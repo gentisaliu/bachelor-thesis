@@ -37,4 +37,4 @@
 .settings/
 
 # Ignore binaries
-.bin/*
+bin/
