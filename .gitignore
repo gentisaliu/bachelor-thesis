@@ -38,3 +38,6 @@
 
 # Ignore binaries
 bin/
+
+# Ignore CMS Offline Software
+cmssw/
