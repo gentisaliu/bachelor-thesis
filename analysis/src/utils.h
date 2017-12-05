@@ -6,6 +6,6 @@
 #include <vector>
 #include <string>
 
-const vector<string> getLines(string str);
+const std::vector<std::string> getLines(std::string str);
 
 #endif  // ANALYSIS_SRC_UTILS_H_

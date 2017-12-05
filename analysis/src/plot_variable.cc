@@ -1,6 +1,8 @@
 // Copyright 2017 Genti Saliu (gentisaliu@gmail.com)
 
 #include <inih/INIReader.h>
+#include <utils.h>
+#include <TSystem.h>
 #include <histogram_plot.h>
 
 #include <iostream>
@@ -23,9 +25,11 @@ int main(int argc, char** argv) {
         std::cout << "Can't load '" << argv[1] << "'." << std::endl;
 
     for (string section : reader.Sections()) {
-        //  string files = reader.Get(section, "files", "");
-        //  string variable = reader.Get(section, "variable", "");
-        //  string dest = reader.Get(section, "destination", "");
+        string files = reader.Get(section, "files", "");
+        vector<string> fileList = getLines(files);
+        
+        string variable = reader.Get(section, "variable", "");
+        string dest = reader.Get(section, "destination", "");
     }
 
     return 0;
@@ -36,12 +40,13 @@ void plot(const vector<string> &files, const string &var, const string &dest) {
         kBlack, kRed, kGreen, kBlue, kYellow, kMagenta, kCyan,
         kOrange, kSpring, kTeal, kGray, kAzure, kViolet, kPink};
 
-    /*HistogramPlot histograms;
+    HistogramPlot histograms;
 
     for (unsigned int i = 0; i != files.size(); i++) {
         EColor color = colors.at(i % colors.size());
         histograms.add(files.at(i), var, color);
     }
 
-    histograms.plot(dest);*/
+    histograms.plot(1);
+    //histograms.plot(dest);
 }

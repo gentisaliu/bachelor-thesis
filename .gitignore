@@ -36,8 +36,9 @@
 .project
 .settings/
 
-# Ignore binaries
+# Ignore binaries and objects
 bin/
+obj/
 
 # Ignore CMS Offline Software
 cmssw/

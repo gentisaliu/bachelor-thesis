@@ -34,7 +34,7 @@ void HistogramPlot::add(const string &file, const string &obj,
     this->stats.push_back(st);*/
 }
 
-void HistogramPlot::placeNextStats(TPaveStats *stats, const EColor &color) {
+void HistogramPlot::placeNextStats(const TPaveStats &stats, const EColor &color) {
     /*if (this->x1 != -1) {
         stats->SetTextColor(color);
         stats->SetLineColor(color);
@@ -51,8 +51,9 @@ void HistogramPlot::placeNextStats(TPaveStats *stats, const EColor &color) {
     this->y2 = stats->GetY2NDC();*/
 }
 
+/*
 void HistogramPlot::plot(const string &dest) {
-    /*TCanvas c("canvas");
+    TCanvas c("canvas");
 
     for (unsigned int i = 0; i != this->histograms.size(); i++) {
         TH1D *h = this->histograms.at(i);
@@ -65,5 +66,9 @@ void HistogramPlot::plot(const string &dest) {
         this->stats.at(i)->Draw("same");
     }
 
-    c.Print(dest.c_str());*/
+    c.Print(dest.c_str());
+}*/
+
+void HistogramPlot::plot(int a) {
+    
 }

@@ -13,9 +13,10 @@ class HistogramPlot {
  public:
     HistogramPlot();
 
-    void add(const string &file, const string &obj, const EColor &color);
+    void add(const std::string &file, const std::string &obj, const EColor &color);
 
-    void plot(const std::string &dest);
+    void plot(int a);
+    //void plot(const std::string &dest);
 
  private:
     double x1;
