@@ -1,13 +1,10 @@
-// Copyright 2017 Genti Saliu (gentisaliu@gmail.com)
+// Copyright 2017 Genti Saliu
 
-#include <utils.h>
+#include <utils/string.h>
 
-#include <vector>
-#include <iostream>
-#include <string>
 #include <sstream>
 
-using namespace std;
+using std::istringstream;
 
 const vector<string> getLines(string str) {
     istringstream origStream(str);

@@ -31,14 +31,11 @@
 *.out
 *.app
 
-# Eclipse resources
+# IDE resources
 .cproject
 .project
 .settings/
+.idea/
 
 # Ignore binaries and objects
-bin/
-obj/
-
-# Ignore CMS Offline Software
-cmssw/
+cmake-build-debug
