@@ -1,6 +1,10 @@
 // Copyright 2017 Genti Saliu
 
 #include <inih/INIReader.h>
+#include "TSystem.h"
+#include <TFile.h>
+#include <TH1D.h>
+#include <TMatrixD.h>
 
 #include <iostream>
 
@@ -12,6 +16,9 @@ int main(int argc, char** argv) {
         cout << "Usage: " << argv[0] << " <config-file>.ini" << endl;
         return 1;
     }
+
+    string b = "aa";
+    TMatrixD a(2, 2);
 
     return 0;
 }

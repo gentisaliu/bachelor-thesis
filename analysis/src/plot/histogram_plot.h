@@ -12,18 +12,13 @@ using std::vector;
 class HistogramPlot {
  public:
     HistogramPlot();
-
     void add(const string &rootFile, const string &rootObj);
-
     void plot(const string &targetFile);
 
  private:
     double x1;
-
     double y1;
-
     double x2;
-
     double y2;
 };
 
