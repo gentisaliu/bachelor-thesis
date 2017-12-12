@@ -10,6 +10,6 @@
 using std::string;
 using std::vector;
 
-const vector<string> getLines(string &str);
+const vector<string> getLines(const string &str);
 
 #endif  // ANALYSIS_SRC_UTILS_STRING_H_

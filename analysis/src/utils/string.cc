@@ -6,7 +6,7 @@
 
 using std::istringstream;
 
-const vector<string> getLines(string str) {
+const vector<string> getLines(const string &str) {
     istringstream origStream(str);
     vector<string> lines;
     string curLine;
