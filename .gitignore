@@ -37,5 +37,10 @@
 .settings/
 .idea/
 
-# Ignore binaries and objects
+# Binaries and objects
 cmake-build-debug
+CMakeFiles
+
+# Makefile and CMake generated files
+*.cmake
+Makefile
