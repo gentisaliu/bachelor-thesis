@@ -15,10 +15,7 @@ HistogramPlot::HistogramPlot() {
 
 void HistogramPlot::addHist(TH1D* h, const EColor &color) {
     h->SetLineColor(color);
-    h->Draw();
-    gPad->Update();
 
-    gStyle->SetOptStat("emri");
 
     TPaveStats *st = reinterpret_cast<TPaveStats*>(h->FindObject("stats"));
     this->positionStatsAfterPrevious(st, color);
@@ -26,8 +23,9 @@ void HistogramPlot::addHist(TH1D* h, const EColor &color) {
     this->histograms.push_back(h);
 }
 
-void HistogramPlot::positionStatsAfterPrevious(TPaveStats *stats,
-                                               const EColor &color) {
+void HistogramPlot::positionStatsAfterPrevious(TH1D *h) {
+    TPaveStats *stats = reinterpret_cast<TPaveStats*>(h->FindObject("stats"));
+
     if (this->x1 != -1) {
         stats->SetTextColor(color);
         stats->SetLineColor(color);
@@ -45,6 +43,7 @@ void HistogramPlot::positionStatsAfterPrevious(TPaveStats *stats,
 }
 
 void HistogramPlot::plot(const string &targetFile) {
+    gStyle->SetOptStat("emri");
     TCanvas c("canvas");
 
     for (unsigned int i = 0; i < this->histograms.size(); i++) {

@@ -24,7 +24,7 @@ class HistogramPlot {
     double x2;
     double y2;
     vector<TH1D*> histograms;
-    void positionStatsAfterPrevious(TPaveStats *stats, const EColor &color);
+    void positionStatsAfterPrevious(TH1D *h, const EColor &color);
 };
 
 #endif  // ANALYSIS_SRC_PLOT_HISTOGRAMPLOT_H_
