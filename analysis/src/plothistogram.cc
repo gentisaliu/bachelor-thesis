@@ -4,6 +4,7 @@
 #include <TSystem.h>
 #include <TFile.h>
 #include <TH1D.h>
+
 #include <plot/histogramplot.h>
 #include <utils/string.h>
 
@@ -11,7 +12,7 @@ using std::cout;
 using std::endl;
 using std::vector;
 
-void processSection(const INIReader *reader, const string &section);
+void processSection(INIReader *reader, const string &section);
 
 int main(int argc, char** argv) {
     if (argc != 2) {
@@ -26,9 +27,8 @@ int main(int argc, char** argv) {
     if (reader.ParseError() < 0)
         cout << "Could not read '" << configFile << "'." << endl;
 
-    for (string section : reader.Sections()) {
+    for (string section : reader.Sections())
         processSection(&reader, section);
-    }
 
     return 0;
 }

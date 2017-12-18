@@ -1,8 +1,10 @@
 // Copyright 2017 Genti Saliu
 
-#include <plot/histogramplot.h>
 #include <TFile.h>
+#include <TStyle.h>
 #include <TCanvas.h>
+
+#include <plot/histogramplot.h>
 
 HistogramPlot::HistogramPlot() {
     this->x1 = -1;
@@ -16,11 +18,12 @@ void HistogramPlot::addHist(TH1D* h, const EColor &color) {
     h->Draw();
     gPad->Update();
 
-    TPaveStats *stats = reinterpret_cast<TPaveStats*>(h->FindObject("stats"));
-    this->positionStatsAfterPrevious(stats, color);
+    gStyle->SetOptStat("emri");
+
+    TPaveStats *st = reinterpret_cast<TPaveStats*>(h->FindObject("stats"));
+    this->positionStatsAfterPrevious(st, color);
 
     this->histograms.push_back(h);
-    this->stats.push_back(stats);
 }
 
 void HistogramPlot::positionStatsAfterPrevious(TPaveStats *stats,
@@ -44,15 +47,13 @@ void HistogramPlot::positionStatsAfterPrevious(TPaveStats *stats,
 void HistogramPlot::plot(const string &targetFile) {
     TCanvas c("canvas");
 
-    for (unsigned int i = 0; i != this->histograms.size(); i++) {
+    for (unsigned int i = 0; i < this->histograms.size(); i++) {
         TH1D *h = this->histograms.at(i);
 
         if (i == 0)
             h->Draw();
         else
             h->Draw("same");
-
-        this->stats.at(i)->Draw("same");
     }
 
     c.Print(targetFile.c_str());

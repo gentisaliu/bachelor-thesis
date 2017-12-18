@@ -14,9 +14,16 @@ find_library(ROOT_GPAD_LIB Gpad)
 find_library(ROOT_HIST_LIB Hist)
 find_library(ROOT_TREE_LIB Tree)
 
-add_executable(plot_histogram src/plothistogram.cc
-        src/plot/histogramplot.cc src/plot/histogramplot.h src/utils/string.h
+add_executable(plot_histogram
+        src/plothistogram.cc
+        src/plot/histogramplot.cc
+        src/plot/histogramplot.h
+        src/utils/string.h
         src/utils/string.cc)
 
-target_link_libraries(plot_histogram ${ROOT_CORE_LIB}
-        ${ROOT_RIO_LIB} ${ROOT_GPAD_LIB} ${ROOT_HIST_LIB} ${ROOT_TREE_LIB})
+target_link_libraries(plot_histogram
+        ${ROOT_CORE_LIB}
+        ${ROOT_RIO_LIB}
+        ${ROOT_GPAD_LIB}
+        ${ROOT_HIST_LIB}
+        ${ROOT_TREE_LIB})
