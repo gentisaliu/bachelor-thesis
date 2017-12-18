@@ -45,6 +45,7 @@ CMakeFiles
 *.cmake
 Makefile
 
-# Models
+# Models, output
 models/
+output/
 
