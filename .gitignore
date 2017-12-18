@@ -44,3 +44,7 @@ CMakeFiles
 # Makefile and CMake generated files
 *.cmake
 Makefile
+
+# Models
+models/*.root
+
