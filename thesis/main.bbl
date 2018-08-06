@@ -1,0 +1,371 @@
+\begin{thebibliography}{10}
+
+\bibitem{tdiscovery}
+F.~Abe {\em et~al.}, ``{Observation of top quark production in $\bar{p}p$
+  collisions}'', {\em {Physical Review Letters}}, vol.~74, pp.~2626--2631,
+  1995.
+
+\bibitem{tau2000}
+K.~Kodama {\em et~al.}, ``{Observation of tau neutrino interactions}'', {\em
+  {Physics Letters B}}, vol.~504, pp.~218--224, 2001.
+
+\bibitem{ATLAS_higgs_1207}
+G.~Aad {\em et~al.}, ``Observation of a new particle in the search for the
+  standard model higgs boson with the atlas detector at the lhc'', {\em Physics
+  Letters B}, vol.~716, pp.~1--29, 2012.
+
+\bibitem{CMS_higgs_1207}
+S.~Chatrchyan {\em et~al.}, ``{Observation of a new boson at a mass of 125 GeV
+  with the CMS experiment at the LHC}'', {\em Physics Letters B}, vol.~716,
+  pp.~30--61, 2012.
+
+\bibitem{Lande}
+D.~Hanneke, S.~F. Hoogerheide, and G.~Gabrielse, ``{Cavity Control of a
+  Single-Electron Quantum Cyclotron: Measuring the Electron Magnetic Moment}'',
+  {\em Physical Review A}, vol.~83, p.~052122, 2011.
+
+\bibitem{QuarksAndLeptons}
+F.~Halzen and A.~D. Martin, ``{Quarks and Leptons: An Introductory Course in
+  Modern Particle Physics}'', 1984.
+
+\bibitem{Gordon}
+G.~L. Kane, ``Modern elementary particle physics: the fundamental particles and
+  forces?'', updated ed., 4. pr.~ed., 1998.
+
+\bibitem{PhysicsFromSymmetry}
+J.~Schwichtenberg, ``Physics from symmetry'', Undergraduate Lecture Notes in
+  Physics, Springer, Cham, 2nd ed. 2018~ed., 2018.
+
+\bibitem{Peskin}
+M.~E. Peskin and D.~V. Schroeder, ``{An Introduction to quantum field
+  theory}'', Addison-Wesley, Reading, USA, 1995.
+
+\bibitem{pdg}
+C.~Patrignani {\em et~al.}, ``{Review of Particle Physics}'', {\em Chinese
+  Physics C}, vol.~40, no.~10, p.~100001, 2016.
+
+\bibitem{top_lifetime}
+A.~Quadt, ``Top quark physics at hadron colliders'', {\em The European Physical
+  Journal C - Particles and Fields}, vol.~48, pp.~835--1000, Dec 2006.
+
+\bibitem{lhcguide}
+{CERN - Education, Communications and Outreach Group}, ``{LHC Guide}'', Mar
+  2017.
+\newblock \url{http://cds.cern.ch/record/2255762}, last accessed on 2018-06-21.
+
+\bibitem{lhcweb}
+{CERN}, ``{The Large Hadron Collider}'', 2014.
+\newblock \url{http://home.cern/topics/large-hadron-collider}, last accessed on
+  2018-06-07.
+
+\bibitem{cernacccompl}
+C.~De~Melis, ``{The CERN accelerator complex. Complexe des accélérateurs du
+  CERN}'', 2016.
+\newblock \url{https://cds.cern.ch/record/2197559}, last accessed on
+  2018-06-07.
+
+\bibitem{lhclumi2016}
+{Lujan P.}, ``{CMS Luminosity - Public Results}'', 2018.
+\newblock
+  \url{https://twiki.cern.ch/twiki/bin/view/CMSPublic/LumiPublicResults#2016_proton_proton_13_TeV_collis},
+  last accessed on 2018-06-28.
+
+\bibitem{CMSDesignReport}
+S.~Chatrchyan {\em et~al.}, ``{The CMS Experiment at the CERN LHC}'', {\em
+  Journal of Instrumentation}, vol.~3, p.~S08004, 2008.
+
+\bibitem{tHq}
+{The CMS Collaboration}, ``{Search for the tH(H$\to \text{b}\bar{\text{b}}$)
+  process in pp collisions at $\sqrt{s}=13\,\mathrm{TeV}$ and study of Higgs
+  boson couplings}'',  CMS-PAS-HIG-17-016, CERN, Geneva, 2018.
+
+\bibitem{cmsslice}
+S.~R. Davis, ``{Interactive Slice of the CMS detector}'', 2016.
+\newblock \url{https://cds.cern.ch/record/2205172}, last accessed on
+  2018-06-08.
+
+\bibitem{tracker}
+V.~Karimäki {\em et~al.}, ``{The CMS tracker system project: Technical Design
+  Report}'', Technical Design Report CMS, CERN, Geneva, 1997.
+
+\bibitem{trackerPerformance}
+S.~Chatrchyan {\em et~al.}, ``{Description and performance of track and
+  primary-vertex reconstruction with the CMS tracker}'', {\em Journal of
+  Instrumentation}, vol.~9, p.~P10009, 2014.
+
+\bibitem{ECAL}
+{The CMS Collaboration}, ``{The CMS electromagnetic calorimeter project:
+  Technical Design Report}'', Technical Design Report CMS, Geneva, 1997.
+
+\bibitem{HCAL}
+{The CMS Collaboration}, ``{The CMS hadron calorimeter project: Technical
+  Design Report}'', Technical Design Report CMS, Geneva, 1997.
+
+\bibitem{MuonChamber}
+{The CMS Collaboration}, ``{The CMS muon project: Technical Design Report}'',
+  Technical Design Report CMS, Geneva, 1997.
+
+\bibitem{TriggerDesignRep}
+V.~Khachatryan {\em et~al.}, ``{The CMS trigger system}'', {\em Journal of
+  Instrumentation}, vol.~12, no.~01, p.~P01020, 2017.
+
+\bibitem{pdfOld}
+S.~Dulat {\em et~al.}, ``{New parton distribution functions from a global
+  analysis of quantum chromodynamics}'', {\em Physical Review Journals D},
+  vol.~93, no.~3, p.~033006, 2016.
+
+\bibitem{nnpdf}
+R.~D. Ball {\em et~al.}, ``{Parton distributions from high-precision collider
+  data}'', {\em {The European Physical Journal C}}, vol.~77, no.~10, p.~663,
+  2017.
+
+\bibitem{DGLAP1}
+Y.~L. Dokshitzer, ``{Calculation of the Structure Functions for Deep Inelastic
+  Scattering and e+ e- Annihilation by Perturbation Theory in Quantum
+  Chromodynamics.}'', {\em Soviet Physics}, vol.~46, pp.~641--653, 1977.
+\newblock [Zh. Eksp. Teor. Fiz.73,1216(1977)].
+
+\bibitem{DGLAP2}
+V.~N. Gribov and L.~N. Lipatov, ``{Deep inelastic e p scattering in
+  perturbation theory}'', {\em Soviet Journal of Nuclear Physics}, vol.~15,
+  pp.~438--450, 1972.
+\newblock [Yad. Fiz.15,781(1972)].
+
+\bibitem{DGLAP3}
+G.~Altarelli and G.~Parisi, ``{Asymptotic Freedom in Parton Language}'', {\em
+  Nuclear Physics B}, vol.~126, pp.~298--318, 1977.
+
+\bibitem{MCmethod}
+N.~Metropolis and S.~Ulam, ``The monte carlo method'', {\em Journal of the
+  American Statistical Association}, vol.~44, no.~247, pp.~335--341, 1949.
+
+\bibitem{PPscattering}
+M.~Bachtis, ``Event simulation'', pp.~47--54.
+\newblock Springer International Publishing, Cham, 2014.
+
+\bibitem{LundString}
+B.~Andersson, G.~Gustafson, G.~Ingelman, and T.~Sjöstrand, ``Parton
+  fragmentation and string dynamics'', {\em Physics Reports}, vol.~97, no.~2,
+  pp.~31 -- 145, 1983.
+
+\bibitem{MadGraph5}
+J.~Alwall, M.~Herquet, F.~Maltoni, O.~Mattelaer, and T.~Stelzer, ``{MadGraph 5
+  : Going Beyond}'', {\em JHEP}, vol.~06, p.~128, 2011.
+
+\bibitem{MadEvent}
+F.~Maltoni and T.~Stelzer, ``{MadEvent: Automatic event generation with
+  MadGraph}'', {\em Journal of High Energy Physics}, vol.~02, p.~027, 2003.
+
+\bibitem{MadGraph5_NLO}
+J.~Alwall {\em et~al.}, ``{The automated computation of tree-level and
+  next-to-leading order differential cross sections, and their matching to
+  parton shower simulations}'', {\em Journal of High Energy Physics}, vol.~07,
+  p.~079, 2014.
+
+\bibitem{Powheg1}
+P.~Nason, ``{A New method for combining NLO QCD with shower Monte Carlo
+  algorithms}'', {\em Journal of High Energy Physics}, vol.~11, p.~040, 2004.
+
+\bibitem{Powheg2}
+S.~Frixione, P.~Nason, and C.~Oleari, ``{Matching NLO QCD computations with
+  Parton Shower simulations: the POWHEG method}'', {\em Journal of High Energy
+  Physics}, vol.~11, p.~070, 2007.
+
+\bibitem{Powheg3}
+S.~Alioli, P.~Nason, C.~Oleari, and E.~Re, ``{A general framework for
+  implementing NLO calculations in shower Monte Carlo programs: the POWHEG
+  BOX}'', {\em Journal of High Energy Physics}, vol.~06, p.~043, 2010.
+
+\bibitem{Pythia82}
+T.~Sjöstrand {\em et~al.}, ``{An Introduction to PYTHIA 8.2}'', {\em Comput.
+  Phys. Commun.}, vol.~191, pp.~159--177, 2015.
+
+\bibitem{Geant4}
+S.~Agostinelli {\em et~al.}, ``G4 - a simulation toolkit'', vol.~506,
+  pp.~250--303, 07 2003.
+
+\bibitem{KalmanFilter}
+R.~Fruhwirth, ``{Application of Kalman filtering to track and vertex
+  fitting}'', {\em Nuclear Instruments and Methods A}, vol.~262, pp.~444--450,
+  1987.
+
+\bibitem{ParticleFlow2}
+{The CMS Collaboration}, ``{Particle-Flow Event Reconstruction in CMS and
+  Performance for Jets, Taus, and MET}'', 2009.
+
+\bibitem{ParticleFlow}
+F.~Beaudette, ``{The CMS Particle Flow Algorithm}'', in {\em {Proceedings,
+  International Conference on Calorimetry for the High Energy Frontier (CHEF
+  2013): Paris, France, April 22-25, 2013}}, pp.~295--304, 2013.
+
+\bibitem{antikt}
+M.~Cacciari, G.~P. Salam, and G.~Soyez, ``{The Anti-k(t) jet clustering
+  algorithm}'', {\em {Journal of High Energy Physics}}, vol.~04, p.~063, 2008.
+
+\bibitem{ICLsafe}
+{G. Salam }, ``{Jets}'', 2008.
+\newblock
+  \url{https://gsalam.web.cern.ch/gsalam/repository/talks/2008-cteq-mcnet.pdf},
+  last accessed on 2018-07-15.
+
+\bibitem{JEC}
+{The CMS collaboration}, ``Determination of jet energy calibration and
+  transverse momentum resolution in cms'', {\em Journal of Instrumentation},
+  vol.~6, no.~11, p.~P11002, 2011.
+
+\bibitem{JEC_levels}
+{V. Sordini}, ``{JEC levels}'', 2016.
+\newblock \url{https://twiki.cern.ch/twiki/bin/viewauth/CMS/IntroToJEC}, last
+  accessed on 2018-07-16.
+
+\bibitem{Bishop}
+C.~M. Bishop, ``Pattern recognition and machine learning'', Information science
+  and statistics, Springer, New York, 2006.
+
+\bibitem{DeepLearningBook}
+I.~Goodfellow, Y.~Bengio, and A.~Courville, ``Deep learning'', 2016.
+\newblock \url{http://www.deeplearningbook.org}, last accessed on 2018-07-26.
+
+\bibitem{VanishingGradientProblem}
+S.~Hochreiter, ``Untersuchungen zu dynamischen neuronalen netzen''.
+\newblock Diplomarbeit im fach informatik, Technische Universität München,
+  April 1991.
+
+\bibitem{relu}
+P.~Ramachandran, B.~Zoph, and Q.~V. Le, ``Searching for activation functions'',
+  {\em Computing Research Repository}, vol.~abs/1710.05941, 2017.
+
+\bibitem{ADAM}
+D.~P. Kingma and J.~Ba, ``Adam: {A} method for stochastic optimization'', {\em
+  Computing Research Repository}, vol.~abs/1412.6980, 2014.
+
+\bibitem{EarlyStopping}
+L.~Prechelt, ``Early stopping --- but when?'', pp.~53--67.
+\newblock Springer, Berlin, Heidelberg, 2012.
+
+\bibitem{dropout}
+G.~E. Hinton {\em et~al.}, ``Improving neural networks by preventing
+  co-adaptation of feature detectors'', {\em Computing Research Repository},
+  vol.~abs/1207.0580, 2012.
+
+\bibitem{BatchNormalization}
+S.~Ioffe and C.~Szegedy, ``Batch normalization: Accelerating deep network
+  training by reducing internal covariate shift'', {\em Computing Research
+  Repository}, vol.~abs/1502.03167, 2015.
+
+\bibitem{ADDA}
+E.~Tzeng {\em et~al.}, ``Adversarial discriminative domain adaptation'', {\em
+  Computing Research Repository}, vol.~abs/1702.05464, 2017.
+
+\bibitem{Reweighting}
+H.~Shimodaira, ``Improving predictive inference under covariate shift by
+  weighting the log-likelihood function'', {\em Journal of Statistical Planning
+  and Inference}, vol.~90, pp.~227--244, 2000.
+
+\bibitem{TCA}
+S.~J. Pan {\em et~al.}, ``Domain adaptation via transfer component analysis'',
+  {\em IEEE Transactions on Neural Networks}, vol.~22, pp.~199--210, Feb 2011.
+
+\bibitem{DA_Adversarial}
+Y.~Ganin {\em et~al.}, ``Domain-adversarial training of neural networks'', {\em
+  Journal of Machine Learning Research}, vol.~17, no.~59, pp.~1--35, 2016.
+
+\bibitem{MME}
+K.~Borgwardt {\em et~al.}, ``Integrating structured biological data by kernel
+  maximum mean discrepancy'', {\em Bioinformatics}, vol.~22, pp.~e49--e57, Aug.
+  2006.
+
+\bibitem{DDE}
+E.~Tzeng {\em et~al.}, ``Deep domain confusion: Maximizing for domain
+  invariance'', {\em Computing Research Repository}, vol.~abs/1412.3474, 2014.
+
+\bibitem{DA_Backprop}
+Y.~{Ganin} and V.~{Lempitsky}, ``{Unsupervised Domain Adaptation by
+  Backpropagation}'', {\em Journal of Machine Learning Research}, Sept. 2014.
+
+\bibitem{Goodfellow}
+I.~J. {Goodfellow} {\em et~al.}, ``{Generative Adversarial Networks}'', {\em
+  ArXiv e-prints}, June 2014.
+\newblock \url{https://arxiv.org/abs/1406.2661}, last accessed on 2018-08-01.
+
+\bibitem{HeavyFlavorIdentification}
+A.~M. Sirunyan {\em et~al.}, ``{Identification of heavy-flavour jets with the
+  CMS detector in pp collisions at 13 TeV}'', {\em Journal of Instrumentation},
+  vol.~13, no.~05, p.~P05011, 2018.
+
+\bibitem{IVF}
+V.~Khachatryan {\em et~al.}, ``{Measurement of $B\bar{B}$ Angular Correlations
+  based on Secondary Vertex Reconstruction at $\sqrt{s}=7$ TeV}'', {\em
+  {Journal of High Energy Physics}}, vol.~03, p.~136, 2011.
+
+\bibitem{Keras}
+F.~Chollet {\em et~al.}, ``Keras'', 2015.
+\newblock \url{https://keras.io}, last accessed on 2018-07-28.
+
+\bibitem{Tensorflow}
+M.~Abadi {\em et~al.}, ``{TensorFlow}: Large-scale machine learning on
+  heterogeneous systems'', 2015.
+\newblock \url{https://www.tensorflow.org/}, last accessed on 2018-07-28.
+
+\bibitem{DeepFlavour}
+{The CMS Collaboration}, ``{CMS Phase 1 heavy flavour identification
+  performance and developments}'', May 2017.
+
+\bibitem{JetClassificationDNN}
+D.~Guest {\em et~al.}, ``Jet flavor classification in high-energy physics with
+  deep neural networks'', {\em Physical Review D}, vol.~94, p.~112002, Dec
+  2016.
+
+\bibitem{LSTM}
+S.~Hochreiter and J.~Schmidhuber, ``Long short-term memory'', vol.~9,
+  pp.~1735--80, Dec 1997.
+
+\bibitem{LSTMunit}
+{Wikimedia}, ``{Long Short Term Memory}'', 2015-10-04.
+\newblock
+  \url{https://commons.wikimedia.org/wiki/File:Long_Short_Term_Memory.png},
+  last accessed on 2018-08-01.
+
+\bibitem{MCTruth}
+{T. Speer}, ``{Jet Flavour Identification (MC Truth)}'', 2018.
+\newblock
+  \url{https://twiki.cern.ch/twiki/bin/view/CMSPublic/SWGuideBTagMCTools}, last
+  accessed on 2018-07-31.
+
+\bibitem{brilcalc}
+CERN, ``Brilview''
+\newblock \url{https://brilview.readthedocs.io/en/stable/}, last accessed on
+  2018-08-03.
+
+\bibitem{TopPP}
+M.~Czakon and A.~Mitov, ``Top++: A program for the calculation of the top-pair
+  cross-section at hadron colliders'', {\em Computer Physics Communications},
+  vol.~185, no.~11, pp.~2930 -- 2938, 2014.
+
+\bibitem{DYCrossSec}
+R.~Gavin, Y.~Li, F.~Petriello, and S.~Quackenbush, ``Fewz 2.0: A code for
+  hadronic z production at next-to-next-to-leading order'', {\em Computer
+  Physics Communications}, vol.~182, no.~11, pp.~2388 -- 2403, 2011.
+
+\bibitem{GenXSec}
+CMS, ``{GenXSecAnalyzer}''
+\newblock
+  \url{https://github.com/cms-sw/cmssw/blob/master/GeneratorInterface/Core/plugins/GenXSecAnalyzer.cc},
+  last accessed on 2018-09-06.
+
+\bibitem{HatHor1}
+P.~Kant {\em et~al.}, ``{HatHor for single top-quark production: Updated
+  predictions and uncertainty estimates for single top-quark production in
+  hadronic collisions}'', {\em Computer Physics Communications}, vol.~191,
+  pp.~74--89, 2015.
+
+\bibitem{HatHor2}
+M.~Aliev {\em et~al.}, ``{HATHOR: HAdronic Top and Heavy quarks crOss section
+  calculatoR}'', {\em Computer Physics Communications}, vol.~182,
+  pp.~1034--1046, 2011.
+
+\bibitem{BosonPairCrossSec}
+J.~M. Campbell, R.~K. Ellis, and C.~Williams, ``Vector boson pair production at
+  the lhc'', {\em Journal of High Energy Physics}, vol.~2011, p.~18, Jul 2011.
+
+\end{thebibliography}
