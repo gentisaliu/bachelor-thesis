@@ -1,0 +1,14 @@
+% diagram_ST-tW.t1 -- generated from diagram_ST-tW.mp
+\fmfL(40.00006,29.60858,b){$\mathrm {b}$}%
+\fmfL(58.50581,22.3227,t){$\mathrm {t}$}%
+\fmfL(57.90102,35.70215,rb){$\mathrm {W^{-}}$}%
+\fmfL(29.52968,19.23854,l){$\mathrm {b}$}%
+\fmfL(71.26651,24.16225,rb){$\mathrm {W}^{+}$}%
+\fmfL(6.40118,-1.37445,rt){$\mathrm {g}$}%
+\fmfL(6.40118,56.37445,rb){$\mathrm {g}$}%
+\fmfL(73.59882,-1.37445,lt){$\textcolor {KITrot}{\mathrm {\bar {b}}}$}%
+\fmfL(78.98836,9.54362,lt){$\textcolor {KITrot}{\mathrm {b}}$}%
+\fmfL(81.75604,21.38274,l){$\mathrm {q}$}%
+\fmfL(81.75615,33.61632,l){$\mathrm {\bar {q}'}$}%
+\fmfL(78.98868,45.45552,lb){$\textcolor {KITgruen}{\bar {\nu }_{_{\scriptscriptstyle \ell }}}$}%
+\fmfL(73.59933,56.37366,lb){$\textcolor {KITcyan}{\ell ^{-}}$}%

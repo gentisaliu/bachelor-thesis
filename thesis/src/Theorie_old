@@ -1,0 +1,105 @@
+\chapter{The Standard Model}
+\label{ch:theory}
+%As we know today, there are four different fundamental forces. Three of them, the electromagnetic, weak ans strong %interactions, are described by the standard model. The gravitational force is described by general relativity. A lot of %predictions of these theories were proofed by experiments. The standard model predicted a set of elementary particles which all %had been found, the last one, the higgs boson, was found in 2012 by the CMS and ATLAS experiment. The discovery of the %gravitational waves was another big proof for General relativity, as it was predicted about 100 years ago. 
+%By now, it is not possible to combine general relativity and the standard model. Besides of this there ...
+
+%Today we know, protons are not elementary particles but consist of quarks. The quarks are hold together by the strong %interaction and its mediator particles, the gluons. Under weak interaction, a quark can transforms into another kind of quark, %it can change its flavor. In this process, a W-boson, the mediator of the weak interaction is released and this W-boson can %decay for example into a pair of an electron and a neutrino. The W-boson and the other mediator particles of weak and %electromagnetic interaction are produced by a spontaneous symmetry breaking mechanism caused by the Higgs mechanism. With the %Higgs-boson, the mass of the elementary particles can be described.
+
+The Standard Model of particle physics (SM) describes all known elementary particles and three of the four known fundamental forces. These forces are the electromagnetic interaction, the weak interaction and the strong interaction. Only gravity is not included yet. A collection of the elementary particles is shown in \ref{fig:ch_1_standardmodel}.\\
+
+In respect of the spin quantum number, the particles in the SM can be divided into two groups, fermions with spin \nicefrac{1}{2} and bosons with integer spin. The fermions form the matter we know, the atoms. They exist in three generations where only the first generation of particles is stable and does not decay over time. Fermions can be further distinguished into quarks and leptons. Quarks are the constituents of protons and neutrons, they undergo all forces. There are up type quarks with an electric charge of $+\nicefrac{2}{3}$\,e and down type quarks with $-\nicefrac{1}{3}$\,e. The charged leptons, the electron, the muon and the tau-lepton are subject to electromagnetic and weak interaction. The neutral leptons, the neutrinos, are only subject to weak interaction. In the second group of the SM are the bosons. Those with spin 1 are the mediator particles for the three fundamental forces of the SM. The Higgs boson is the only particle of the SM with spin 0, it interacts with all massive particles and is responsible for the mass of the $\textrm{W}^+$, $\textrm{W}^-$ and Z boson. \\
+
+\begin{figure}
+\centering
+\includegraphics[width=1.0\textwidth]{chapter_1_theory/Standardmodel.pdf}
+\caption[Standard Model of Elementary Particles]{\textbf{Standard Model of Elementary Particles.} . Source: \cite{standardmodel}}
+\label{fig:ch_1_standardmodel}
+\end{figure}
+
+The standard model is a quantum field theory, it describes the particles as fields and it includes quantum mechanics as well as special relativity. Further it is a gauge theory, the underlying interactions are described by gauge symmetries. This chapter gives a brief reminder of the theoretical principles of the standard model. In the first section, the electroweak theory will be described, this theory combines the weak and the electromagnetic interaction. The second section explains the quantum chromodynamics which is used to describe the strong interaction. Finally the proton-proton scattering process is outlined to provide a theoretical foundation for the collider physics, which is content in the upcoming chapters. A more detailed description of the SM can be found in one of many textbooks, for example \cite{QuarksAndLeptons} \cite{PhysicsFromSymmetry} \cite{Peskin}.
+
+\section{Electroweak Theory}
+The electroweak theory combines the quantum electrodynamic (QED) with the weak interaction in a quantum field description. As mentioned before, a quantum field theory has to obey the special relativity. This implies that a formulation of such a theory has to be invariant under Lorentz transformation; it has to be a Lorentz scalar. The central object of such a description is the lagrangian density function (lagrangian). This function determines the system in the sense that the equation of motion for different particles can be derived from it. The building blocks of the Lagrangian are fields which different particles.\\
+
+The spin of a particle has direct influence of its behavior under Lorenz transformation, it defines the representation of the Lorentz group. A representation for a spin 0 particle, for example the Higgs boson, is the fundamental representation which is a scalar field $\phi$. For a particle with spin 1/2 one can find two representations of the Lorentz group, both are spinor fields. They are called left- and right handed spinor field $\psi_{L,R}$ and have a distinct transformation behavior. A spin 1 particle is represented by a vector field $\vec{A} = A_{\upmu} = A$. To construct a Lorentz scalar from these fields, one has to combine them with different elements. For the vector field, $A_{\mu}A^{\mu}$ would be a valid Lorentz scalar. To construct Lorentz scalars with spinor fields one can use Dirac spinors which are tuples of left and right handed spinors:
+\begin{equation}
+\Psi = \left(\begin{array}{c} \chi_\textrm{L} \\ \xi_\textrm{R} \end{array}\right) \quad .
+\end{equation}
+Then $\bar{\Psi} \Psi$ is a Lorentz scalar with $\bar{\Psi} = \Psi^\dagger \gamma_0$ where $\Psi^\dagger$ is the adjunct object of $\Psi$ and $\gamma_0$ is one of the Dirac matrices. One can show that if $\Psi$ corresponds to a certain particle, $\bar{\Psi}$ corresponds to its anti particle.
+
+\subsection*{Quantum Electrodynamics}
+Quantum electrodynamics (QED) covers all effects of elementary particles caused by the electric charge. The corresponding Lagrangian $\mathcal{L}$ should include fermion fields, photon fields and a coupling term. Starting with one fermion field, and taking all allowed terms in lowest order, gives the Dirac Lagrangian
+\begin{equation}\label{eq:ch_1_lagrangian_dirac}
+\mathcal{L}_{\textrm{Dirac}} = -m \bar{\Psi}\Psi + i\bar{\Psi}\gamma^{\mu}\partial_{\mu}\Psi \quad ,
+\end{equation} 
+where the first term corresponds to a mass of the fermion and the second to the kinetic energy. Putting this Lagrangian into the Euler-Lagrange equation would lead to the Dirac equation.\\
+
+The photon on the other hand is massless, therefore the Maxwell Lagrangian is
+\begin{equation}\label{eq:ch_1_lagrangian_maxwell}
+\mathcal{L}_{\textrm{Maxwell}} = \frac{1}{2} (\partial^\mu A^\nu \partial_\mu A_\nu - \partial^\mu A^\nu \partial_\nu A_\mu) = \frac{1}{4} F^{\mu\nu}F_{\mu\nu} \quad ,
+\end{equation} 
+with the photon field $A^\mu$. By applying the Euler-Lagrange equation, one will get the homogeneous Maxwell equations. This shows the consistency with other theories in one single framework. But for now, there is nothing new. To get the interactions between the particles, one can take both Lagrangians \ref{eq:ch_1_lagrangian_dirac} and \ref{eq:ch_1_lagrangian_maxwell} together and add an interaction term with a coupling constant $g$ and a vector of Dirac matrices $\gamma_\mu$ to preserve Lorentz invariance
+\begin{equation}\label{eq:ch_1_lagrangian_QED}
+\begin{split}
+\mathcal{L}_{\textrm{QED}} &= -m \bar{\Psi}\Psi 
+	 + i\bar{\Psi}\gamma^{\mu}\partial_{\mu}\Psi 
+	 + g A_\mu\bar{\Psi}\gamma^{\mu}\Psi 
+	 + \frac{1}{4} F^{\mu\nu}F_{\mu\nu} \\
+	 &= -m \bar{\Psi}\Psi 
+	 + i\bar{\Psi}\gamma^{\mu}(\partial_{\mu} - i g A_\mu)\Psi 
+	 + \frac{1}{4} F^{\mu\nu}F_{\mu\nu} \\
+	 &= -m \bar{\Psi}\Psi 
+	 + i\bar{\Psi}\gamma^{\mu}(D_\mu)\Psi 
+	 + \frac{1}{4} F^{\mu\nu}F_{\mu\nu}
+	  \quad , 
+\end{split}
+\end{equation} 
+with the covariant derivation $D_\mu = \partial_{\mu} - i g A_\mu$ which is equivalent to the minimal coupling in quantum mechanics. From the interaction term one can see, that a photon can only couple to a pair of fermions. This can explain for example the photon pair production where a photon produces a pair of electron and positron \footnote{For this effect another particle has to be involved that both final particles, the electron and the positron, can be on the mass shell and exist not only as virtual particles.}.\\
+
+As mentioned before, gauge symmetries play an important role in quantum field theories. One can show that $\mathcal{L}_{\textrm{QED}}$ has a local $U$(1) invariance because under the simultaneous transformation of 
+\begin{equation}
+A_\mu \rightarrow A_\mu' = A_\mu + \partial_\mu a(x) \quad \textrm{and} \quad \Psi \rightarrow \Psi' = \textrm{e}^{\textrm{i}q a(x)} \Psi
+\end{equation}
+it stays the same. As a reason a conserved quantity can be derived using Noether's theorem. It turns out, that this conserved quantity is the coupling constant $g$ which can be identified as the electric charge. The local $U$(1) symmetry further forbids a mass term for the photon field and explains why they are massless. The photon field $A_\mu$ is demanded to achieve a local gauge symmetry and is therefore called the gauge boson of the $U$(1) symmetry. Higher symmetries can be used to explain the other forces, this will be subject in the following parts of this section.
+
+\subsection*{Weak Intreaction and the Electroweak Symmetry Breaking}
+A famous example for the weak interaction is the $\beta^-$-decay where a down-type quark decays into an up-type quark and an additional $\textrm{W}^-$ boson. The underlying local symmetry is a unification of the SU(2) and the U(1) groups.\\
+
+The SU(2) has three basis generators $\nicefrac{\sigma^i}{2}$ with the $2 \times 2$ Pauli matrices $\sigma^i$ and $i = 1,2,3$. Therefore three fields $W_1, W_2, \textrm{and} W_3$ are needed to make the Lagrangian locally SU(2) invariant. A SU(2) transformation is a rotation of a right and a left handed spinor, for example the exchange between a right handed down-type and a left handed up-type quark. These fermions are described in doublets like
+\begin{equation}
+\Psi = \left(\begin{array}{c} \textrm{u}_\textrm{L} \\ \textrm{d}_\textrm{R} \end{array}\right) \quad .
+\end{equation}
+Locality of this symmetry forbids a mass term of the gauge bosons as well as different quark or lepton masses in one doublet. A SU(2) invariant Lagrangian can be found as
+\begin{equation}
+\mathcal{L}_{\textrm{SU(2)}} = i\bar{\Psi}\gamma^{\mu}(\partial_{\mu} - i g \mathcal{W}_\mu)\Psi + 
+	 \frac{1}{4} \textrm{Tr}(\mathcal{W}^{\nu \mu}\mathcal{W}_{\mu\nu})  \quad ,
+\end{equation}
+with the $2 \times 2$ matrices $\mathcal{W}^\mu = (W^\mu)_i \frac{\sigma^i}{2}$ and the objects $\mathcal{W}_{\mu\nu}$ which have a similar role in the SU(2) like $F^{\mu\nu}$ from \ref{eq:ch_1_lagrangian_maxwell} in the U(1). However the three mediator particles of the weak interaction, the $\textrm{W}^+$, $\textrm{W}^-$ and Z boson, have a mass and are therefore distinct from $W_1, W_2, \textrm{and} W_3$. A correct description can be achieved with the electroweak symmetry breaking. \\
+
+In the electroweak symmetry breaking a scalar Higgs field is introduced
+
+
+
+ The conserved quantity is the electroweak 
+
+photons wbosons zboson 
+higgs mechanism
+leptons quarks
+hypercharge weak isospin
+
+ckm matrix
+
+\section{Quantum Chromodynamics}
+SU3
+running coupling constant
+asymtotic freedom and confinement
+mesons and baryons
+bquark properties
+
+\section{Proton-Proton Scattering Process}
+cross section
+parton distribution function
+hard scattering/ matrixelement
+parton shower
+hadronization
+
