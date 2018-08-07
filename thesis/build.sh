@@ -1,19 +1,20 @@
-echo PDFLATEX 1st
-echo '##############################################'
+echo "PDFLATEX 1st"
+echo "##############################################"
 pdflatex -interaction=batchmode main.tex
-echo '##############################################'
-echo BIBTEX
-echo '##############################################'
+echo "##############################################"
+echo "BIBTEX"
+echo "##############################################"
 bibtex main
-echo '##############################################'
-echo PDFLATEX 2nd
-echo '##############################################'
+echo "##############################################"
+echo "PDFLATEX 2nd"
+echo "##############################################"
 pdflatex -interaction=batchmode main.tex
-echo '##############################################'
-echo PDFLATEX 3rd
-echo '##############################################'
+echo "##############################################"
+echo "PDFLATEX 3rd"
+echo "##############################################"
 pdflatex -interaction=batchmode main.tex
-echo '##############################################'
+echo "##############################################"
+echo "Cleanup"
 find . -name "*.aux" -type f -delete
 find . -name "*.log" -type f -delete
 find . -name "*.toc" -type f -delete
@@ -23,4 +24,4 @@ find . -name "*.lot" -type f -delete
 find . -name "*.blg" -type f -delete
 echo DONE
 date
-echo '##############################################'
+echo "##############################################"
