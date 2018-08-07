@@ -4,7 +4,7 @@ Jets that origin from the heavy flavor quarks c and b have characteristic proper
 \section{Heavy Flavor Jet Properties}\label{sec:ch_tag_properties}
 \begin{figure}
 \centering
-\includegraphics[width=0.6\textwidth]{chapter_5_tagging/SV.png}
+\includegraphics[width=0.6\textwidth]{assets/SV.png}
 \caption[Heavy Flavor Jet]{\textbf{A heavy flavor jet.} Several jet properties can be used to identify a heavy flavor jet. The main identifying properties are secondary vertices (SV) and displaced tracks with an impact parameter (IP) towards the primary vertex (PV).  Source: \cite{HeavyFlavorIdentification}}
 \label{fig:ch_5_SV}
 \end{figure}
@@ -54,7 +54,7 @@ The DeepFlavour algorithm \cite{DeepFlavour} is a further development of the Dee
 
 \begin{figure}
 \centering
-\includegraphics[width=0.8\textwidth]{chapter_5_tagging/DF.png}
+\includegraphics[width=0.8\textwidth]{assets/DF.png}
 \caption[Architecture of the DeepFlavour Algorithm]{\textbf{Architecture of the DeepFlavour algorithm.} Charged particle tracks, neutral particle tracks, SVs and global jet information are inserted separately in the network and compressed through $1x1$ convolutional layers. The subsequent use of recurrent sequences leads to a more flexible structure in respect of the number of objects that are present in the jet. Together with the global features, the correlations between the object can be extracted. Source: With kind permission of Jan Kieseler}
 \label{fig:ch_5_DF}
 \end{figure}
@@ -64,7 +64,7 @@ The network structure of the DeepFlavour algorithm is shown in figure \ref{fig:c
 
 \begin{figure}
 \centering
-\includegraphics[width=5cm]{chapter_5_tagging/convolutional.png}
+\includegraphics[width=5cm]{assets/convolutional.png}
 \caption[$1x1$ Convolutional Layer and LSTM Unit]{\textbf{$1x1$ convolutional layer.} Shown are three objects with four features each. The objects share their weights among themselves, the lines in the same color represent the same weights. For each filter, one output neuron is generated for each object. In this case, three filters were used.}
 \label{fig:ch_5_Conv}
 \end{figure}
@@ -73,7 +73,7 @@ The $1x1$ convolutional layer generates output features which are again two-dime
 
 \begin{figure}
 \centering
-\includegraphics[width=7cm]{chapter_5_tagging/lstm.png}
+\includegraphics[width=7cm]{assets/lstm.png}
 \caption[Long Short-Term Memory Unit]{\textbf{Long short-term memory (LSTM) unit.} The LSTM unit transports the input vector $x_t$ to three gates. The input gate $i_t$ determines how much a new value influences the memory cell $c_t$, the forget gate $f_t$ describes the degree the value of $c_t$ is forgotten and the output gate defines the impact of $c_t$ in the output. Adapted from \cite{LSTMunit}.}
 \label{fig:ch_5_LSTM}
 \end{figure}
@@ -94,7 +94,7 @@ To measure the performance of a tagging algorithm, the so called receiver operat
 
 \begin{figure}
 \centering
-\includegraphics[width=10cm]{chapter_5_tagging/performance.png}
+\includegraphics[width=10cm]{assets/performance.png}
 \caption[Architecture of the DeepFlavour Algorithm]{\textbf{Performance of b tagging algorithms.} The plot shows the misidentification probability (which is the FPR) against the b tagging efficiency measured on simulated samples. The b tagging efficiencies against light quarks and gluons (continuous lines) and c quarks (dashed lines) are shown for three different tagging algorithms. The CSVv2 algorithm has the worst performance. The DeepCSV (DCSV) is the currently proposed b tagging algorithm for CMS analyses. The DeepFlavour (DF) has the best performance, it is under development and the performance on real data is currently not known. Source: \cite{DeepFlavour}}
 \label{fig:ch_5_Performance}
 \end{figure}
@@ -108,7 +108,7 @@ Scalefactors for the DeepCSV and CSVv2 algorithm computed with various methods a
 
 \begin{figure}
 \centering
-\includegraphics[width=6cm]{chapter_5_tagging/SF.png}
+\includegraphics[width=6cm]{assets/SF.png}
 \caption[Scalefactors for b Tagging Algorithms]{\textbf{Scalefactor for b tagging algorithms.} The scalefactor for the b tagging algorithms at different working points are shown for five methods. The measured scalefactors agree in their uncertainties. The black dot refers to the combined value and is mainly dominated by the Muon Jets method. Source: \cite{HeavyFlavorIdentification}}
 \label{fig:ch_5_Scalefactor}
 \end{figure}

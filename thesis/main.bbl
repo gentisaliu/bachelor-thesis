@@ -288,50 +288,6 @@ I.~J. {Goodfellow} {\em et~al.}, ``{Generative Adversarial Networks}'', {\em
   ArXiv e-prints}, June 2014.
 \newblock \url{https://arxiv.org/abs/1406.2661}, last accessed on 2018-08-01.
 
-\bibitem{HeavyFlavorIdentification}
-A.~M. Sirunyan {\em et~al.}, ``{Identification of heavy-flavour jets with the
-  CMS detector in pp collisions at 13 TeV}'', {\em Journal of Instrumentation},
-  vol.~13, no.~05, p.~P05011, 2018.
-
-\bibitem{IVF}
-V.~Khachatryan {\em et~al.}, ``{Measurement of $B\bar{B}$ Angular Correlations
-  based on Secondary Vertex Reconstruction at $\sqrt{s}=7$ TeV}'', {\em
-  {Journal of High Energy Physics}}, vol.~03, p.~136, 2011.
-
-\bibitem{Keras}
-F.~Chollet {\em et~al.}, ``Keras'', 2015.
-\newblock \url{https://keras.io}, last accessed on 2018-07-28.
-
-\bibitem{Tensorflow}
-M.~Abadi {\em et~al.}, ``{TensorFlow}: Large-scale machine learning on
-  heterogeneous systems'', 2015.
-\newblock \url{https://www.tensorflow.org/}, last accessed on 2018-07-28.
-
-\bibitem{DeepFlavour}
-{The CMS Collaboration}, ``{CMS Phase 1 heavy flavour identification
-  performance and developments}'', May 2017.
-
-\bibitem{JetClassificationDNN}
-D.~Guest {\em et~al.}, ``Jet flavor classification in high-energy physics with
-  deep neural networks'', {\em Physical Review D}, vol.~94, p.~112002, Dec
-  2016.
-
-\bibitem{LSTM}
-S.~Hochreiter and J.~Schmidhuber, ``Long short-term memory'', vol.~9,
-  pp.~1735--80, Dec 1997.
-
-\bibitem{LSTMunit}
-{Wikimedia}, ``{Long Short Term Memory}'', 2015-10-04.
-\newblock
-  \url{https://commons.wikimedia.org/wiki/File:Long_Short_Term_Memory.png},
-  last accessed on 2018-08-01.
-
-\bibitem{MCTruth}
-{T. Speer}, ``{Jet Flavour Identification (MC Truth)}'', 2018.
-\newblock
-  \url{https://twiki.cern.ch/twiki/bin/view/CMSPublic/SWGuideBTagMCTools}, last
-  accessed on 2018-07-31.
-
 \bibitem{brilcalc}
 CERN, ``Brilview''
 \newblock \url{https://brilview.readthedocs.io/en/stable/}, last accessed on
