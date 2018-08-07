@@ -23,7 +23,7 @@ The multivariate classification in this thesis is done with ANNs by constructing
 \section{Perceptron} \label{sec:ch_4_perceptron}
 \begin{figure}
 \centering
-\includegraphics[width=0.8\textwidth]{chapter_4_stat/perceptronAndActivation.png}
+\includegraphics[width=0.8\textwidth]{assets/perceptronAndActivation.png}
 \caption[Perceptron and Activation Function]{\textbf{Perceptron (left).} An ANN consisting of one neuron as shown on the left is called perceptron. Several neurons can be connected to a multilayer perceptron. \\
 \textbf{Activation functions (right).} Three common activation functions are shown.}
 \label{fig:ch_4_perceptron}
@@ -51,7 +51,7 @@ A multilayer perceptron (MLP) is the standard type of ANN where several neurons 
 
 \begin{figure}
 \centering
-\includegraphics[width=0.8\textwidth]{chapter_4_stat/ann_3.png}
+\includegraphics[width=0.8\textwidth]{assets/ann_3.png}
 \caption[Multilayer Perceptron]{\textbf{A multilayer perceptron} with $L+2$ fully connected, feed-forward layers. The first layer (green) is called the input layer and the last layer (red) is called the output layer. In between there are $L$ layers (blue), referred to as hidden layers.  The circles represent the neurons while the connections between them are the edges. Each edge has a weight $w_{ij}$ where $i$ and $j$ indicate its source and target neuron respectively. Each neuron has a bias and delivers a value $x_i$, the biases are not shown.}
 \label{fig:ch_4_dnn}
 \end{figure}
@@ -131,7 +131,7 @@ Various methods for unsupervised domain adaptation methods have been proposed \c
 
 \begin{figure}
 \centering
-\includegraphics[width=0.8\textwidth]{chapter_4_stat/DomainAdaptation.png}
+\includegraphics[width=0.8\textwidth]{assets/DomainAdaptation.png}
 \caption[The Effect of Domain Adaptation]{\textbf{The effect of domain adaptation.} The blue (red) points represent samples from the source (target) domain. Each point represents the position of an element in a two-dimensional feature space. Shown are features from the last hidden layer of a DNN classifier. In the left plot no domain adaptation is performed. The source samples form separated groups while the target samples are more centered and less separated. In the right plot, the domain adaptation is used during the training. Source and target samples cover the same areas, the predictions of target samples are more reliable. Source: \cite{DA_Adversarial}}
 \label{fig:ch_4_DomainAdaptation}
 \end{figure}
@@ -172,7 +172,7 @@ The domain-adversarial method (or domain adaptation by backpropagation) was intr
 
 \begin{figure}
 \centering
-\includegraphics[width=0.9\textwidth]{chapter_4_stat/gradReversal.png}
+\includegraphics[width=0.9\textwidth]{assets/gradReversal.png}
 \caption[Domain-Adversarial Method]{\textbf{The domain-adversarial method.} The input features $\vec{x}$, the feature extractor (green) and the label predictor (blue) form a conventional DNN. Additionally, a domain classifier (red) is added. For a more detailed description refer to the text. Source: \cite{DA_Adversarial}}
 \label{fig:ch_4_DA_Backprop}
 \end{figure}
