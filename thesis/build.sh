@@ -1,6 +1,6 @@
 echo PDFLATEX 1st
 echo '##############################################'
-pdflatex main.tex
+pdflatex -interaction=batchmode main.tex
 echo '##############################################'
 echo BIBTEX
 echo '##############################################'
@@ -8,11 +8,11 @@ bibtex main
 echo '##############################################'
 echo PDFLATEX 2nd
 echo '##############################################'
-pdflatex main.tex
+pdflatex -interaction=batchmode main.tex
 echo '##############################################'
 echo PDFLATEX 3rd
 echo '##############################################'
-pdflatex main.tex
+pdflatex -interaction=batchmode main.tex
 echo '##############################################'
 rm -f *.aux
 rm -f *.log

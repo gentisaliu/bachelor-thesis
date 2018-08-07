@@ -1,0 +1,61 @@
+\documentclass{article}
+\usepackage{feynmp}
+\usepackage{xcolor}
+\DeclareGraphicsRule{*}{mps}{*}{}
+\pagestyle{empty}
+
+\definecolor{KITrot}{RGB}{162,34,35} 
+\definecolor{KITgruen}{RGB}{0,150,130} 
+\definecolor{KITmaigruen}{RGB}{140,182,60} 
+\definecolor{KITblau}{RGB}{70,100,170} 
+\definecolor{KITcyan}{RGB}{35,161,224} 
+
+\begin{document}
+\unitlength = 1mm
+\begin{fmffile}{diagram_ST-tW}
+\begin{fmfgraph*}(80,55)
+
+\fmfleft{i1,i2}
+\fmfright{o1,o2,o3,o4,o5,o6}
+
+% \fmf{phantom}{i1,v1,v2,v3,i2}
+% \fmf{phantom}{v2,v4}
+% \fmf{phantom}{v4,o3}
+\fmf{phantom}{i1,v2,v3,o6}
+\fmf{phantom}{i2,v2,v3,o1}
+
+\fmffreeze
+
+\fmf{gluon}{i1,v1}
+\fmf{fermion,label=$\mathrm{b}$}{v1,v2}
+\fmf{fermion,f=(162/255,,34/255,,35/255),tension=0.3}{o1,v1}
+\fmf{gluon}{i2,v2}
+
+\fmf{fermion,label=$\mathrm{b}$}{v2,v3}
+\fmf{fermion,label=$\mathrm{t}$}{v3,v4}
+\fmf{boson,label=$\mathrm{W^{-}}$,label.side=left,label.dist=3}{v3,v5}
+
+% \fmffreeze
+
+\fmf{boson,label=$\mathrm{W}^{+}$,label.dist=3}{v4,v6}
+\fmf{fermion,f=(162/255,,34/255,,35/255)}{v4,o2}
+\fmf{fermion,f=(35/255,,161/255,,224/255)}{v5,o6}
+\fmf{fermion,f=(0/255,,150/255,,130/255)}{o5,v5}
+\fmf{fermion}{v6,o3}
+\fmf{fermion}{o4,v6}
+
+\fmflabel{$\mathrm{g}$}{i1}
+\fmflabel{$\mathrm{g}$}{i2}
+\fmflabel{$\textcolor{KITrot}{\mathrm{\bar{b}}}$}{o1}
+\fmflabel{$\textcolor{KITrot}{\mathrm{b}}$}{o2}
+\fmflabel{$\textcolor{KITgruen}{\bar{\nu}_{_{\scriptscriptstyle\ell}}}$}{o5}
+\fmflabel{$\textcolor{KITcyan}{\ell^{-}}$}{o6}
+\fmflabel{$\mathrm{q}$}{o3}
+\fmflabel{$\mathrm{\bar{q}'}$}{o4}
+
+\fmfdot{v1,v2,v3,v4,v5,v6}
+
+\end{fmfgraph*}
+\end{fmffile}
+
+\end{document}

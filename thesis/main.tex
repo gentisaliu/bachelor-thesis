@@ -1,26 +1,19 @@
 \documentclass[a4paper,11pt,twoside,DIVcalc,BCOR12.5mm,headsepline,titlepage,openright,final,english]{scrbook}
- %\documentclass[a4paper,11pt,twoside,titlepage,openright,english]{book}
 
-  \usepackage[german,english]{babel}
-  \usepackage[utf8]{inputenc}
-  \usepackage[T1]{fontenc}
+\usepackage[german,english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
 
-%  \usepackage[amssymb,textstyle ]{SIunits}
-  \usepackage[input-uncertainty-signs=\pm,separate-uncertainty=true]{siunitx}
+\usepackage[input-uncertainty-signs=\pm,separate-uncertainty=true]{siunitx}
 \newcommand{\unit}[2]{\SI{#1}{#2}}
  
- %\usepackage[sc]{mathpazo}
- %\usepackage{tgpagella}
-  \usepackage{tgheros} %Helveticaverschnitt
-  \usepackage{helvet} 
-  \usepackage{newcent}
-  \usepackage{geometry}
- \usepackage{bookman}
- \usepackage{xfrac}
- \usepackage{enumitem}
-
-% remove in case no errors without it
-%\usepackage{morefloats}
+\usepackage{tgheros} %Helveticaverschnitt
+\usepackage{helvet} 
+\usepackage{newcent}
+\usepackage{geometry}
+\usepackage{bookman}
+\usepackage{xfrac}
+\usepackage{enumitem}
 
 \usepackage[osf,sc]{mathpazo}
 \usepackage{courier}
@@ -28,30 +21,22 @@
 \renewcommand{\rmdefault}{pplx} % ---> Mathpazo Palatino (pplx)
 \linespread{1.05}
 
-  \geometry{a4paper}
-  \usepackage{amsmath,amssymb,amstext}
-  \usepackage{graphicx}
-  \usepackage{floatrow}
- \floatsetup[table]{capposition=top}
+\geometry{a4paper}
+\usepackage{amsmath,amssymb,amstext}
+\usepackage{graphicx}
+\usepackage{floatrow}
+\floatsetup[table]{capposition=top}
 
-  \usepackage{multicol}
-  \usepackage{multirow}
-  \usepackage{booktabs}
-  \usepackage{xspace}
-  \usepackage{tabularx}
-%  \usepackage{bbold}
-  \usepackage{feynmf}
-  \usepackage{slashed}
-%  \usepackage{cite}
- \usepackage[square,sort&compress,comma,numbers]{natbib}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{xspace}
+\usepackage{tabularx}
+\usepackage{feynmf}
+\usepackage{slashed}
+\usepackage[square,sort&compress,comma,numbers]{natbib}
 
 \usepackage[section,above]{placeins} % Keeps floats `in their place', preventing them from floating past a "\FloatBarrier" command into another section
-
-  %\usepackage{dblfnote}
-%  \usepackage{floatflt}
-
-%  \usepackage[headsepline]{scrpage2}
-  %\pagestyle{scrheadings}
  
 \usepackage[subfigure]{tocloft} % subfigure option only if using subfigure package
 \renewcommand{\cfttoctitlefont} % ToC title
@@ -69,102 +54,61 @@
 \renewcommand{\cftsubsecpagefont} % subsection page numbers
              {\cftsubsecfont} 
  
- \usepackage{subfigure}
-%\usepackage{subfig}
-  \usepackage{caption}
-  %\usepackage{subcaption}
+\usepackage{subfigure}
+\usepackage{caption}
   
 %%%%%%%%%%%%%  
 % Table captions serifenlos
 %%%%%%%%%%%%%
- \usepackage{caption}
- 
-% \captionsetup{labelfont=bf,font={rm,footnotesize},format=plain}
+\usepackage{caption}
 \captionsetup{margin=10pt,font=footnotesize,labelfont=bf,format=plain}
-
-
-%%%%%%%%
-
-	%\include{header}
   
-  \usepackage{psfrag}
-  \usepackage{verbatim}
-  \usepackage{wrapfig}
-  \usepackage{lineno}
-  \usepackage{textcomp}
-  \usepackage{cancel}
-  \usepackage{rotating}
-  \usepackage{upgreek}
-  \usepackage[table]{xcolor}
-  \usepackage{fixltx2e}
-	\usepackage{blindtext}
+\usepackage{psfrag}
+\usepackage{verbatim}
+\usepackage{wrapfig}
+\usepackage{lineno}
+\usepackage{textcomp}
+\usepackage{cancel}
+\usepackage{rotating}
+\usepackage{upgreek}
+\usepackage[table]{xcolor}
+\usepackage{fixltx2e}
+\usepackage{blindtext}
 \usepackage{comment}	
-  \usepackage{nicefrac}
+\usepackage{nicefrac}
 
-  \usepackage[normalem]{ulem}
-  \usepackage{url}
-  \DeclareGraphicsExtensions{.pdf,.png,.jpg}
+\usepackage[normalem]{ulem}
+\usepackage{url}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
 
-% \includeonly{0_Intro_ger}
-% \includeonly{0_Intro_eng}
-% \includeonly{1_Theory}
-%\includeonly{2_Detector}
-%\includeonly{3_SimReco}
-
- % \includeonly{4_Methods}
-% \includeonly{5_Analysis} 
-%\includeonly{6_Summary}  
-%  \includeonly{A_Appendix}
-%\includeonly{X_Danksagung}
-
- %\includeonly{0_Intro_ger,0_Intro_eng,6_Summary}
-%\includeonly{0_Intro_eng,5_Analysis,6_Summary,A_Appendix}
-
-  	\usepackage[pdftex,
+\usepackage[pdftex,
         colorlinks=false,
-%        urlcolor=rltblue,       % \href{...}{...} external (URL)
-%        filecolor=rltgreen,     % \href{...} local file
-%        linkcolor=rltblue,       % \ref{...} and \pageref{...}
         linkbordercolor={0.6353 0.1333 0.1373}, %KIT red
         filebordercolor={0.1373 0.6314 0.8784}, % KIT cyan 
         urlbordercolor={0.2745 0.3922 0.6667}, % KIT blue
         citebordercolor={0 0.5882 0.5098}, % KIT green
         pdftitle={},% FIXME
-%     	pdfborder={ 0 3 0.5 [3 3]},
-        pdfauthor={Denise M\"uller},
-%        pdfsubject={pdfsubject},% FIXME
+        pdfauthor={Genti Saliu},
         pdfkeywords={none},
-		hyperindex,
+	hyperindex,
         pdfpagemode=None,
         bookmarksopen=true]{hyperref}
 
-   %\addtokomafont{chapter}{\huge\bfseries}
- % \addtokomafont{caption}{\small}
-%   \setcapindent{1em}  % Captions zu begin leicht eingerueckt
-
-%  \renewcommand{\sfdefault}{pmy}
-  \renewcommand{\sectfont}{\sffamily}    %ueberschriften weniger fett
-%  \usepackage{lmodern}                        % duenne schrift, besser fuer pdf
- %\usepackage[bitstream-charter]{mathdesign}    %sehr gut auf Bildschirm zu lesen
- %\renewcommand*\familydefault{}
-%   \usepackage[stretch=10,shrink=10]{microtype}
+\renewcommand{\sectfont}{\sffamily}    %ueberschriften weniger fett
 \usepackage[activate=true,final,tracking=true,kerning=true,spacing=true,factor=1100,stretch=10,shrink=10]{microtype}
 \SetTracking{encoding={*}, shape=sc}{45}
-
- \hyphenation{ATLAS}
-
+\hyphenation{ATLAS}
 \newcommand{\vecd}[1]{\vec{#1}}
 \newcommand{\vecv}[1]{\mathbf{#1}}
-
 
 \input{includes/shortcuts.tex}
 
 \long\def\symbolfootnote[#1]#2{\begingroup%
 \def\thefootnote{\fnsymbol{footnote}}\footnote[#1]{#2}\endgroup} 
 
-  \title{title}% FIXME
-  \author{David Walter}
-  \date{00.00.00}
+\title{title}% FIXME
+\author{Genti Saliu}
+\date{00.00.00}
   
 \makeatletter
 \DeclareRobustCommand*{\bfseries}{%                                                                                                                                
@@ -196,8 +140,7 @@
 
 \include{title_eng}
 \cleardoublepage
-
-%  \pagenumbering{roman}  
+  
 \mainmatter
 
 \include{intro}
@@ -205,13 +148,8 @@
 
 \setcounter{tocdepth}{2}
 \tableofcontents
-%\linenumbers
 
 \renewcommand{\arraystretch}{1.2}  
- % \pagenumbering{arabic}   
-
-% \selectlanguage{english} %if the pdf should contain only some main chapters (for name of figures)
-
 \include{theory}
 \include{detector}
 \include{sim_reco}
@@ -229,13 +167,7 @@
 \listoftables
 \listoffigures
 
-%\bibliographystyle{bibliostylefile}
-%\bibliographystyle{ieeetr}
 \bibliographystyle{custom2}
-%\bibliographystyle{acm}
-%\bibliographystyle{apalike}
-
-%\bibliographystyle{unsrt}
 
 \bibliography{ref}
 \backmatter

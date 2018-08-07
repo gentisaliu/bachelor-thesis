@@ -1,0 +1,10 @@
+% diagram_singlet_s2_fs.t1 -- generated from diagram_singlet_s2_fs.mp
+\fmfL(35.00006,29.60878,b){${\mathrm {W^{+}}}$}%
+\fmfL(48.6237,35.22179,rb){${\mathrm {t}}$}%
+\fmfL(60.3663,37.09247,rt){${\mathrm {W^{+}}}$}%
+\fmfL(5.49594,-1.47765,rt){$\mathrm {\bar {q}'}$}%
+\fmfL(5.49594,56.47765,rb){$\mathrm {q}$}%
+\fmfL(64.50406,-1.47765,lt){$\textcolor {KITrot}{\mathrm {\bar {b}}}$}%
+\fmfL(72.10876,27.5,l){$\textcolor {KITblau}{\nu _{\scriptscriptstyle \ell }}$}%
+\fmfL(70.16174,42.51677,lb){$\textcolor {KITgruen}{\ell ^{+}}$}%
+\fmfL(64.50406,56.47765,lb){$\textcolor {KITrot}{\mathrm {b}}$}%
