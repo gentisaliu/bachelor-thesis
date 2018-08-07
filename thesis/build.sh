@@ -14,13 +14,13 @@ echo PDFLATEX 3rd
 echo '##############################################'
 pdflatex -interaction=batchmode main.tex
 echo '##############################################'
-rm -f **/*.aux
-rm -f **/*.log
-rm -f **/*.toc
-rm -f **/*.lof
-rm -f **/*.out
-rm -f **/*.lot
-rm -f **/*.blg
+find . -name "*.aux" -type f -delete
+find . -name "*.log" -type f -delete
+find . -name "*.toc" -type f -delete
+find . -name "*.lof" -type f -delete
+find . -name "*.out" -type f -delete
+find . -name "*.lot" -type f -delete
+find . -name "*.blg" -type f -delete
 echo DONE
 date
 echo '##############################################'
