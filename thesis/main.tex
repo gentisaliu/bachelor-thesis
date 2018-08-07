@@ -94,7 +94,7 @@
         pdfpagemode=None,
         bookmarksopen=true]{hyperref}
 
-\renewcommand{\sectfont}{\sffamily}    %ueberschriften weniger fett
+\renewcommand{\sectfont}{\sffamily}
 \usepackage[activate=true,final,tracking=true,kerning=true,spacing=true,factor=1100,stretch=10,shrink=10]{microtype}
 \SetTracking{encoding={*}, shape=sc}{45}
 \hyphenation{ATLAS}
@@ -129,13 +129,16 @@
 
 \frontmatter
 
-\include{accept}
+\include{acceptance}
 \cleardoublepage
 
-\include{declaration}
+\include{originality}
 \cleardoublepage
 
 \include{abstract}
+\cleardoublepage
+
+\include{acks}
 \cleardoublepage
   
 \mainmatter
@@ -154,12 +157,12 @@
 \include{chapter_5_tagging/tagging}
 \include{chapter_6_selection/selection}
 \include{chapter_7_ana/analysis}
-\include{concl}
+\include{conclusions}
 
 \appendix
-\include{AppendixA}
-\include{AppendixB}
-\include{AppendixC}
+\include{appendix/appendix_a}
+\include{appendix/appendix_b}
+\include{appendix/appendix_c}
  
 \listoftables
 \listoffigures
@@ -168,7 +171,5 @@
 
 \bibliography{references}
 \backmatter
-
-\input{acknowledgments}
  
 \end{document}
