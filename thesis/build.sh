@@ -1,18 +1,18 @@
 echo "PDFLATEX 1st"
 echo "##############################################"
-pdflatex -interaction=batchmode main.tex
+pdflatex -interaction=batchmode thesis.tex
 echo "##############################################"
 echo "BIBTEX"
 echo "##############################################"
-bibtex main
+bibtex thesis
 echo "##############################################"
 echo "PDFLATEX 2nd"
 echo "##############################################"
-pdflatex -interaction=batchmode main.tex
+pdflatex -interaction=batchmode thesis.tex
 echo "##############################################"
 echo "PDFLATEX 3rd"
 echo "##############################################"
-pdflatex -interaction=batchmode main.tex
+pdflatex -interaction=batchmode thesis.tex
 echo "##############################################"
 echo "Cleanup"
 find . -name "*.aux" -type f -delete

@@ -1,7 +1,7 @@
-# master_thesis
+# Bachelor thesis
+This bachelor thesis focuses on improving the single top quark reconstruction algorithm in s-channel by making use of machine learning algorithms.
 
-## get repository
-git clone git@gitlab.ekp.kit.edu:dmueller/master_thesis.git
+## Compile thesis
 
-## compile LaTeX file
-./create.sh
+```
+	. build.sh

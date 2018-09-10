@@ -108,7 +108,7 @@
 
 \title{title}% FIXME
 \author{Genti Saliu}
-\date{00.00.00}
+\date{\today}
   
 \makeatletter
 \DeclareRobustCommand*{\bfseries}{%                                                                                                                                
@@ -146,20 +146,25 @@
 \setcounter{tocdepth}{2}
 \tableofcontents
 
-\renewcommand{\arraystretch}{1.2}  
-\include{chapters/chapter_1_theory/theory}
-\include{chapters/chapter_2_detector/detector}
-\include{chapters/chapter_3_gen/sim_reco}
-\include{chapters/chapter_4_stat/stat}
-\include{chapters/chapter_5_tagging/tagging}
-\include{chapters/chapter_6_selection/selection}
-\include{chapters/chapter_7_ana/analysis}
-\include{conclusions}
+\renewcommand{\arraystretch}{1.2}
 
-\appendix
-\include{appendix/appendix_a}
-\include{appendix/appendix_b}
-\include{appendix/appendix_c}
+\chapter{Theoretical Foundation}
+\label{ch:theory}
+\input{chapters/chapter_1_theory}
+
+% \chapter{}
+% \include{chapters/chapter_2_detector/detector}
+% \include{chapters/chapter_3_gen/sim_reco}
+% \include{chapters/chapter_4_stat/stat}
+% \include{chapters/chapter_5_tagging/tagging}
+% \include{chapters/chapter_6_selection/selection}
+% \include{chapters/chapter_7_ana/analysis}
+% \include{conclusions}
+
+% \appendix
+% \include{appendix/appendix_a}
+% \include{appendix/appendix_b}
+% \include{appendix/appendix_c}
  
 \listoftables
 \listoffigures
