@@ -49,3 +49,4 @@ Makefile
 models/
 output/
 
+*.backup
