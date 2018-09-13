@@ -1,6 +1,6 @@
-\documentclass[a4paper,11pt,twoside,DIVcalc,BCOR12.5mm,headsepline,titlepage,openright,final,english]{scrbook}
+\documentclass[a4paper,11pt,twoside,DIV=calc,BCOR12.5mm,headsepline,titlepage,openright,final,english]{scrbook}
 
-\usepackage[german,english]{babel}
+\usepackage[english]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 
@@ -87,7 +87,7 @@
         filebordercolor={0.1373 0.6314 0.8784}, % KIT cyan 
         urlbordercolor={0.2745 0.3922 0.6667}, % KIT blue
         citebordercolor={0 0.5882 0.5098}, % KIT green
-        pdftitle={},% FIXME
+        pdftitle={Improvement of the single top-quark detection in the s-channel at the CMS Experiment},
         pdfauthor={Genti Saliu},
         pdfkeywords={none},
 	hyperindex,
@@ -106,10 +106,10 @@
 \long\def\symbolfootnote[#1]#2{\begingroup%
 \def\thefootnote{\fnsymbol{footnote}}\footnote[#1]{#2}\endgroup} 
 
-\title{title}% FIXME
+\title{title}
 \author{Genti Saliu}
 \date{\today}
-  
+
 \makeatletter
 \DeclareRobustCommand*{\bfseries}{%                                                                                                                                
   \not@math@alphabet\bfseries\mathbf
@@ -152,20 +152,33 @@
 \label{ch:theory}
 \input{chapters/chapter_1_theory}
 
-% \chapter{}
-% \include{chapters/chapter_2_detector/detector}
-% \include{chapters/chapter_3_gen/sim_reco}
-% \include{chapters/chapter_4_stat/stat}
-% \include{chapters/chapter_5_tagging/tagging}
-% \include{chapters/chapter_6_selection/selection}
-% \include{chapters/chapter_7_ana/analysis}
-% \include{conclusions}
+\chapter{The Compact Muon Solenoid Experiment}
+\label{ch:cms}
+\input{chapters/chapter_2_cms}
 
-% \appendix
-% \include{appendix/appendix_a}
-% \include{appendix/appendix_b}
-% \include{appendix/appendix_c}
- 
+\chapter{Statistical Methods}
+\label{ch:stat}
+\input{chapters/chapter_3_stat}
+
+\chapter{Event Simulation}
+\label{ch:simulation}
+\input{chapters/chapter_4_sim}
+
+\chapter{Event Reconstruction}
+\label{ch:reconstruction}
+\input{chapters/chapter_5_reco}
+
+\chapter{Analysis}
+\label{ch:analysis}
+\input{chapters/chapter_6_analysis}
+
+\include{conclusions}
+
+\appendix
+\include{appendix/appendix_a}
+\include{appendix/appendix_b}
+\include{appendix/appendix_c}
+
 \listoftables
 \listoffigures
 

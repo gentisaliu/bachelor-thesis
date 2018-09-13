@@ -1,6 +1,6 @@
 echo "PDFLATEX 1st"
 echo "##############################################"
-pdflatex -interaction=batchmode thesis.tex
+pdflatex -interaction=batchmode -halt-on-error thesis.tex
 echo "##############################################"
 echo "BIBTEX"
 echo "##############################################"
