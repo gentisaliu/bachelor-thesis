@@ -22,6 +22,8 @@ find . -name "*.lof" -type f -delete
 find . -name "*.out" -type f -delete
 find . -name "*.lot" -type f -delete
 find . -name "*.blg" -type f -delete
+find . -name "*.xml" -type f -delete
+find . -name "*.bcf" -type f -delete
 echo DONE
 date
 echo "##############################################"

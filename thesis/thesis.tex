@@ -17,7 +17,7 @@
 
 \usepackage[osf,sc]{mathpazo}
 \usepackage{courier}
-\renewcommand{\sfdefault}{phv} % 
+\renewcommand{\sfdefault}{phv} 
 \renewcommand{\rmdefault}{pplx} % ---> Mathpazo Palatino (pplx)
 \linespread{1.05}
 
@@ -34,10 +34,9 @@
 \usepackage{tabularx}
 \usepackage{feynmf}
 \usepackage{slashed}
-\usepackage[square,sort&compress,comma,numbers]{natbib}
-
+\usepackage[numbers,square]{natbib}
+\bibliographystyle{amsalpha}
 \usepackage[section,above]{placeins} % Keeps floats `in their place', preventing them from floating past a "\FloatBarrier" command into another section
- 
 \usepackage[subfigure]{tocloft} % subfigure option only if using subfigure package
 \renewcommand{\cfttoctitlefont} % ToC title
              {\usefont{T1}{phv}{b}{n}\selectfont\huge}
@@ -56,7 +55,7 @@
  
 \usepackage{subfigure}
 \usepackage{caption}
-  
+
 %%%%%%%%%%%%%
 % Table captions serifenlos
 %%%%%%%%%%%%%
@@ -90,7 +89,7 @@
         pdftitle={Improvement of the single top-quark detection in the s-channel at the CMS Experiment},
         pdfauthor={Genti Saliu},
         pdfkeywords={none},
-	hyperindex,
+		hyperindex,
         pdfpagemode=None,
         bookmarksopen=true]{hyperref}
 
@@ -124,10 +123,10 @@
 
 \begin{document}
 
+\frontmatter
+
 \include{title}
 \cleardoublepage
-
-\frontmatter
 
 \include{acceptance}
 \cleardoublepage
@@ -137,14 +136,11 @@
 
 \include{abstract}
 \cleardoublepage
-  
-\mainmatter
-
-\include{intro}
-\cleardoublepage
 
 \setcounter{tocdepth}{2}
 \tableofcontents
+
+\mainmatter
 
 \renewcommand{\arraystretch}{1.2}
 
@@ -152,9 +148,9 @@
 \label{ch:theory}
 \input{chapters/chapter_1_theory}
 
-\chapter{The Compact Muon Solenoid Experiment}
-\label{ch:cms}
-\input{chapters/chapter_2_cms}
+\chapter{Experiment}
+\label{ch:experiment}
+\input{chapters/chapter_2_experiment}
 
 \chapter{Statistical Methods}
 \label{ch:stat}
@@ -182,11 +178,10 @@
 \listoftables
 \listoffigures
 
-\bibliographystyle{includes/custom2}
+\bibliography{bib}
 
-\bibliography{references}
 \backmatter
 
 \include{acks}
- 
+
 \end{document}
