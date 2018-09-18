@@ -50,3 +50,16 @@ models/
 output/
 
 *.backup
+
+# Intermediary LaTeX files
+*.aux
+*.bcf
+*.log
+*.gz
+*.toc
+*.blg
+*.lot
+*.xml
+*.lof
+*.bbl
+

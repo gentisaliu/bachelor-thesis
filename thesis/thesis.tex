@@ -34,8 +34,23 @@
 \usepackage{tabularx}
 \usepackage{feynmf}
 \usepackage{slashed}
-\usepackage[numbers,square]{natbib}
-\bibliographystyle{amsalpha}
+
+\usepackage[backend=biber,isbn=true,url=false,style=alphabetic,sorting=nyt]{biblatex}
+\DefineBibliographyStrings{english}{phdthesis = {Ph.D.\@ thesis}}
+\DeclareFieldFormat[article,inbook,incollection,inproceedings,patent,thesis,unpublished]{title}{\mkbibemph{#1}}
+\DeclareFieldFormat{journaltitle}{#1}
+\DeclareFieldFormat{issuetitle}{#1}
+\DeclareFieldFormat{maintitle}{#1}
+\DeclareFieldFormat{booktitle}{#1}
+\DefineBibliographyExtras{english}{\renewcommand{\finalandcomma}{}}
+
+\bibliography{bib.bib}
+
+% http://tex.stackexchange.com/q/218706/15107
+\setcounter{biburlnumpenalty}{400}  % allow breaks at numbers
+\setcounter{biburlucpenalty}{400}   % allow breaks at uppercase letters
+\setcounter{biburllcpenalty}{400}   % allow breaks at lowercase letters
+
 \usepackage[section,above]{placeins} % Keeps floats `in their place', preventing them from floating past a "\FloatBarrier" command into another section
 \usepackage[subfigure]{tocloft} % subfigure option only if using subfigure package
 \renewcommand{\cfttoctitlefont} % ToC title
@@ -156,7 +171,7 @@
 \label{ch:stat}
 \input{chapters/chapter_3_stat}
 
-\chapter{Event Simulation}
+\chapter{Simulated Samples                                                                                                                                                      }
 \label{ch:simulation}
 \input{chapters/chapter_4_sim}
 
@@ -178,7 +193,10 @@
 \listoftables
 \listoffigures
 
-\bibliography{bib}
+\begingroup
+\setlength{\emergencystretch}{.5em}
+\printbibliography
+\endgroup
 
 \backmatter
 

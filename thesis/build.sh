@@ -2,9 +2,9 @@ echo "PDFLATEX 1st"
 echo "##############################################"
 pdflatex -interaction=batchmode -halt-on-error thesis.tex
 echo "##############################################"
-echo "BIBTEX"
+echo "BIBER"
 echo "##############################################"
-bibtex thesis
+biber thesis
 echo "##############################################"
 echo "PDFLATEX 2nd"
 echo "##############################################"
