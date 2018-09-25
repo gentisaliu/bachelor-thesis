@@ -1,7 +1,10 @@
-This chapter provides an 
+This chapter discusses the relevant theory for the thesis. Section \ref{sec:theory_sm} provides a summary of the standard model (SM) of particle physics, the context of this work. Section \ref{sec:theory_top} focuses on properties of the top quark, its production processes and decay modes, which will be relevant for the development and evaluation of the classifier in chapters \ref{ch:classifier} and \ref{ch:classifier}.
 \section{The Standard Model of Particle Physics}
+\label{sec:theory_sm}
+The SM is a quantum field theory that describes the fundamental forces in the universe and classifies all known elementary particles. It includes quantum mechanics, special relativity and chromodynamics. Underlying interactions of matter are described by the $\textrm{U}(1)_\textrm{Y}\otimes \textrm{SU}(2)_\textrm{L}\otimes \textrm{SU}(3)_\textrm{C}$ symmetry group. It is the result of many theoretical and experimental studies, which were conducted throughout the latter half of the 20th century and is in excellent accord with almost all current data \cite{RevModPhys.71.S96}.\\ \\
+Elementary particles in the SM are divided in fermions and bosons based on their spin quantum number.\\ \\
 \begin{table}[h]
-\caption[Fermions of the SM]{The fermions of the standard model. Source: \cite{povh}}
+\caption[Fermions of the SM]{Fermions of the standard model. Source: \cite{povh}}
 \label{tab:ch_1_sm_particles}
 \begin{tabular}{ccccccccc}
 \toprule
@@ -17,18 +20,29 @@ This chapter provides an
 \end{tabular}
 \end{table}
 
+\textbf{Fermions} are half-integer spin particles that follow Fermi-Dirac statistics and obey the Pauli exclusion principle. Fermions are classified into six quarks (up, down, charm, strange, top, bottom) and six leptons (electron, electron neutrino, muon, muon neutrino, tau, tau neutrino). Pairs from each classification form a generation.\\ \\
+Quarks carry color charge, and hence interact via the strong interaction. Color confinement leads to quarks being strongly bound to one another, forming color-neutral composite particles (hadrons) that contain either a quark and an antiquark (mesons) or three quarks (baryons). Quarks also carry electric charge and weak isospin, thus they interact with other fermions both electromagnetically and via the weak interaction. Quarks of the same generation form an isospin dublett. Quarks within a dublett behave similarly towards the weak interaction.
+
+The remaining six fermions do not carry color charge and are called leptons. The three neutrinos do not carry electric charge either, so their motion is directly influenced only by the weak nuclear force, which makes them difficult to detect. However, by virtue of carrying an electric charge, the electron, muon, and tau all interact electromagnetically.\\ \\
+Each member of a generation has greater mass than the corresponding particles of lower generations. The first-generation charged particles do not decay, hence all ordinary matter is made of such particles. Specifically, all atoms consist of electrons orbiting around atomic nuclei, ultimately constituted of up and down quarks. Second- and third-generation charged particles, on the other hand, decay with very short half-lives and are observed only in very high-energy environments. Neutrinos of all generations also do not decay and pervade the universe, but rarely interact with baryonic matter.
+
 \begin{table}[h]
-\caption[Bosons described by the SM]{The bosons of the standard model. Source: \cite{povh}}
-\label{tab:ch_1_sm_bosons}
-\begin{tabular}{ccccc}
-\toprule
-Interaction & Acts on & Carrier of the force & Mass (GeV) & {$J^P$}\\
-\midrule
-strong & color charge & 8 gluons (g) & {$0$} & {$1^-$}\\
-electromagnetic & electric charge & Photon ($\upgamma$) & {$0$} & {$1^-$}\\
-weak & weak charge & W$^{\pm}$, Z$^0$ & {$80.4$, $91.2$} & {$1$}\\
-\bottomrule
-\end{tabular}
+	\caption[Bosons described by the SM]{The bosons of the standard model. Source: \cite{povh}, \cite{faltermann}}
+	\label{tab:ch_1_sm_bosons}
+	\begin{tabular}{cccccc}
+		\toprule
+		Interaction & Acts on & Carrier of the force & Mass (GeV) & {$J^P$} & Range (m)\\
+		\midrule
+		strong & color charge & 8 gluons (g) & {$0$} & {$1^-$} & $\approx 10^{-15}$\\
+		electromagnetic & electric charge & Photon ($\upgamma$) & {$0$} & {$1^-$} & $10^{-15}$\\
+		weak & weak charge & W$^{\pm}$, Z$^0$ & {$80.385$, $91.188$} & {$1$} & $\infty$\\
+		\bottomrule
+	\end{tabular}
 \end{table}
+The Higgs particle is a massive scalar elementary particle theorized by Peter Higgs in 1964, when he showed that Goldstone's 1962 theorem (generic continuous symmetry, which is spontaneously broken) provides a third polarisation of a massive vector field. Hence, Goldstone's original scalar doublet, the massive spin-zero particle, was proposed as the Higgs boson. (see 1964 PRL symmetry breaking papers) and is a key building block in the Standard Model. It has no intrinsic spin, and for that reason is classified as a boson (like the gauge bosons, which have integer spin).\\ \\
+The Higgs boson plays a unique role in the Standard Model, by explaining why the other elementary particles, except the photon and gluon, are massive. In particular, the Higgs boson explains why the photon has no mass, while the W and Z bosons are very heavy. Elementary-particle masses, and the differences between electromagnetism (mediated by the photon) and the weak force (mediated by the W and Z bosons), are critical to many aspects of the structure of microscopic (and hence macroscopic) matter. In electroweak theory, the Higgs boson generates the masses of the leptons (electron, muon, and tau) and quarks. As the Higgs boson is massive, it must interact with itself.\\ \\
+Because the Higgs boson is a very massive particle and also decays almost immediately when created, only a very high-energy particle accelerator can observe and record it. Experiments to confirm and determine the nature of the Higgs boson using the Large Hadron Collider (LHC) at CERN began in early 2010 and were performed at Fermilab's Tevatron until its closure in late 2011. Mathematical consistency of the Standard Model requires that any mechanism capable of generating the masses of elementary particles becomes visible at energies above 1.4 TeV; therefore, the LHC (designed to collide two 7 TeV proton beams) was built to answer the question of whether the Higgs boson actually exists.\\ \\
+On 4 July 2012, two of the experiments at the LHC (ATLAS and CMS) both reported independently that they found a new particle with a mass of about 125 GeV/c2, which is ''consistent with the Higgs boson''. It was later confirmed to be the searched-for Higgs boson.
 
 \section{The Top Quark}
+\label{sec:theory_top}
