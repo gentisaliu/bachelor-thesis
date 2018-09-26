@@ -1,7 +1,7 @@
 # Bachelor thesis
-This bachelor thesis improves the single top quark reconstruction in the s-channel using machine learning algorithms.
+This bachelor thesis improves upon the best-mass method for single top quark reconstruction in the s-channel by employing machine learning algorithms.
 
 ## Compile thesis
 
 ```
-    . build.sh
+. build.sh
