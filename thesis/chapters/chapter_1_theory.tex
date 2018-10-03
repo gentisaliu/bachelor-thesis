@@ -1,30 +1,32 @@
-This chapter discusses the relevant theory for the thesis. Section \ref{sec:theory_sm} provides an overview of the experimental aspects of the standard model (SM) of particle physics, the context of this work. Section \ref{sec:theory_top} focuses on properties of the top quark, its production processes and decay modes, which will be relevant for the development and evaluation of the classifier in chapters \ref{ch:classifier} and \ref{ch:classifier}.
+This chapter discusses the relevant theory for the thesis. Section \ref{sec:theory_sm} provides a condensed overview of the experimental aspect of the standard model (SM) of particle physics, the framework for this work. Section \ref{sec:theory_top} focuses on properties of the top quark, its production processes and decay modes, which will be relevant for the development and evaluation of the classifier in chapters \ref{ch:classifier} and \ref{ch:classifier}.
 \section{The Standard Model of Particle Physics}
 \label{sec:theory_sm}
-The SM is a quantum field theory that describes the fundamental forces in the universe and classifies all known elementary particles. It includes quantum mechanics, special relativity and chromodynamics. Underlying interactions of matter are described by the $\textrm{U}(1)_\textrm{Y}\otimes \textrm{SU}(2)_\textrm{L}\otimes \textrm{SU}(3)_\textrm{C}$ symmetry group. It is the result of many theoretical and experimental studies, which were conducted throughout the latter half of the 20th century and is in excellent accord with almost all current data \cite{RevModPhys.71.S96}.\\ \\
-Particles in the SM are divided in fermions and bosons based on their spin quantum number.\\ \\
-\textbf{Fermions} are half-integer spin particles that follow Fermi-Dirac statistics and obey the Pauli exclusion principle. They are classified into six quarks (up, down, charm, strange, top, bottom) and six leptons (electron, electron neutrino, muon, muon neutrino, tau, tau neutrino). Pairs from each classification form a generation. A summary is given in table \ref{tab:ch_1_sm_fermions}.
+The SM is a quantum field theory that describes the fundamental forces in the universe and classifies all known elementary particles. It includes quantum mechanics, special relativity and chromodynamics. Underlying interactions of matter are described by the $\textrm{U}(1)_\textrm{Y}\otimes \textrm{SU}(2)_\textrm{L}\otimes \textrm{SU}(3)_\textrm{C}$ symmetry group. The SM is the result of many theoretical and experimental studies, which were conducted throughout the latter half of the 20th century and is in excellent accord with almost all current data \cite{RevModPhys.71.S96}.\\ \\
+The elementary interactions postulated by the SM are the strong, electromagnetic and weak interaction, each of which is mediated by the exchange of vector bosons. The fourth known interaction in nature, gravitation, is not covered by the theory of the SM, which, in the typical scales particle physics operates in, is negligible. Together with the exchange bosons, fermions form the known fundamental particles of the SM.\\ \\
+\textbf{Fermions} are half-integer spin particles that follow Fermi-Dirac statistics and obey the Pauli exclusion principle. They are grouped into six \emph{quarks}, namely, the up ($\textrm{u}$), down ($\textrm{d}$), charm ($\textrm{c}$), strange ($\textrm{s}$), top ($\textrm{t}$) and bottom ($\textrm{b}$) quark and six \emph{leptons}, namely, the electron ($\textrm{e}$), electron neutrino ($\upnu_\textrm{e}$), muon ($\upmu$), muon neutrino ($\upnu_\upmu$), tau ($\uptau$), tau neutrino ($\upnu_\uptau$). Pairs from each group form a generation. Three generations of particles exist, arranged by masses of the comprising particles in increasing order. For each fermion an associated antifermion with same mass, but opposite electric charge, color and third component of isospin, exists. A summary of the fermions is given in table \ref{tab:ch_1_sm_fermions}.
+
 \begin{table}[h]
-\caption[Fermions of the SM]{Fermions of the standard model. Source: \cite{povh}}
+\caption[Fermions of the SM]{Fermions of the standard model. Source: \cite{povh,schenkel}}
 \label{tab:ch_1_sm_fermions}
 \begin{tabular}{ccccccccc}
 \toprule
-\multirow{2}{*}{Fermions} & \multicolumn{3}{c}{Generation} & {Electric} & \multirow{2}{*}{Color} & \multicolumn{2}{c}{$3^{\mathrm{rd}}$ component of isospin $I_3$} & \multirow{2}{*}{Spin}\\
-& 1 & 2 & 3 & {charge} & & left-handed & right-handed & \\
+\multirow{2}{*}{Fermions} & \multicolumn{3}{c}{Generation} & {Electric} & \multirow{2}{*}{Color} & {$3^{\mathrm{rd}}$ component} & \multirow{2}{*}{Spin}\\
+& 1 & 2 & 3 & {charge} & & {of isospin $I_3$} & \\
 \midrule
-\multirow{2}{*}{Leptons} & $\upnu_\textrm{e}$ & $\upnu_\upmu$ & $\upnu_\uptau$ & {$0$} & \multirow{2}{*}{---} & \multirow{2}{*}{$\nicefrac{1}{2}$} & --- & \multirow{2}{*}{$\nicefrac{1}{2}$}\\
-& e & $\upmu$ & $\uptau$ & {$-1$} & & & {$0$} &\\
+\multirow{2}{*}{Leptons} & $\upnu_\textrm{e}$ & $\upnu_\upmu$ & $\upnu_\uptau$ & {$0$} & \multirow{2}{*}{---} & {$+\nicefrac{1}{2}$} & \multirow{2}{*}{$\nicefrac{1}{2}$}\\
+& e & $\upmu$ & $\uptau$ & {$-1$} & & {$+\nicefrac{1}{2}$} &\\
 \midrule
-\multirow{2}{*}{Quarks} & u & c & t & $+\nicefrac{2}{3}$ & \multirow{2}{*}{r, b, g} & \multirow{2}{*}{$\nicefrac{1}{2}$} & {$0$} & \multirow{2}{*}{$\nicefrac{1}{2}$}\\
-& d & s & b & $-\nicefrac{1}{3}$ & & & {$0$} & \\
+\multirow{2}{*}{Quarks} & u & c & t & $+\nicefrac{2}{3}$ & \multirow{2}{*}{r, b, g} & {$+\nicefrac{1}{2}$} & \multirow{2}{*}{$\nicefrac{1}{2}$}\\
+& d & s & b & $-\nicefrac{1}{3}$ & & {$-\nicefrac{1}{2}$} & \\
 \bottomrule
 \end{tabular}
 \end{table}
-Quarks carry color charge, hence they interact via the strong interaction. Color confinement leads to quarks being strongly bound to one another, forming color-neutral composite particles (hadrons) that contain either a quark and an antiquark (mesons) or three quarks (baryons, such as protons and neutrons). Quarks also carry electric charge and weak isospin, thus they interact with other fermions both electromagnetically and via the weak interaction. Consequently, quarks of the same generation form a weak isospin doublet, where they behave similarly towards the weak interaction.
 
-The remaining six fermions do not carry color charge and are called leptons. The three neutrinos do not carry electric charge either, their motion is directly influenced only by the weak nuclear force, which makes them difficult to detect. Since they carry an electric charge, the electron, muon, and tau all interact electromagnetically.
+Quarks carry color charge, electric charge and weak isospin - they interact with other quarks via the strong, electromagnetic and weak interaction respectively. According to quantum chromodynamics (QCD), a quark's color can take one of three charges, red, green and blue, and an antiquark one of the three anticolors,  antired, antigreen and antiblue. Color confinement leads quarks to being strongly bound to one another and forming color-neutral composite particles (hadrons) made of either a quark and antiquark (mesons) or three quarks (baryons, such as the proton (uud) and the neutron (udd)). Quarks of the same generation form a weak isospin doublet; particles from the same doublet behave similarly towards the weak interaction.
 
-Particles of a generation have greater mass than those of lower generations. The first-generation charged particles do not decay, all ordinary matter is made of such particles. Second- and third-generation charged particles decay with very short half-lives and are observed only in high-energy environments. Neutrinos of all generations also do not decay and pervade the universe, but rarely interact with baryonic matter.\\ \\
+Leptons do not possess color charge with the three neutrinos additionally lacking in electric charge and only interacting through the weak nuclear force, which makes them difficult to detect. The electron, muon, and tau all have electric charge and interact electromagnetically.
+
+First-generation charged particles do not decay, ordinary matter is built from such particles. Second- and third-generation charged particles decay with very short half-lives and can be observed in high-energy environments only. Neutrinos of all generations do not decay either, they pervade the universe, but rarely interact with baryonic matter \cite{wiki:standardmodel}.\\ \\
 \textbf{Bosons} are defined as force carriers that mediate the strong, weak, and electromagnetic fundamental interactions.
 
 Interactions in physics are the ways that particles influence other particles. At a macroscopic level, electromagnetism allows particles to interact with one another via electric and magnetic fields, and gravitation allows particles with mass to attract one another in accordance with Einstein's theory of general relativity. The Standard Model explains such forces as resulting from matter particles exchanging other particles, generally referred to as force mediating particles. When a force-mediating particle is exchanged, at a macroscopic level the effect is equivalent to a force influencing both of them, and the particle is therefore said to have mediated (i.e., been the agent of) that force. The Feynman diagram calculations, which are a graphical representation of the perturbation theory approximation, invoke "force mediating particles", and when applied to analyze high-energy scattering experiments are in reasonable agreement with the data. However, perturbation theory (and with it the concept of a "force-mediating particle") fails in other situations. These include low-energy quantum chromodynamics, bound states, and solitons.
@@ -33,11 +35,12 @@ Interactions in physics are the ways that particles influence other particles. A
 	\label{tab:ch_1_sm_bosons}
 	\begin{tabular}{cccccc}
 		\toprule
-		Interaction & Acts on & Carrier of the force & Mass (GeV) & {$J^P$} & Range (m)\\
+		Interaction & Acts on & Force carrier & Mass (GeV) & {$J^P$} & Range (m)\\
 		\midrule
 		strong & color charge & 8 gluons (g) & {$0$} & {$1^-$} & $\approx 10^{-15}$\\
 		electromagnetic & electric charge & Photon ($\upgamma$) & {$0$} & {$1^-$} & $10^{-15}$\\
-		weak & weak charge & W$^{\pm}$, Z$^0$ & {$80.385$, $91.188$} & {$1$} & $\infty$\\
+		\multirow{2}{*}{weak} & \multirow{2}{*}{weak charge} & W$^{\pm}$ & {$80.385$} & \multirow{2}{*}{$1$} & \multirow{2}{*}{$\infty$}\\
+		 & & Z$^0$ & {$91.188$} & &\\
 		\bottomrule
 	\end{tabular}
 \end{table}
