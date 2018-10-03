@@ -1,9 +1,8 @@
 This chapter discusses the relevant theory for the thesis. Section \ref{sec:theory_sm} provides a condensed overview of the experimental aspect of the standard model (SM) of particle physics, the framework for this work. Section \ref{sec:theory_top} focuses on properties of the top quark, its production processes and decay modes, which will be relevant for the development and evaluation of the classifier in chapters \ref{ch:classifier} and \ref{ch:classifier}.
 \section{The Standard Model of Particle Physics}
 \label{sec:theory_sm}
-The SM is a quantum field theory that describes the fundamental forces in the universe and classifies all known elementary particles. It includes quantum mechanics, special relativity and chromodynamics. Underlying interactions of matter are described by the $\textrm{U}(1)_\textrm{Y}\otimes \textrm{SU}(2)_\textrm{L}\otimes \textrm{SU}(3)_\textrm{C}$ symmetry group. The SM is the result of many theoretical and experimental studies, which were conducted throughout the latter half of the 20th century and is in excellent accord with almost all current data \cite{RevModPhys.71.S96}.\\ \\
-The elementary interactions postulated by the SM are the strong, electromagnetic and weak interaction, each of which is mediated by the exchange of vector bosons. The fourth known interaction in nature, gravitation, is not covered by the theory of the SM, which, in the typical scales particle physics operates in, is negligible. Together with the exchange bosons, fermions form the known fundamental particles of the SM.\\ \\
-\textbf{Fermions} are half-integer spin particles that follow Fermi-Dirac statistics and obey the Pauli exclusion principle. They are grouped into six \emph{quarks}, namely, the up ($\textrm{u}$), down ($\textrm{d}$), charm ($\textrm{c}$), strange ($\textrm{s}$), top ($\textrm{t}$) and bottom ($\textrm{b}$) quark and six \emph{leptons}, namely, the electron ($\textrm{e}$), electron neutrino ($\upnu_\textrm{e}$), muon ($\upmu$), muon neutrino ($\upnu_\upmu$), tau ($\uptau$), tau neutrino ($\upnu_\uptau$). Pairs from each group form a generation. Three generations of particles exist, arranged by masses of the comprising particles in increasing order. For each fermion an associated antifermion with same mass, but opposite electric charge, color and third component of isospin, exists. A summary of the fermions is given in table \ref{tab:ch_1_sm_fermions}.
+The SM describes the known elementary particles and their interactions. Elementary particles are grouped into fermions and bosons based on their spin quantum number.\\ \\
+\textbf{Fermions} are particles with a spin of $\nicefrac{1}{2}$. They are grouped into six quarks and six leptons, which are arranged according to their masses in three generations. The quarks are the up ($\textrm{u}$), down ($\textrm{d}$), charm ($\textrm{c}$), strange ($\textrm{s}$), top ($\textrm{t}$) and bottom ($\textrm{b}$) quark. The leptons consist of the electron ($\textrm{e}$), electron neutrino ($\upnu_\textrm{e}$), muon ($\upmu$), muon neutrino ($\upnu_\upmu$), tau ($\uptau$), tau neutrino ($\upnu_\uptau$). For each fermion an antifermion with same mass, but opposite electric charge, color and third component of isospin, exists. A summary of the fermions is given in table \ref{tab:ch_1_sm_fermions}.
 
 \begin{table}[h]
 \caption[Fermions of the SM]{Fermions of the standard model. Source: \cite{povh,schenkel}}
@@ -14,7 +13,7 @@ The elementary interactions postulated by the SM are the strong, electromagnetic
 & 1 & 2 & 3 & {charge} & & {of isospin $I_3$} & \\
 \midrule
 \multirow{2}{*}{Leptons} & $\upnu_\textrm{e}$ & $\upnu_\upmu$ & $\upnu_\uptau$ & {$0$} & \multirow{2}{*}{---} & {$+\nicefrac{1}{2}$} & \multirow{2}{*}{$\nicefrac{1}{2}$}\\
-& e & $\upmu$ & $\uptau$ & {$-1$} & & {$+\nicefrac{1}{2}$} &\\
+& e & $\upmu$ & $\uptau$ & {$-1$} & & {$-\nicefrac{1}{2}$} &\\
 \midrule
 \multirow{2}{*}{Quarks} & u & c & t & $+\nicefrac{2}{3}$ & \multirow{2}{*}{r, b, g} & {$+\nicefrac{1}{2}$} & \multirow{2}{*}{$\nicefrac{1}{2}$}\\
 & d & s & b & $-\nicefrac{1}{3}$ & & {$-\nicefrac{1}{2}$} & \\
@@ -22,12 +21,19 @@ The elementary interactions postulated by the SM are the strong, electromagnetic
 \end{tabular}
 \end{table}
 
-Quarks carry color charge, electric charge and weak isospin - they interact with other quarks via the strong, electromagnetic and weak interaction respectively. According to quantum chromodynamics (QCD), a quark's color can take one of three charges, red, green and blue, and an antiquark one of the three anticolors,  antired, antigreen and antiblue. Color confinement leads quarks to being strongly bound to one another and forming color-neutral composite particles (hadrons) made of either a quark and antiquark (mesons) or three quarks (baryons, such as the proton (uud) and the neutron (udd)). Quarks of the same generation form a weak isospin doublet; particles from the same doublet behave similarly towards the weak interaction.
+Quarks carry color charge, electric charge and weak isospin - they interact with other quarks via the strong, electromagnetic and weak interaction respectively. A quark's color can take one of three charges (red, green, and blue), an antiquark one of the three anticolors (antired, antigreen, and antiblue). Due to color confinement, quarks cannot be isolated, they are strongly bound to one another forming color-neutral composite particles (hadrons). Hadrons consist of mesons (one quark, one antiquark) and baryons (three quarks), such as the proton (uud) and the neutron (udd). Quarks from the same generation form a weak isospin doublet; particles from the same doublet behave similarly towards the weak interaction.
 
-Leptons do not possess color charge with the three neutrinos additionally lacking in electric charge and only interacting through the weak nuclear force, which makes them difficult to detect. The electron, muon, and tau all have electric charge and interact electromagnetically.
+Leptons do not possess color charge. The three neutrinos lack additionally in electric charge and only interact through the weak nuclear force, thus being difficult to detect. The electron, muon, and tau have electric charge and interact electromagnetically.
 
-First-generation charged particles do not decay, ordinary matter is built from such particles. Second- and third-generation charged particles decay with very short half-lives and can be observed in high-energy environments only. Neutrinos of all generations do not decay either, they pervade the universe, but rarely interact with baryonic matter \cite{wiki:standardmodel}.\\ \\
-\textbf{Bosons} are defined as force carriers that mediate the strong, weak, and electromagnetic fundamental interactions.
+First-generation charged particles do not decay, they constitute ordinary matter. Neutrinos do not decay either, they exist in abundance, but do not interact with matter. Other higher generation charged particles have very short lifetimes and can be observed in high-energy experiments only \cite{wiki:standardmodel}.\\ \\
+The interactions of the SM are described by quantum field theories \cite{welsch}:
+\begin{itemize}
+\item The electromagnetic interaction is described by quantum electrodynamics (QED), wherein the photon ($\upgamma$) acts as the force carrier that mediates the interaction between electrically charged particles. Because photons are not electrically charged, they do not interact with other photons.
+\item The strong interaction is described by quantum chromodynamics (QCD). 
+\item The weak interaction
+\end{itemize}
+
+Gauge \textbf{bosons} are defined as force carriers that mediate the strong, weak, and electromagnetic fundamental interactions. With the exception of the Higgs boson, which has spin 0, bosons have spin 1, follow Bose-Einstein statistics and do not obey the Pauli exclusion principle.\\
 
 Interactions in physics are the ways that particles influence other particles. At a macroscopic level, electromagnetism allows particles to interact with one another via electric and magnetic fields, and gravitation allows particles with mass to attract one another in accordance with Einstein's theory of general relativity. The Standard Model explains such forces as resulting from matter particles exchanging other particles, generally referred to as force mediating particles. When a force-mediating particle is exchanged, at a macroscopic level the effect is equivalent to a force influencing both of them, and the particle is therefore said to have mediated (i.e., been the agent of) that force. The Feynman diagram calculations, which are a graphical representation of the perturbation theory approximation, invoke "force mediating particles", and when applied to analyze high-energy scattering experiments are in reasonable agreement with the data. However, perturbation theory (and with it the concept of a "force-mediating particle") fails in other situations. These include low-energy quantum chromodynamics, bound states, and solitons.
 \begin{table}[h]
@@ -45,6 +51,8 @@ Interactions in physics are the ways that particles influence other particles. A
 	\end{tabular}
 \end{table}
 The gauge bosons of the Standard Model all have spin (as do matter particles). The value of the spin is 1, making them bosons. As a result, they do not follow the Pauli exclusion principle that constrains fermions: thus bosons (e.g. photons) do not have a theoretical limit on their spatial density (number per volume). The different types of gauge bosons are described below.
+
+These gauge bosons are the eight gluons, which mediate
 
 Photons mediate the electromagnetic force between electrically charged particles. The photon is massless and is well-described by the theory of quantum electrodynamics.
 The W+, W-, and Z gauge bosons mediate the weak interactions between particles of different flavors (all quarks and leptons). They are massive, with the Z being more massive than the $\textrm{W}^{\pm}$. The weak interactions involving the W± exclusively act on left-handed particles and right-handed antiparticles. Furthermore, the $\textrm{W}^{\pm}$ carries an electric charge of +1 and -1 and couples to the electromagnetic interaction. The electrically neutral Z boson interacts with both left-handed particles and antiparticles. These three gauge bosons along with the photons are grouped together, as collectively mediating the electroweak interaction.
