@@ -5,20 +5,20 @@ The SM describes the known elementary particles and their interactions. Elementa
 \textbf{Fermions} are particles with a spin of $\nicefrac{1}{2}$. They are grouped into six quarks and six leptons, which are arranged according to their masses in three generations. The quarks are the up ($\textrm{u}$), down ($\textrm{d}$), charm ($\textrm{c}$), strange ($\textrm{s}$), top ($\textrm{t}$) and bottom ($\textrm{b}$) quark. The leptons consist of the electron ($\textrm{e}$), electron neutrino ($\upnu_\textrm{e}$), muon ($\upmu$), muon neutrino ($\upnu_\upmu$), tau ($\uptau$), tau neutrino ($\upnu_\uptau$). For each fermion an antifermion with same mass, but opposite electric charge, color and third component of isospin, exists. A summary of the fermions is given in table \ref{tab:ch_1_sm_fermions}.
 
 \begin{table}[h]
-\caption[Fermions of the Standard Model]{Six leptons and six quarks constitute the fermions of the Standard Model. Particles are ordered according to their generation. Source: \cite{povh,schenkel}}
-\label{tab:ch_1_sm_fermions}
-\begin{tabular}{ccccccccc}
-\toprule
-\multirow{2}{*}{Fermions} & \multicolumn{3}{c}{Generation} & {Electric} & \multirow{2}{*}{Color} & {$3^{\mathrm{rd}}$ component} & \multirow{2}{*}{Spin}\\
-& 1 & 2 & 3 & {charge} & & {of isospin $I_3$} & \\
-\midrule
-\multirow{2}{*}{Leptons} & $\upnu_\textrm{e}$ & $\upnu_\upmu$ & $\upnu_\uptau$ & {$0$} & \multirow{2}{*}{---} & {$+\nicefrac{1}{2}$} & \multirow{2}{*}{$\nicefrac{1}{2}$}\\
-& e & $\upmu$ & $\uptau$ & {$-1$} & & {$-\nicefrac{1}{2}$} &\\
-\midrule
-\multirow{2}{*}{Quarks} & u & c & t & $+\nicefrac{2}{3}$ & \multirow{2}{*}{r, b, g} & {$+\nicefrac{1}{2}$} & \multirow{2}{*}{$\nicefrac{1}{2}$}\\
-& d & s & b & $-\nicefrac{1}{3}$ & & {$-\nicefrac{1}{2}$} & \\
-\bottomrule
-\end{tabular}
+    \caption[Fermions of the Standard Model]{Six leptons and six quarks constitute the fermions of the Standard Model. Particles are ordered according to their generation. Source: \cite{povh,schenkel}}
+    \label{tab:ch_1_sm_fermions}
+    \begin{tabular}{ccccccccc}
+        \toprule
+        \multirow{2}{*}{Fermions} & \multicolumn{3}{c}{Generation} & {Electric} & \multirow{2}{*}{Color} & {$3^{\mathrm{rd}}$ component} & \multirow{2}{*}{Spin}\\
+        & 1 & 2 & 3 & {charge} & & {of isospin $I_3$} & \\
+        \midrule
+        \multirow{2}{*}{Leptons} & $\upnu_\textrm{e}$ & $\upnu_\upmu$ & $\upnu_\uptau$ & {$0$} & \multirow{2}{*}{---} & {$+\nicefrac{1}{2}$} & \multirow{2}{*}{$\nicefrac{1}{2}$}\\
+        & e & $\upmu$ & $\uptau$ & {$-1$} & & {$-\nicefrac{1}{2}$} &\\
+        \midrule
+        \multirow{2}{*}{Quarks} & u & c & t & $+\nicefrac{2}{3}$ & \multirow{2}{*}{r, b, g} & {$+\nicefrac{1}{2}$} & \multirow{2}{*}{$\nicefrac{1}{2}$}\\
+        & d & s & b & $-\nicefrac{1}{3}$ & & {$-\nicefrac{1}{2}$} & \\
+        \bottomrule
+    \end{tabular}
 \end{table}
 
 Quarks carry color charge, electric charge and weak isospin - they interact with other quarks via the strong, electromagnetic and weak interaction respectively. A quark's color can take one of three charges (red, green, and blue), an antiquark one of the three anticolors (antired, antigreen, and antiblue). Due to color confinement, quarks cannot be isolated, they are strongly bound to one another forming color-neutral composite particles (hadrons). Hadrons consist of mesons (one quark, one antiquark) and baryons (three quarks), such as the proton (uud) and the neutron (udd). Quarks from the same generation form a weak isospin doublet; particles from the same doublet behave similarly towards the weak interaction.
@@ -58,15 +58,37 @@ The Higgs mechanism introduces a new complex scalar Higgs field, which in additi
 \section{The Top Quark}
 \label{sec:theory_top}
 
-\begin{figure}
-    \begin{fmffile*}{diagram}
-        \begin{fmfgraph}(40,25)
-            \fmfleft{i1,i2}
-            \fmfright{o1,o2}
-            \fmf{fermion}{i1,v1,o1}
-            \fmf{fermion}{i2,v2,o2}
-            \fmf{photon}{v1,v2}
-        \end{fmfgraph}
-    \end{fmffile*}
-    \caption{Pictures of animals}\label{fig:animals}
+\begin{figure}[H]
+    \unitlength = 1mm
+    \begin{fmffile}{simple_labels}
+    \begin{fmfgraph*}(40,25)
+    \fmfleft{i1,i2}
+    \fmfright{o1,o2}
+    \fmflabel{$e^-$}{i1}
+    \fmflabel{$e^+$}{i2}
+    \fmflabel{$e^+,\mu^+$}{o1}
+    \fmflabel{$e^-,\mu^-$}{o2}
+    \fmflabel{$i\sqrt{\alpha}$}{v1}
+    \fmflabel{$i\sqrt{\alpha}$}{v2}
+    \fmf{fermion}{i1,v1,i2}
+    \fmf{fermion}{o1,v2,o2}
+    \fmf{photon,label=$\gamma,,Z^0$}{v1,v2}
+    \end{fmfgraph*}
+    \end{fmffile}
+    %
+    \hfill
+    %
+    \begin{fmffile}{box}
+    \begin{fmfgraph}(40,15)
+    \fmfleft{i1,i2}
+    \fmfright{o1,o2}
+    \fmf{fermion}{i1,v1,v2,o1}
+    \fmf{fermion}{o2,v4,v3,i2}
+    \fmf{photon,tension=0}{v1,v3}
+    \fmf{photon,tension=0}{v2,v4}
+    \end{fmfgraph}
+    \end{fmffile}
+    
+    \medskip
+    \caption{Using \texttt{feynmp}}
 \end{figure}
