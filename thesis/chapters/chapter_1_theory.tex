@@ -1,11 +1,11 @@
-This chapter discusses the relevant theory for the thesis. Section \ref{sec:theory_sm} provides a condensed overview of the experimental aspect of the standard model (SM) of particle physics, the framework for this work. Section \ref{sec:theory_top} focuses on properties of the top quark, its production processes and decay modes, which will be relevant for the development and evaluation of the classifier in chapters \ref{ch:classifier} and \ref{ch:classifier}.
+This chapter discusses the relevant theory for the thesis. Section \ref{sec:theory_sm} gives a condensed overview of the experimental aspect of the standard model (SM) of particle physics, the framework for this work. Section \ref{sec:theory_top} focuses on properties of the top quark, its production processes and decay modes, which will be relevant for the development and evaluation of the classifier in chapters \ref{ch:classifier} and \ref{ch:classifier}.
 \section{The Standard Model of Particle Physics}
 \label{sec:theory_sm}
 The SM describes the known elementary particles and their interactions. Elementary particles are grouped into fermions and bosons based on their spin quantum number.\\ \\
 \textbf{Fermions} are particles with a spin of $\nicefrac{1}{2}$. They are grouped into six quarks and six leptons, which are arranged according to their masses in three generations. The quarks are the up ($\textrm{u}$), down ($\textrm{d}$), charm ($\textrm{c}$), strange ($\textrm{s}$), top ($\textrm{t}$) and bottom ($\textrm{b}$) quark. The leptons consist of the electron ($\textrm{e}$), electron neutrino ($\upnu_\textrm{e}$), muon ($\upmu$), muon neutrino ($\upnu_\upmu$), tau ($\uptau$), tau neutrino ($\upnu_\uptau$). For each fermion an antifermion with same mass, but opposite electric charge, color and third component of isospin, exists. A summary of the fermions is given in table \ref{tab:ch_1_sm_fermions}.
 
 \begin{table}[h]
-\caption[Fermions of the SM]{Fermions of the standard model. Source: \cite{povh,schenkel}}
+\caption[Fermions of the Standard Model]{Six leptons and six quarks constitute the fermions of the Standard Model. Particles are ordered according to their generation. Source: \cite{povh,schenkel}}
 \label{tab:ch_1_sm_fermions}
 \begin{tabular}{ccccccccc}
 \toprule
@@ -25,44 +25,35 @@ Quarks carry color charge, electric charge and weak isospin - they interact with
 
 Leptons do not possess color charge. The three neutrinos lack additionally in electric charge and only interact through the weak nuclear force, thus being difficult to detect. The electron, muon, and tau have electric charge and interact electromagnetically.
 
-First-generation charged particles do not decay, they constitute ordinary matter. Neutrinos do not decay either, they exist in abundance, but do not interact with matter. Other higher generation charged particles have very short lifetimes and can be observed in high-energy experiments only \cite{wiki:standardmodel}.\\ \\
-The interactions of the SM are described by quantum field theories \cite{welsch}:
-\begin{itemize}
-\item The electromagnetic interaction is described by quantum electrodynamics (QED), wherein the photon ($\upgamma$) acts as the force carrier that mediates the interaction between electrically charged particles. Because photons are not electrically charged, they do not interact with other photons.
-\item The strong interaction is described by quantum chromodynamics (QCD). 
-\item The weak interaction
-\end{itemize}
+First-generation charged particles do not decay, they constitute ordinary matter. Neutrinos do not decay either, they exist in abundance, but do not interact with matter. Other higher generation charged particles have very short lifetimes and can be observed in high-energy experiments only \cite{wiki:standardmodel}.\\
 
-Gauge \textbf{bosons} are defined as force carriers that mediate the strong, weak, and electromagnetic fundamental interactions. With the exception of the Higgs boson, which has spin 0, bosons have spin 1, follow Bose-Einstein statistics and do not obey the Pauli exclusion principle.\\
+Gauge \textbf{bosons} mediate the forces between elementary particles and have a spin of 1. They consist of the photon $\upgamma$, mediating the electromagnetic interaction between electrically charged particles, the $W^{+}$, $W^{-}$ and $Z$ bosons mediating the weak interaction and the 8 gluons $g$, mediating the strong interaction. They are listed in detail in table \ref{tab:ch_1_sm_bosons}.\\
 
-Interactions in physics are the ways that particles influence other particles. At a macroscopic level, electromagnetism allows particles to interact with one another via electric and magnetic fields, and gravitation allows particles with mass to attract one another in accordance with Einstein's theory of general relativity. The Standard Model explains such forces as resulting from matter particles exchanging other particles, generally referred to as force mediating particles. When a force-mediating particle is exchanged, at a macroscopic level the effect is equivalent to a force influencing both of them, and the particle is therefore said to have mediated (i.e., been the agent of) that force. The Feynman diagram calculations, which are a graphical representation of the perturbation theory approximation, invoke "force mediating particles", and when applied to analyze high-energy scattering experiments are in reasonable agreement with the data. However, perturbation theory (and with it the concept of a "force-mediating particle") fails in other situations. These include low-energy quantum chromodynamics, bound states, and solitons.
 \begin{table}[h]
-	\caption[Bosons described by the SM]{The bosons of the standard model. Source: \cite{povh}, \cite{faltermann}}
+	\caption[Gauge bosons of the Standard Model]{The gauge bosons of the Standard Model are spin-1 particles that mediate the three fundamental forces described by the SM. For every boson, the interaction it participates on, the charge it couples on, its mass, spin, parity and interaction range are given. Source: \cite{povh}, \cite{faltermann}}
 	\label{tab:ch_1_sm_bosons}
 	\begin{tabular}{cccccc}
 		\toprule
-		Interaction & Acts on & Force carrier & Mass (GeV) & {$J^P$} & Range (m)\\
+		Boson & Interaction & Acts on & Mass (\SI[parse-numbers = false]{\giga\eV}) & {$J^P$} & Range (\SI[parse-numbers = false]{\meter})\\
 		\midrule
-		strong & color charge & 8 gluons (g) & {$0$} & {$1^-$} & $\approx 10^{-15}$\\
-		electromagnetic & electric charge & Photon ($\upgamma$) & {$0$} & {$1^-$} & $10^{-15}$\\
-		\multirow{2}{*}{weak} & \multirow{2}{*}{weak charge} & W$^{\pm}$ & {$80.385$} & \multirow{2}{*}{$1$} & \multirow{2}{*}{$\infty$}\\
-		 & & Z$^0$ & {$91.188$} & &\\
+		8 gluons (g) & strong & color charge & {$0$} & {$1^-$} & $\approx 10^{-15}$\\
+		photon ($\upgamma$) & electromagnetic & electric charge & {$0$} & {$1^-$} & {$\infty$}\\
+		W$^{\pm}$ & \multirow{2}{*}{weak} &\multirow{2}{*}{weak charge} & {$80.385$} & \multirow{2}{*}{$1$} & \multirow{2}{*}{$10^{-18}$}\\
+		Z$^0$ & & & {$91.188$} & &\\
 		\bottomrule
 	\end{tabular}
 \end{table}
-The gauge bosons of the Standard Model all have spin (as do matter particles). The value of the spin is 1, making them bosons. As a result, they do not follow the Pauli exclusion principle that constrains fermions: thus bosons (e.g. photons) do not have a theoretical limit on their spatial density (number per volume). The different types of gauge bosons are described below.
 
-These gauge bosons are the eight gluons, which mediate
+The interactions of the SM are described by quantum field theories \cite{welsch}:
+\begin{itemize}
+\item the electromagnetic interaction is described by quantum electrodynamics (QED). Because photons have no electrical charge, they do not interact with other photons,
+\item the strong interaction is described by quantum chromodynamics (QCD), which, as previously mentioned, forbids the existence of free color-charged particles,
+\item the weak interaction is described by quantumflavordynamics (QFD) \cite{griffiths}. The gauge bosons, left-chiral fermions and right-chiral antifermions interact weakly. Conservation of parity is therefore violated by the weak interaction, because left-handed particles transform to right-handed particles under a parity inversion.
+\end{itemize}
 
-Photons mediate the electromagnetic force between electrically charged particles. The photon is massless and is well-described by the theory of quantum electrodynamics.
-The W+, W-, and Z gauge bosons mediate the weak interactions between particles of different flavors (all quarks and leptons). They are massive, with the Z being more massive than the $\textrm{W}^{\pm}$. The weak interactions involving the W± exclusively act on left-handed particles and right-handed antiparticles. Furthermore, the $\textrm{W}^{\pm}$ carries an electric charge of +1 and -1 and couples to the electromagnetic interaction. The electrically neutral Z boson interacts with both left-handed particles and antiparticles. These three gauge bosons along with the photons are grouped together, as collectively mediating the electroweak interaction.
-The eight gluons mediate the strong interactions between color charged particles (the quarks). Gluons are massless. The eightfold multiplicity of gluons is labeled by a combination of color and anticolor charge. Because the gluons have an effective color charge, they can also interact among themselves. The gluons and their interactions are described by the theory of quantum chromodynamics.
-The interactions between all the particles described by the Standard Model are summarized by the diagrams on the right of this section.
+The electromagnetic and the weak interaction are unified within the theory of the electroweak interaction. This theory predicts four massless gauge bosons, the B$^{0}$, W$^{0}$, W$^{1}$, W$^{2}$ bosons. The spontaneous symmetry breaking of the electroweak symmetry, caused by the Higgs mechanism, produces three massive gauge bosons (the Z$^0$ and W$^{\pm}$) and one massless (the photon $\upgamma$). These gauge bosons are described by the theory as orthogonal linear combinations of the B$^{0}$ and W$^{0}$ bosons under the Weinberg angle \cite{wiki:electroweak}.\\
 
-The Higgs particle is a massive scalar elementary particle theorized by Peter Higgs in 1964, when he showed that Goldstone's 1962 theorem (generic continuous symmetry, which is spontaneously broken) provides a third polarisation of a massive vector field. Hence, Goldstone's original scalar doublet, the massive spin-zero particle, was proposed as the Higgs boson. (see 1964 PRL symmetry breaking papers) and is a key building block in the Standard Model. It has no intrinsic spin, and for that reason is classified as a boson (like the gauge bosons, which have integer spin).\\ \\
-The Higgs boson plays a unique role in the Standard Model, by explaining why the other elementary particles, except the photon and gluon, are massive. In particular, the Higgs boson explains why the photon has no mass, while the W and Z bosons are very heavy. Elementary-particle masses, and the differences between electromagnetism (mediated by the photon) and the weak force (mediated by the W and Z bosons), are critical to many aspects of the structure of microscopic (and hence macroscopic) matter. In electroweak theory, the Higgs boson generates the masses of the leptons (electron, muon, and tau) and quarks. As the Higgs boson is massive, it must interact with itself.\\ \\
-Because the Higgs boson is a very massive particle and also decays almost immediately when created, only a very high-energy particle accelerator can observe and record it. Experiments to confirm and determine the nature of the Higgs boson using the Large Hadron Collider (LHC) at CERN began in early 2010 and were performed at Fermilab's Tevatron until its closure in late 2011. Mathematical consistency of the Standard Model requires that any mechanism capable of generating the masses of elementary particles becomes visible at energies above 1.4 TeV; therefore, the LHC (designed to collide two 7 TeV proton beams) was built to answer the question of whether the Higgs boson actually exists.\\ \\
-On 4 July 2012, two of the experiments at the LHC (ATLAS and CMS) both reported independently that they found a new particle with a mass of about 125 GeV/c2, which is ''consistent with the Higgs boson''. It was later confirmed to be the searched-for Higgs boson.
+The Higgs mechanism introduces a new complex scalar Higgs field, which in addition to providing masses to the weak gauge bosons, also couples through a Yukawa interaction with the corresponding fermion fields, generating non-vanishing fermion mass terms. The excitation of the Higgs field leads to the production of the Higgs boson. The existence of the Higgs boson was confirmed in 2012 by the ATLAS and CMS experiments at the Large Hadron Collider. It has a mass of around \SI{125}{\giga\eV} \cite{chatrchyan} and is the only spin-0 particle in the SM.
 
 \section{The Top Quark}
 \label{sec:theory_top}
