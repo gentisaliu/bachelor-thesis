@@ -1,193 +1,92 @@
-\documentclass[a4paper,11pt,twoside,DIV=calc,BCOR12.5mm,headsepline,titlepage,openright,final,english]{scrbook}
+\documentclass{thesisclass}
 
-\usepackage[english]{babel}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-
-\usepackage[input-uncertainty-signs=\pm,separate-uncertainty=true]{siunitx}
-\newcommand{\unit}[2]{\SI{#1}{#2}}
-
-\usepackage{tgheros} %Helveticaverschnitt
-\usepackage{helvet} 
-\usepackage{newcent}
-\usepackage{geometry}
-\usepackage{bookman}
-\usepackage{xfrac}
-\usepackage{enumitem}
-\usepackage{feynmp-auto}
-\usepackage{hepnames}
-
-\usepackage[osf,sc]{mathpazo}
-\usepackage{courier}
-\renewcommand{\sfdefault}{phv} 
-\renewcommand{\rmdefault}{pplx} % ---> Mathpazo Palatino (pplx)
-\linespread{1.05}
-
-\geometry{a4paper}
-\usepackage{amsmath,amssymb,amstext}
-\usepackage{floatrow}
-\floatsetup[table]{capposition=top}
-
-\usepackage{multicol}
-\usepackage{multirow}
-\usepackage{booktabs}
-\usepackage{xspace}
-\usepackage{tabularx}
-\usepackage{slashed}
-
-\usepackage[backend=biber,isbn=true,sorting=nyt]{biblatex}
-\DefineBibliographyStrings{english}{phdthesis = {Ph.D.\@ thesis}}
-\DeclareFieldFormat[article,inbook,incollection,inproceedings,patent,thesis,unpublished]{title}{\mkbibemph{#1}}
-\DeclareFieldFormat{journaltitle}{#1}
-\DeclareFieldFormat{issuetitle}{#1}
-\DeclareFieldFormat{maintitle}{#1}
-\DeclareFieldFormat{booktitle}{#1}
-\DefineBibliographyExtras{english}{\renewcommand{\finalandcomma}{}}
-
-\bibliography{bib.bib}
-
-% http://tex.stackexchange.com/q/218706/15107
-\setcounter{biburlnumpenalty}{400}  % allow breaks at numbers
-\setcounter{biburlucpenalty}{400}   % allow breaks at uppercase letters
-\setcounter{biburllcpenalty}{400}   % allow breaks at lowercase letters
-
-\usepackage[section,above]{placeins} % Keeps floats `in their place', preventing them from floating past a "\FloatBarrier" command into another section
-\usepackage[subfigure]{tocloft} % subfigure option only if using subfigure package
-\renewcommand{\cfttoctitlefont} % ToC title
-             {\usefont{T1}{phv}{b}{n}\selectfont\huge}
-\renewcommand{\cftchapfont} % chapter titles
-             {\boldmath\usefont{T1}{phv}{b}{n}\selectfont}
-\renewcommand{\cftsecfont} % section titles
-             {\usefont{T1}{pplx}{m}{n}\selectfont}
-\renewcommand{\cftsubsecfont} % subsection titles
-             {\usefont{T1}{pplx}{m}{n}\selectfont} 
-\renewcommand{\cftchappagefont} % chapter page numbers
-             {\usefont{T1}{pplx}{b}{n}\selectfont}
-\renewcommand{\cftsecpagefont} % section page numbers
-             {\cftsecfont} 
-\renewcommand{\cftsubsecpagefont} % subsection page numbers
-             {\cftsubsecfont} 
- 
-\usepackage{graphicx}
-\usepackage{subfig}
-
-%%%%%%%%%%%%%
-% Table captions serifenlos
-%%%%%%%%%%%%%
-\captionsetup{margin=10pt,font=footnotesize,labelfont=bf,format=plain}
-  
-\usepackage{psfrag}
-\usepackage{verbatim}
-\usepackage{wrapfig}
-\usepackage{lineno}
-\usepackage{textcomp}
-\usepackage{cancel}
-\usepackage{rotating}
-\usepackage{upgreek}
-\usepackage[table]{xcolor}
-\usepackage{fixltx2e}
-\usepackage{blindtext}
-\usepackage{comment}	
-\usepackage{nicefrac}
-\usepackage{caption}
-
-\usepackage[normalem]{ulem}
-\usepackage{url}
-\DeclareGraphicsExtensions{.pdf,.png,.jpg}
-
-\usepackage[pdftex,
-        colorlinks=false,
-        linkbordercolor={0.6353 0.1333 0.1373}, %KIT red
-        filebordercolor={0.1373 0.6314 0.8784}, % KIT cyan 
-        urlbordercolor={0.2745 0.3922 0.6667}, % KIT blue
-        citebordercolor={0 0.5882 0.5098}, % KIT green
-        pdftitle={Improvement of the single top-quark detection in the s-channel at the CMS Experiment},
-        pdfauthor={Genti Saliu},
-        pdfkeywords={none},
-		hyperindex,
-        pdfpagemode=None,
-        bookmarksopen=true]{hyperref}
-
-\renewcommand{\sectfont}{\sffamily}
-\usepackage[activate=true,final,tracking=true,kerning=true,spacing=true,factor=1100,stretch=10,shrink=10]{microtype}
-\SetTracking{encoding={*}, shape=sc}{45}
-\hyphenation{ATLAS}
-\newcommand{\vecd}[1]{\vec{#1}}
-\newcommand{\vecv}[1]{\mathbf{#1}}
-
-\input{includes/shortcuts.tex}
-
-\long\def\symbolfootnote[#1]#2{\begingroup%
-\def\thefootnote{\fnsymbol{footnote}}\footnote[#1]{#2}\endgroup} 
-
-\title{title}
-\author{Genti Saliu}
-\date{\today}
-
-\makeatletter
-\DeclareRobustCommand*{\bfseries}{%                                                                                                                                
-  \not@math@alphabet\bfseries\mathbf
-  \fontseries\bfdefault\selectfont
-  \boldmath
+%% -------------------------------
+%% |  Information for PDF file   |
+%% -------------------------------
+\hypersetup{
+    colorlinks=false,
+    linkbordercolor={0.6353 0.1333 0.1373}, %KIT red
+    filebordercolor={0.1373 0.6314 0.8784}, % KIT cyan 
+    urlbordercolor={0.2745 0.3922 0.6667}, % KIT blue
+    citebordercolor={0 0.5882 0.5098}, % KIT green
+    pdftitle={Improvement of the single top-quark detection in the s-channel at the CMS Experiment},
+    pdfauthor={Genti Saliu},
+    pdfkeywords={none}
 }
-\makeatother
 
-\setlength\parindent{0pt}
+%% ---------------------------------
+%% | Information about the thesis  |
+%% ---------------------------------
+\newcommand{\myname}{Genti Saliu}
+\newcommand{\mytitle}{Improvement of the single top-quark detection in the s-channel at the CMS Experiment}
+\newcommand{\myinstitute}{Institute of Experimental Particle Physics}
+\newcommand{\mydepartment}{Department of Physics}
+\newcommand{\myuniversity}{Karlsruhe Institute of Technology (KIT)}
+\newcommand{\myplace}{Karlsruhe}
 
-\DeclareMathOperator{\sgn}{sgn}
+\newcommand{\reviewerone}{Prof. Dr. Thomas Müller}
+\newcommand{\reviewertwo}{Dr. Nils Faltermann}
+\newcommand{\timestart}{08 August 2018}
+\newcommand{\timeend}{08 November 2018}
+\newcommand{\submissiontime}{08 November 2018}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Here, main documents begins %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 
+\selectlanguage{english}
+
+% Removes the dash in IEEEtrans bibliography for repeated names
+{\bstctlcite{IEEEexample:BSTcontrol}}{}
+
 \frontmatter
+\pagenumbering{roman}
+\include{titlepage}
+\include{content/acceptance}
+\include{content/declaration}
+\blankpage
 
-\include{title}
-\cleardoublepage
 
-\include{acceptance}
-\cleardoublepage
-
-\include{originality}
-\cleardoublepage
-
-\include{abstract}
-\cleardoublepage
-
-\setcounter{tocdepth}{2}
+%% -------------------
+%% |   Directories   |
+%% -------------------
 \tableofcontents
+\blankpage
 
+
+%% -----------------
+%% |   Main part   |
+%% -----------------
 \mainmatter
+\pagenumbering{arabic}
+\include{content/abstract}
+\include{content/chap01}
+\include{content/chap02}
+\include{content/chap03}
+\include{content/conclusion}
 
-\renewcommand{\arraystretch}{1.2}
 
-\chapter{Theoretical Background}
-\label{ch:theory}
-\input{chapters/chapter_1_theory}
+%% --------------------
+%% |   Bibliography   |
+%% --------------------
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{\bibname}
 
-\chapter{Experimental Background}
-\label{ch:experiment}
-\input{chapters/chapter_2_experiment}
+\bibliographystyle{IEEEtran}
+\bibliography{bibliography/thesis}
 
-\chapter{NN-Classifier for Top-Quark Reconstruction}
-\label{ch:classifier}
-\input{chapters/chapter_6_classifier}
 
-\include{conclusions}
+%% ----------------
+%% |   Appendix   |
+%% ----------------
+\cleardoublepage
 
-\appendix
-\include{appendix/appendix_a}
-\include{appendix/appendix_b}
-\include{appendix/appendix_c}
-
-\listoftables
-\listoffigures
-
-\begingroup
-\setlength{\emergencystretch}{.5em}
-\printbibliography
-\endgroup
+\input{content/appendix}
 
 \backmatter
 
-\include{acks}
+\include{content/acknowledgments}
 
 \end{document}

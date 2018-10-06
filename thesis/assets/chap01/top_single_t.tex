@@ -1,0 +1,18 @@
+\begin{fmffile}{top-single-t}
+    \unitlength = 1mm
+    \begin{fmfgraph*}(45,30)
+        \fmfleft{i1,i2}
+        \fmfright{o1,o2}
+        
+        \fmf{quark}{i1,v1,o1}
+        \fmf{quark}{i2,v2,o2}
+        
+        \fmf{photon,label=\PW,label.side=right}{v1,v2}
+        \fmfdot{v1,v2}
+        
+        \fmflabel{\Pbottom}{i1}
+        \fmflabel{\Pquark}{i2}
+        \fmflabel{\Ptop}{o1}
+        \fmflabel{\Pquark'}{o2}
+    \end{fmfgraph*}
+\end{fmffile}

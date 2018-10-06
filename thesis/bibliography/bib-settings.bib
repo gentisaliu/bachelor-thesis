@@ -1,0 +1,14 @@
+% Remove the dash in IEEEtrans bibliography for repeated names
+% See http://tex.stackexchange.com/questions/29381/is-it-normal-for-bibtex-to-replace-similar-author-names-with
+\RequirePackage{filecontents}
+\begin{filecontents}{thesis.bib}
+@IEEEtranBSTCTL{IEEEexample:BSTcontrol,
+CTLdash_repeated_names= "no",
+CTLuse_forced_etal       = "yes",
+CTLmax_names_forced_etal = "2",
+CTLnames_show_etal       = "1",
+}
+
+
+
+%% DO NOT CHANGE ANYTHING

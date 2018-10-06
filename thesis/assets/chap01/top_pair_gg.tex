@@ -1,0 +1,18 @@
+\begin{fmffile}{top-pair-gg}
+    \unitlength = 1mm
+    \begin{fmfgraph*}(45,25)
+        \fmfleft{i1,i2}
+        \fmfright{o1,o2}
+        
+        \fmf{gluon}{i2,v1,i1}
+        \fmf{quark}{o1,v2,o2}
+        
+        \fmf{gluon,label=\Pgluon,label.side=left}{v1,v2}
+        \fmfdot{v1,v2}
+        
+        \fmflabel{\Pgluon}{i1}
+        \fmflabel{\Pgluon}{i2}
+        \fmflabel{\APtop}{o1}
+        \fmflabel{\Ptop}{o2}
+    \end{fmfgraph*}
+\end{fmffile}
