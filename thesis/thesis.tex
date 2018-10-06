@@ -37,9 +37,6 @@
 
 \selectlanguage{english}
 
-% Removes the dash in IEEEtrans bibliography for repeated names
-{\bstctlcite{IEEEexample:BSTcontrol}}{}
-
 \frontmatter
 \pagenumbering{roman}
 \include{titlepage}
@@ -74,9 +71,10 @@
 \phantomsection
 \addcontentsline{toc}{chapter}{\bibname}
 
-\bibliographystyle{IEEEtran}
-\bibliography{bibliography/thesis}
-
+\begingroup
+\setlength{\emergencystretch}{.5em}
+\printbibliography
+\endgroup
 
 %% ----------------
 %% |   Appendix   |

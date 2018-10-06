@@ -81,8 +81,22 @@
 \lstset{basicstyle=\footnotesize\ttfamily,breaklines=true,framextopmargin=50pt,frame=sideline,xleftmargin=20pt}
 
 %% BibTex
-\usepackage{IEEEtrantools} % needed for better IEEEtran bibliography
-\usepackage{cite} % cite multiple articles
+\usepackage[backend=biber,style=alphabetic,sorting=nyt,maxalphanames=5,minalphanames=3,maxbibnames=10]{biblatex}
+\DefineBibliographyStrings{english}{phdthesis = {Ph.D.\@ thesis}}
+\DeclareFieldFormat[article,inbook,incollection,inproceedings,patent,thesis,unpublished]{title}{\mkbibemph{#1}}
+\DeclareFieldFormat{journaltitle}{#1}
+\DeclareFieldFormat{issuetitle}{#1}
+\DeclareFieldFormat{maintitle}{#1}
+\DeclareFieldFormat{booktitle}{#1}
+
+\DefineBibliographyExtras{english}{\renewcommand{\finalandcomma}{}}
+
+% http://tex.stackexchange.com/q/218706/15107
+\setcounter{biburlnumpenalty}{400}  % allow breaks at numbers
+\setcounter{biburlucpenalty}{400}   % allow breaks at uppercase letters
+\setcounter{biburllcpenalty}{400}   % allow breaks at lowercase letters
+
+\bibliography{bibliography/thesis}
 
 %% For better enumerations
 \usepackage{enumitem}
