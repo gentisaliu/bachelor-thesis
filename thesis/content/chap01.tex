@@ -59,47 +59,66 @@ The interactions of the SM are described by quantum field theories \cite{Wel17}:
 \item the weak interaction is described by quantumflavordynamics (QFD) \cite{Gri08}. The gauge bosons, left-chiral fermions and right-chiral antifermions interact weakly. Conservation of parity is therefore violated by the weak interaction, because left-handed particles transform to right-handed particles under a parity inversion.
 \end{itemize}
 
-The electromagnetic and the weak interaction are unified within the theory of the electroweak interaction. This theory predicts four massless gauge bosons, the \PBzero, \PWzero, \PWone, \PWtwo bosons. The spontaneous symmetry breaking of the electroweak symmetry, caused by the Higgs mechanism, produces three massive gauge bosons (the \PZz and \PWpm) and one massless (the photon \Pphoton). These gauge bosons are described by the theory as orthogonal linear combinations of the \PBzero and \PWzero bosons under the Weinberg angle \cite{wiki:electroweak}.
+The electromagnetic and the weak interaction are unified within the theory of the electroweak interaction. This theory predicts four massless gauge bosons, the \PBzero, \PWzero, \PWone, \PWtwo bosons. The spontaneous symmetry breaking of the electroweak symmetry, caused by the Higgs mechanism, produces three massive gauge bosons (the \PZzero and \PWpm) and one massless (the photon \Pphoton). These gauge bosons are described by the theory as orthogonal linear combinations of the \PBzero and \PWzero bosons under the Weinberg angle \cite{wiki:electroweak}.
 
 The Higgs mechanism introduces a new complex scalar Higgs field, which in addition to providing masses to the weak gauge bosons, also couples through a Yukawa interaction with the corresponding fermion fields, generating non-vanishing fermion mass terms. The excitation of the Higgs field leads to the production of the Higgs boson. The existence of the Higgs boson was confirmed in 2012 by the ATLAS and CMS experiments at the Large Hadron Collider. It has a mass of around \SI{125}{\giga\eV} \cite{Cha12} and is the only spin-0 particle in the SM.
 
 \section{The Top Quark}
 \label{sec:theory_top}
+The top quark is at $172.44 \pm 0.13 \text{ (stat)} \pm 0.47 \text{ (syst) }\SI{}{GeV}$ \cite{ACCC14} the heaviest particle in the SM. Its existence was first postulated in 1973 by Makoto Kobayashi and Toshihide Maskawa, later to be discovered in 1995 at the Tevatron by the CDF and D\O{} collaborations. The high mass is responsible for the top quark's short lifetime of \SI{5e-25}{s}, which is about twenty times shorter than the typical timescale of hadronization. Because no hadronization can occur, there are no composite particles made up of a top quark, making the top quark very interesting for studying ''bare'' quarks.
+
+\subsection{Production}
+Due to their high mass, accelerators providing high energies are necessary for the production of top quarks. 
 
 \begin{figure}[H]
     \centering
-    \begin{subfigure}[b]{0.3\textwidth}
+    \begin{subfigure}[b]{0.2\textwidth}
         \centering
         \input{assets/chap01/top_pair_qqbar}
     \end{subfigure}
     \hfill
-    \begin{subfigure}[b]{0.3\textwidth}
+    \begin{subfigure}[b]{0.2\textwidth}
         \centering
         \input{assets/chap01/top_pair_gg}
     \end{subfigure}
     \hfill
-    \begin{subfigure}[b]{0.3\textwidth}
+    \begin{subfigure}[b]{0.2\textwidth}
         \centering
-        \input{assets/chap01/top_pair_gg}
+        \input{assets/chap01/top_pair_gg_scatter}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.2\textwidth}
+        \centering
+        \input{assets/chap01/top_pair_t}
     \end{subfigure}
     \caption{Using \texttt{feynmp}}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \begin{subfigure}[b]{0.3\textwidth}
+    \begin{subfigure}[b]{0.2\textwidth}
         \centering
         \input{assets/chap01/top_single_s}
     \end{subfigure}
     \hfill
-    \begin{subfigure}[b]{0.3\textwidth}
+    \begin{subfigure}[b]{0.2\textwidth}
         \centering
         \input{assets/chap01/top_single_t}
     \end{subfigure}
     \hfill
-    \begin{subfigure}[b]{0.3\textwidth}
+    \begin{subfigure}[b]{0.2\textwidth}
         \centering
-        \input{assets/chap01/top_single_tw}
+        \input{assets/chap01/top_single_tw_1}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.2\textwidth}
+        \centering
+        \input{assets/chap01/top_single_tw_2}
     \end{subfigure}
     \caption{Using \texttt{feynmp}}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \input{thesis/assets/chap01/top_s_reco}
 \end{figure}

@@ -96,7 +96,7 @@
 \setcounter{biburlucpenalty}{400}   % allow breaks at uppercase letters
 \setcounter{biburllcpenalty}{400}   % allow breaks at lowercase letters
 
-\bibliography{bibliography/thesis}
+\bibliography{bibliography}
 
 %% For better enumerations
 \usepackage{enumitem}
@@ -175,8 +175,8 @@
 %% -------------------------------
 %% |      Globale Settings       |
 %% -------------------------------
-\setcounter{secnumdepth}{3} % Numbering also for \subsubsections
-\setcounter{tocdepth}{3}    % Register \subsubsections in content directory
+\setcounter{secnumdepth}{2} % Numbering also for \subsubsections
+\setcounter{tocdepth}{2}    % Register \subsubsections in content directory
 
 \setpapersize{A4}
 \setmarginsrb{3cm}{1cm}{3cm}{1cm}{6mm}{7mm}{5mm}{15mm}

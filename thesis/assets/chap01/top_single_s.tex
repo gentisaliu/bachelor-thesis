@@ -1,21 +1,18 @@
 \begin{fmffile}{top-single-s}
     \unitlength = 1mm
-    \begin{fmfgraph*}(45,30)
+    \begin{fmfgraph*}(30,25)
         \fmfleft{i1,i2}
         \fmfright{o1,o2}
         
-        \fmf{gluon}{i1,v1}
-        \fmf{gluon}{i2,v2}
+        \fmf{quark}{i1,v1,i2}
+        \fmf{quark}{o2,v2,o1}
         
-        \fmf{quark}{o1,v1}
-        \fmf{quark}{v2,o2}
-        
-        \fmf{quark}{v1,v2}
+        \fmf{boson,label=\PWplus,label.side=left}{v1,v2}
         \fmfdot{v1,v2}
         
-        \fmflabel{\Pgluon}{i1}
-        \fmflabel{\Pgluon}{i2}
-        \fmflabel{\APtop}{o1}
-        \fmflabel{\Ptop}{o2}
+        \fmflabel{\Pquark}{i1}
+        \fmflabel{\APquark}{i2}
+        \fmflabel{\Ptop}{o1}
+        \fmflabel{\APbottom}{o2}
     \end{fmfgraph*}
 \end{fmffile}
