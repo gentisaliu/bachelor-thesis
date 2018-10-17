@@ -109,6 +109,8 @@
 \usepackage{nicefrac}
 \usepackage{feynmp-auto}
 \usepackage{hepnames}
+\usepackage{physics}
+\usepackage{slashed}
 
 %% --- End of Packages ---
 
@@ -168,6 +170,8 @@
 \newcommand{\blankpage}{
  \clearpage{\pagestyle{empty}\cleardoublepage}
 }
+\renewcommand{\thesubfigure}{(\alph{subfigure})}
+\captionsetup[sub]{labelformat=simple}
 %% --- End of New Commands ---
 
 
@@ -180,6 +184,8 @@
 
 \setpapersize{A4}
 \setmarginsrb{3cm}{1cm}{3cm}{1cm}{6mm}{7mm}{5mm}{15mm}
+
+\renewcommand{\arraystretch}{1.5}
 
 \parindent 0cm                     % Do not indent beginning of paragraph
 \parskip1.5ex plus0.5ex minus0.5ex % Margin between paragraphs

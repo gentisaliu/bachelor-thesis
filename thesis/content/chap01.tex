@@ -65,60 +65,68 @@ The Higgs mechanism introduces a new complex scalar Higgs field, which in additi
 
 \section{The Top Quark}
 \label{sec:theory_top}
-The top quark is at $172.44 \pm 0.13 \text{ (stat)} \pm 0.47 \text{ (syst) }\SI{}{GeV}$ \cite{ACCC14} the heaviest particle in the SM. Its existence was first postulated in 1973 by Makoto Kobayashi and Toshihide Maskawa, later to be discovered in 1995 at the Tevatron by the CDF and D\O{} collaborations. The high mass is responsible for the top quark's short lifetime of \SI{5e-25}{s}, which is about twenty times shorter than the typical timescale of hadronization. Because no hadronization can occur, there are no composite particles made up of a top quark, making the top quark very interesting for studying ''bare'' quarks.
+The top quark is at $172.44 \pm 0.13 \text{ (stat)} \pm 0.47 \text{ (syst) }\SI{}{GeV}$ \cite{ACCC14} the heaviest particle in the SM. Its existence was first postulated in 1973 by Makoto Kobayashi and Toshihide Maskawa. The high mass is responsible for the top quark's short lifetime of \SI{5e-25}{s}, which is about twenty times shorter than the typical timescale of hadronization. Because no hadronization can occur, there are no composite particles made up of a top quark, making the top quark very interesting for studying ''bare'' quarks. The strong coupling between the Higgs boson and the top quark makes it a great tool for researching the Higgs boson and Physics Beyond the Standard Model.
 
-\subsection{Production}
-Due to their high mass, accelerators providing high energies are necessary for the production of top quarks. 
-
+\subsection{Production and Decay}
+Due to their high mass, accelerators with high energies are required for the production of top quarks. Because of this, its discovery was a long and difficult process, which began in the late seventies \cite{RevModPhys.69.137} and was concluded in 1995 at the Tevatron by the CDF and D\O{} collaborations.
 \begin{figure}[H]
     \centering
-    \begin{subfigure}[b]{0.2\textwidth}
+    \begin{subfigure}[t]{0.2\textwidth}
         \centering
         \input{assets/chap01/top_pair_qqbar}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.2\textwidth}
+        \caption{$q\overline{q}$ annhilation}
+        \label{fig:top_pair_qqbar}
+    \end{subfigure}\hfill
+    \begin{subfigure}[t]{0.2\textwidth}
         \centering
         \input{assets/chap01/top_pair_gg}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.2\textwidth}
+        \caption{$gg$ annihilation}
+        \label{fig:top_pair_gg}
+    \end{subfigure}\hfill
+    \begin{subfigure}[t]{0.2\textwidth}
         \centering
         \input{assets/chap01/top_pair_gg_scatter}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.2\textwidth}
+        \caption{$gg$ scattering}
+        \label{fig:top_pair_gg_scatter}
+    \end{subfigure}\hfill
+    \begin{subfigure}[t]{0.2\textwidth}
         \centering
         \input{assets/chap01/top_pair_t}
+        \caption{$gg$ scattering with switched final states}
+        \label{fig:top_pair_gg_scatter_switched}
     \end{subfigure}
-    \caption{Using \texttt{feynmp}}
+    \caption{Top quark pair production via the strong interaction}
+    \label{fig:top_pair}
 \end{figure}
-
+Top quarks are predominantly produced in pairs via the strong interaction. Figure \ref{fig:top_pair} shows the four relevant Feynman diagrams at leading order. These processes are known as $t\overline{t}$ processes. Owing to the fact that antiquarks do not appear as valence quarks in a proton, $q\overline{q}$ annihilation is unlikely to occur in proton-proton-collisions, such as those in LHC experiments. Top quarks are mostly produced via gluon fusion.\\ \\
+Additionally, individual (single) top quarks can be produced via the electroweak interaction. The Feynman diagrams for these processes in leading order are given in Figure \ref{fig:top_single}.
 \begin{figure}[H]
     \centering
-    \begin{subfigure}[b]{0.2\textwidth}
+    \begin{subfigure}[t]{0.2\textwidth}
         \centering
         \input{assets/chap01/top_single_s}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.2\textwidth}
+        \caption{s-channel}
+        \label{fig:top_single_s}
+    \end{subfigure}\hfill
+    \begin{subfigure}[t]{0.2\textwidth}
         \centering
         \input{assets/chap01/top_single_t}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.2\textwidth}
+        \caption{t-channel}
+        \label{fig:top_single_t}
+    \end{subfigure}\hfill
+    \begin{subfigure}[t]{0.2\textwidth}
         \centering
         \input{assets/chap01/top_single_tw_1}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.2\textwidth}
+        \caption{tW channel}
+        \label{fig:top_single_tw_1}
+    \end{subfigure}\hfill
+    \begin{subfigure}[t]{0.2\textwidth}
         \centering
         \input{assets/chap01/top_single_tw_2}
+        \caption{tW channel}
+        \label{fig:top_single_tw_2}
     \end{subfigure}
-    \caption{Using \texttt{feynmp}}
+    \caption{Single top quark production via the electroweak interaction}
+    \label{fig:top_single}
 \end{figure}
-
-\begin{figure}[H]
-    \centering
-    \input{thesis/assets/chap01/top_s_reco}
-\end{figure}
+Top quarks decay almost exclusively in a \PWplus boson and a \Pbottom quark. The boson further decays either in a quark-antiquark-pair or in a positron and electron neutrino. The former process is referred to as being hadronic, the latter as leptonic.
