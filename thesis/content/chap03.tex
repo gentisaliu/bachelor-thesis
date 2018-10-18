@@ -1,5 +1,29 @@
-\chapter{NN-Classifier for Top-Quark Reconstruction}
-\label{ch:classifier}
+\chapter{Multivariate analysis}
+\label{ch:nn_mva}
+The reconstruction of the top quark in the s-channel is done by multivariate analysis, which combines several input variables to a final discriminator, yielding better results than the once popular cut-and-count analysis. This chapter gives a theoretical introduction to artificial neural networks and boosted decision trees as multivariate analysis tools, that will be used in this thesis.
+
+\section{Neural Networks}
+Neural networks represent a class of algorithms widely used in machine learning and pattern recognition, modeled after the structure of the biological brain, known as artificial neural networks (ANN). The power of ANNs lies in being able to identify complex relationships between given inputs and outputs, recognizing them in other input values and generating an accurate output.
+
+ANNs consist of a sequence of layers containing neurons. The first layer is the \emph{input layer} with $n$ neurons, accepting input values $\va{x}={x_1,x_2,...,x_n}$. These neurons forward the input values to the neurons of the next layer. The last layer is the \emph{output layer}, which returns the predicted values of the ANN. Between these layers, one or more \emph{hidden layers} may exist. ANNs with two hidden layers or more are known as deep neural networks (DNN). This class of networks with more than one layer of computational units is known more generally as a multi-layer perceptron. A single-layer perceptron has only a single layer of output nodes, the inputs are directly fed to the outputs via a series of weights.
+
+The type of neural network used in the thesis is a feed-forward neural network, where the output values are passed on from one layer to the next and do not return to any neuron of the previous layer (Figure \ref{fig:neural_network}).
+\begin{figure}[H]
+    \centering
+    \input{assets/chap03/neuralnetwork.tex}
+    \caption{Example of a fully-connected neural network with one input layer containing 4 input neurons, two hidden layers containing 5 neurons each and one output layer containing a neuron. The output of a neuron serves as input for all the neurons of the next layer.}
+    \label{fig:neural_network}
+\end{figure}
+A neuron is a single computational unit, that receives the input values $\va{x}={x_1,x_2,...,x_n}$ from neurons in the previous layer and outputs a single value $y$ by the following rule:
+\begin{equation*}
+    y=f\left( \sum_{k=1}^{n} w_k \cdot x_k + b_k \right)
+\end{equation*}
+Each input value $x_k$ is multiplied with adaptable weights $w_k$ and added an adaptable bias $b_k$. The result is applied to an activation function $f$, which introduces non-linear properties to the neuron. Without the activation function, the neural network would simply be a linear regression model and would not be able to learn and model complex datasets. Commonly used activation functions are the ReLu (rectified linear unit), Elu (exponential linear unit) and sigmoid function.
+
+In order for the correct neuron weights and biases to be calculated, an ANN needs to be trained with a set of predefined input and output values. The available training data is split into \emph{training}, \emph{validation} and \emph{test} data. The training and validation data are both used during training, with validation data being used for determining overfitting - an accuracy increase over the training data, but an unchanged accuracy over validation data is such an indication. The testing dataset tests the predictive power of the trained network.
+
+The most commonly used algorithm for weight adjustment is the backpropagation algorithm.
+\section{Boosted Decision Trees}
 
 \begin{center}
     \begin{tabular}{ll}

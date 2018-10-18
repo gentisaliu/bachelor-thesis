@@ -111,6 +111,7 @@
 \usepackage{hepnames}
 \usepackage{physics}
 \usepackage{slashed}
+\usepackage{tikz}
 
 %% --- End of Packages ---
 
@@ -155,6 +156,8 @@
 \DeclareRobustCommand{\PWone}{\PWo}
 \DeclareRobustCommand{\PWt}{\HepParticle{W}{}{2}\xspace}
 \DeclareRobustCommand{\PWtwo}{\PWt}
+
+\def\layersep{2.5cm}
 
 %% --- End of Declarations ---
 
