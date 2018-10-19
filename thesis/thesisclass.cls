@@ -112,6 +112,8 @@
 \usepackage{physics}
 \usepackage{slashed}
 \usepackage{tikz}
+\usetikzlibrary{arrows}
+\usepackage{multicol}
 
 %% --- End of Packages ---
 
