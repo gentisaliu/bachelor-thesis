@@ -1,3 +1,25 @@
+\chapter{ANN Classifier for Top Quark Reconstruction}
+\label{ch:classifier}
+The study of single top quark s channel production is important in exploring the electroweak sector of the SM, which predicts three production channels (refer to Section \ref{sec:theory_top}). Deviations from the SM prediction of its cross section may hint to the presence of mechanisms beyond the standard model (BSM) \cite{CMS16}.
+
+\section{Simulation of Events and Corrections}
+Simulation of processes is done using the year 2017 conditions at the CMS. The s-channel single top quark production process is simulated with the \emph{MAD-GRAPH5\_AMC@NLO MC} event generator, version 2.2.2, using the 4FS description \cite{Fal18} and every simulation involving top quarks uses their literature mass of \SI{172.5}{GeV}. The parton shower and hadronization process are performed using \emph{PYTHIA} version 8.2. The probability for each parton in the initial state to be present in the proton with a given fraction of the proton momentum is obtained by the \emph{NNPDF31\_NNLO\_HESSIAN\_PDFAS PDF} \cite{Fal18}.
+
+Several corrections are applied to the simulations to consider differences between simulation and detector data. The number of pileup interactions is reweighted based on the distribution obtained from minimum-bias events in order to resemble the actual conditions. During reconstruction and selection of leptons dedicated scale factors are applied to simulated events to account for differences in the kinematic properties of the lepton between simulation and data. Finally, the efficiency of the employed b tagging algorithm is corrected to resemble the same number of events in simulation with a certain number of b-tagged jets as in data \cite{Fal18}.
+
+\section{Preselection}
+\section{Reconstruction with the Best-Mass Method}
+\begin{figure}[h]
+    \centering
+    \input{assets/chap04/top_s_reco}
+    \label{fig:ch_4_single_top_reco}
+    \caption{s-channel single top quark production with the top quark decaying in a \PWplus boson and a \Pbottom quark}
+\end{figure}
+The top quark can be easily reconstructed from its decay products, the b jet, the lepton and the neutrino (see Figure \ref{fig:ch_4_single_top_reco}), by adding their four-momenta together. Since events stem from the 2-jets-2-tags signal region, the assignment of a b-tagged jet to the b jet from the top quark is ambiguous because of the two b-tagged jets in each event. The b-tagged jet that results in a reconstructed top mass closer to the literature value of \SI{172.5}{GeV} (best-mass method) is selected for the reconstruction \cite{Fal18}.
+\section{Input Variables}
+\section{Network Topology}
+\section{Training}
+\section{Evaluation}
 
 \begin{center}
     \begin{tabular}{ll}

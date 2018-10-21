@@ -1,26 +1,27 @@
-\chapter{Multivariate analysis}
+\chapter{Artificial Neural Networks}
 \label{ch:nn_mva}
 The reconstruction of the top quark in the s-channel happens by applying multivariate analysis, where several input variables are combined to a final discriminator. This approach performs better than the classic cut-and-count analysis. This chapter gives a practical introduction to artificial neural networks as a multivariate analysis tool that was used in this work.
 
-\section{Artificial Neural Networks}
 Artificial Neural Networks (ANN) represent a class of algorithms widely used in machine learning and pattern recognition, modeled after the structure of the biological brain. The power of ANNs lies in being able to identify complex relationships between given inputs and outputs, recognizing them in other input values and generating an accurate prediction.
 
 ANNs consist of a sequence of layers containing neurons. The first layer is the \emph{input layer} with $n$ neurons, accepting input values $\va{x}=(x_1,x_2,...,x_n)$. These neurons forward the input values to the neurons of the next layer. The last layer is the \emph{output layer}, which returns the predicted values of the ANN. Between these layers, one or more \emph{hidden layers} may exist. ANNs with two hidden layers or more are known as deep neural networks (DNN). This class of networks with more than one layer of computational units is generally known generally as a multi-layer perceptron. A single-layer perceptron has only a single layer of output nodes, the inputs are directly fed to the outputs via a series of weights.
 
 The type of neural network used in the thesis is a feed-forward neural network, where the output values are passed on from one layer to the next and do not return to any neuron of the previous layer (Figure \ref{fig:neural_network}).
-\begin{figure}[H]
+
+\begin{figure}[h]
     \centering
     \input{assets/chap03/neuralnetwork.tex}
     \caption{Example of a fully-connected neural network with one input layer containing 4 input neurons, two hidden layers containing 5 neurons each and one output layer containing a single neuron. The output of a neuron serves as input for all the neurons of the next layer.}
     \label{fig:neural_network}
 \end{figure}
+
 A neuron is a single computational unit, that receives the input values $\va{x}={x_1,x_2,...,x_n}$ from neurons in the previous layer and outputs a single value $y$ by the rule
 \begin{equation}
     y=f\left( \sum_{k=1}^{n} w_k \cdot x_k + b_k \right).
 \end{equation}
 Each input value $x_k$ is multiplied with adaptable weights $w_k$ and an adaptable bias $b_k$ is added. An activation function $f$ is applied to the result, which introduces non-linear properties to the neuron. Without the activation function, the neural network would simply be a linear regression model and would not be able to learn and model complex data sets. Commonly used activation functions are the ReLu (rectified linear unit), Elu (exponential linear unit) and sigmoid function.
 
-\subsection{Training}
+\section{Training}
 To calculate the correct neuron weights and biases, an ANN needs to be trained with a set of predefined input and output values. The available training data is split into \emph{training}, \emph{validation} and \emph{test} data. The training and validation data are both used during training, with validation data being used for determining overfitting, e.g., an accuracy increase over the training data, but an unchanged accuracy over validation data being such an indication. The testing data set is applied to the neural network after training to confirm its predictive power.
 
 A loss or cost function $C$ that measures the inconsistency between predicted value $\hat{y}$ and actual label $y$ is used to adapt the weight $w$, such that the value of the loss function is minimized (or reaches 0). 
@@ -45,7 +46,7 @@ Higher learning rates make it difficult to determine the minimum of the cost fun
 
 The most common algorithm for weight adjustment is the backpropagation algorithm \cite{Rumelhart:1988:LRB:65669.104451}. In very broad terms, backpropagation iteratively adjusts each weight in the network proportionally to its overall error contribution. Starting at the output layer and going backwards, the chain rule of differentiation is applied for finding the derivatives of cost.
 
-\subsection{Regularization}
+\section{Regularization}
 Regularization is one of the many techniques used to prevent an ANN from overfitting. It consists of several methods that force the model of the ANN to be simpler. Overfitting occurs when the ANN approximates the training data too closely by losing its generalizability and abstraction ability.
 
 The regularization methods used in this work are explained in the following.
@@ -60,21 +61,21 @@ Batch normalization \cite{DBLP:journals/corr/IoffeS15} addresses the issue of \e
 \end{equation}
 where $\gamma$ is an adjustable scale factor, $\beta$ an adjustable shift factor, $\sigma_B$ the standard deviation and $\mu_B$ the mean of the current training batch. Batch normalization eliminates the need for dropout in some cases, allows for much higher learning rates and speeds up training since the input values are more in the scope of the common activation functions.
 
-\subsection{Classifier Evaluation}
+\section{Classifier Evaluation}
 Two of the many methods available for evaluating a classifier used in this work are the Receiver Operating Characteristics (ROC) curve and the confusion (error) matrix.
 
-ROC graphs are two-dimensional graphs in which the true positive rate (TPR) is plotted on the Y axis and the false positive rate (FPR) is plotted on the X axis. The ROC curve shows the trade-off between the true positive rate and the false positive rate. The integral of the curve or the area-under-curve (AUC) is a measure of the accuracy of the model. The closer the curve to the diagonal, the less accurate a model is. A model with perfect accuracy will have an area of 1.0. Figure \ref{fig:ch_3_roc} shows an example ROC curve.
+ROC graphs are two-dimensional graphs in which the true positive rate (TPR) is plotted on the Y axis and the false positive rate (FPR) is plotted on the X axis. The ROC curve shows the trade-off between the true positive rate and the false positive rate. The integral of the curve, also known as the area-under-curve (AUC), is a measure of the accuracy of the model. The closer the curve to the diagonal, the less accurate a model is. A model with perfect accuracy will have an AUC score of 1.0. Figure \ref{fig:ch_3_roc} shows an example ROC curve.
 \begin{figure}[H]
     \centering
     \includegraphics[width=8cm]{assets/chap03/roc.png}
     \caption{Example of a ROC curve.}
     \label{fig:ch_3_roc}
 \end{figure}
-The AUC score of a ROC curve can be used to determine overfitting, e.g., the AUC score of the training data set is higher than for the validation data set.
+The AUC score of a ROC curve can be used to determine overfitting, e.g., when the AUC score of the training data set is higher than that of the validation data set.
 
-The confusion matrix is a table layout, where each row of the matrix represents the instance counts in a predicted class while each column represents the instances in an actual class.
+The confusion matrix is a table layout, where each row of the matrix represents the instance counts in a predicted class while each column represents the counts in an actual class.
 
-Assume a classifier that has been trained to distinguish between cats, dogs and rabbits with a sample of 27 animals, where 8 are cats, 6 dogs and 13 rabbits.
+Assume a classifier has been trained to distinguish between cats, dogs and rabbits with a sample of 27 animals, where 8 are cats, 6 dogs and 13 rabbits.
 
 \begin{table}[h]
     \caption[Confusion matrix]{Confusion matrix with prediction results of the classifier that distinguishes between cats, dogs and rabbits. Source: \cite{wiki:confusionmatrix}}
