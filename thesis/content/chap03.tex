@@ -1,6 +1,6 @@
 \chapter{Multivariate analysis}
 \label{ch:nn_mva}
-The reconstruction of the top quark in the s-channel is done by multivariate analysis, which combines several input variables to a final discriminator, yielding better results than the once popular cut-and-count analysis. This chapter gives a theoretical introduction to artificial neural networks and boosted decision trees as multivariate analysis tools that will be used in this thesis.
+The reconstruction of the top quark in the s-channel happens by applying multivariate analysis, where several input variables are combined to a final discriminator. This approach performs better than the classic cut-and-count analysis. This chapter gives a practical introduction to artificial neural networks as a multivariate analysis tool that was used in this work.
 
 \section{Artificial Neural Networks}
 Artificial Neural Networks (ANN) represent a class of algorithms widely used in machine learning and pattern recognition, modeled after the structure of the biological brain. The power of ANNs lies in being able to identify complex relationships between given inputs and outputs, recognizing them in other input values and generating an accurate prediction.
@@ -35,39 +35,65 @@ C_{E}=-\sum_{i=1}^N \left(y_i-\ln{(\hat{y}_i)+(1-y_i)\ln{(1-\hat{y}_i)}}\right),
 \end{equation}
 where $N$ denotes the number of the training data sets in both equations.
 
-The optimization of the loss function is done using algorithms, such as gradient descent, stochastic gradient descent, Adam optimizer and others.
+The optimization of the loss function is done with algorithms, such as gradient descent, stochastic gradient descent, Adam optimizer and others.
 
 The step size, by which the weights are adjusted, is called the \emph{learning rate} $\eta$, and must be fine-tuned before the training
-\begin{equation}
+\begin{equation}\label{eq:learnrate}
     w \leftarrow w - \eta \dv{C}{w}.
 \end{equation}
-Higher learning rates make it difficult to determine the minimum of the cost function accurately, whereas lower learning rates may impact the performance of the algorithm.
+Higher learning rates make it difficult to determine the minimum of the cost function accurately, whereas lower learning rates may impact the performance of the algorithm. The weight readjustment as per equation \ref{eq:learnrate} is repeated for several epochs. An epoch is a full training cycle, where every element in the training data set is learned by the ANN. If $\dv{C}{w}$ is zero, a minimum or a saddle point has been reached. To avoid saddle points or shallow local minimums, the training data sample is split into batches and the weights per equation \ref{eq:learnrate} are readjusted for every batch.
 
 The most common algorithm for weight adjustment is the backpropagation algorithm \cite{Rumelhart:1988:LRB:65669.104451}. In very broad terms, backpropagation iteratively adjusts each weight in the network proportionally to its overall error contribution. Starting at the output layer and going backwards, the chain rule of differentiation is applied for finding the derivatives of cost.
 
 \subsection{Regularization}
-\section{Boosted Decision Trees}
+Regularization is one of the many techniques used to prevent an ANN from overfitting. It consists of several methods that force the model of the ANN to be simpler. Overfitting occurs when the ANN approximates the training data too closely by losing its generalizability and abstraction ability.
 
-\begin{center}
-    \begin{tabular}{ll}
-    \hline
-    Variable & Description\\
-    \hline
-    $p_T(t)$ & Transverse momentum of top signal\\
-    $\eta_T(t)$ & Pseudorapidity of top signal\\
-    $\phi_T(t)$ & $\phi$ of top signal\\
-    $m_T(t)$ & Invariant mass of top signal\\
+The regularization methods used in this work are explained in the following.
 
-    $p_T(j)$ & Transverse momentum of jet signal\\
-    $\eta_T(j)$ & Pseudorapidity of jet signal\\
-    $\phi_T(j)$ & $\phi$ of jet signal\\
-    $m_T(j)$ & Invariant mass of jet signal\\
+Early stopping \cite{Prechelt2012} stops the training of an ANN when a monitored value does not improve after a certain number of epochs. The monitored value in this thesis is the validation loss. The available data is divided in training and validation data set. After every epoch, the validation loss is calculated by evaluating the loss function on the validation data set, and the ANN parameters, where the validation loss becomes minimal, are stored. Additionally, early stopping was combined with the learning-rate-reduction-on-plateau strategy, that reduces the learning rate hyperparameter of the ANN by a certain factor if the validation loss does not improve for several epochs.
 
-    $p_T(W)$ & Transverse momentum of W boson\\
-    $\eta_T(W)$ & Pseudorapidity of W boson\\
-    $\phi_T(W)$ & $\phi$ of W boson\\
-    $m_T(W)$ & Invariant mass of W boson\\
+Dropout \cite{DBLP:journals/corr/abs-1207-0580} deactivates random neurons for every batch update, preventing single neurons from carrying most or all the generalization information of the ANN. This forces the network to reapply weights to the remaining active neurons making it more capable of generalizing beyond the training set. The dropout rate is used to indicate the fraction of neurons to be deactivated.
 
-    number of jets & Number of additional jets with more than \SI{20}{GeV}\\
-  \end{tabular}
-\end{center}
+Batch normalization \cite{DBLP:journals/corr/IoffeS15} addresses the issue of \emph{internal covariance shift} by normalizing each neuron's output $y_i$. Internal covariance shift happens due to the distribution change in each layer's inputs during training, as the parameters of the previous layers change. The normalization is given by
+\begin{equation}
+    \hat{y}_i=\gamma \frac{y_i - \mu_B}{\sqrt{\sigma_B^2 + \epsilon}}+\beta,
+\end{equation}
+where $\gamma$ is an adjustable scale factor, $\beta$ an adjustable shift factor, $\sigma_B$ the standard deviation and $\mu_B$ the mean of the current training batch. Batch normalization eliminates the need for dropout in some cases, allows for much higher learning rates and speeds up training since the input values are more in the scope of the common activation functions.
+
+\subsection{Classifier Evaluation}
+Two of the many methods available for evaluating a classifier used in this work are the Receiver Operating Characteristics (ROC) curve and the confusion (error) matrix.
+
+ROC graphs are two-dimensional graphs in which the true positive rate (TPR) is plotted on the Y axis and the false positive rate (FPR) is plotted on the X axis. The ROC curve shows the trade-off between the true positive rate and the false positive rate. The integral of the curve or the area-under-curve (AUC) is a measure of the accuracy of the model. The closer the curve to the diagonal, the less accurate a model is. A model with perfect accuracy will have an area of 1.0. Figure \ref{fig:ch_3_roc} shows an example ROC curve.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{assets/chap03/roc.png}
+    \caption{Example of a ROC curve.}
+    \label{fig:ch_3_roc}
+\end{figure}
+The AUC score of a ROC curve can be used to determine overfitting, e.g., the AUC score of the training data set is higher than for the validation data set.
+
+The confusion matrix is a table layout, where each row of the matrix represents the instance counts in a predicted class while each column represents the instances in an actual class.
+
+Assume a classifier that has been trained to distinguish between cats, dogs and rabbits with a sample of 27 animals, where 8 are cats, 6 dogs and 13 rabbits.
+
+\begin{table}[h]
+    \caption[Confusion matrix]{Confusion matrix with prediction results of the classifier that distinguishes between cats, dogs and rabbits. Source: \cite{wiki:confusionmatrix}}
+    \label{tab:ch_3_confusion_matrix}
+    \begin{center}
+        \begin{tabular}{|c|c|c|c|c|}
+            \hhline{~~---}
+            \multicolumn{2}{c|}{}&\multicolumn{3}{c|}{\textbf{Actual class}}\\
+            \hhline{~~---}
+            \multicolumn{2}{c|}{}&\textbf{Cat}&\textbf{Dog}&\textbf{Rabbit}\\
+            \hline
+            \multirow{3}{*}{\rotatebox[origin=c]{90}{\textbf{\shortstack{Predicted\\class}}}} & \textbf{Cat} & \textbf{5} & 2 & 0\\
+            \hhline{~----}
+             & \textbf{Dog} &3&\textbf{3}&2\\
+            \hhline{~----}
+             & \textbf{Rabbit} &0&1&\textbf{11}\\
+            \hline
+        \end{tabular}
+    \end{center}
+\end{table}
+
+Reading the columns of table \ref{tab:ch_3_confusion_matrix} vertically, the classifier predicted that of the 8 actual cats 3 were dogs, of the actual 6 dogs 2 were cats and 1 rabbit and of the actual 13 rabbits 2 were dogs. The correct predictions are highlighted in bold in the diagonal of the table, the incorrect predictions are represented by values outside the diagonal.

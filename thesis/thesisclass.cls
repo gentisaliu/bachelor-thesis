@@ -114,6 +114,7 @@
 \usepackage{tikz}
 \usetikzlibrary{arrows}
 \usepackage{multicol}
+\usepackage{hhline}
 
 %% --- End of Packages ---
 
