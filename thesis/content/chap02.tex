@@ -58,3 +58,9 @@ The CMS detector can not detect neutrinos, since they barely interact with matte
 \begin{equation}
 \slashed{E}_T=|-\sum{\va{p_T}}|.
 \end{equation}
+
+The LHC has a nominal bunch crossing frequency of about \SI{40}{MHz} with approximately 1 megabyte of data for every crossing at each interaction point. This would result in 40 terabytes of data per second, which is very large given the available bandwidth out of the detector and disk space, moreover the data contains physically uninteresting events. The trigger system of the CMS reduces the event rate from \SI{40}{MHz} to \SI{400}{Hz} in two stages, making their transfer and storage feasable.
+
+The first stage are the Level-1 (L1) triggers, which is realized by hardware electronics and filters out information from the calorimeters and the muon chambers, where only a few features of interest such as high energy jets, muons or missing energy are calculated. The triggers select events with hard scattering, and reduce the frequency by a factor of 400 to \SI{100}{kHz}, afterwards an online reconstruction with performance optimizations is run. This stage takes around \SI{1}{\micro s} to complete.
+
+The second stage are the High Level Triggers (HLTs) that reduce the event rate by a further factor of 100 to the order of \SI{1}{kHz}, then stores the event data on tape for more detailed analysis. This trigger is software-based (written mainly in C++) and does complex calculations and a more precise reconstruction.
