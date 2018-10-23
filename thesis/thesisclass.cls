@@ -159,6 +159,7 @@
 \DeclareRobustCommand{\PWone}{\PWo}
 \DeclareRobustCommand{\PWt}{\HepParticle{W}{}{2}\xspace}
 \DeclareRobustCommand{\PWtwo}{\PWt}
+\DeclareRobustCommand{\PWthree}{\HepParticle{W}{}{3}\xspace}
 
 \def\layersep{2.5cm}
 

@@ -1,10 +1,10 @@
 \chapter{Artificial Neural Networks}
 \label{ch:nn_mva}
-The reconstruction of the top quark in the s-channel happens by applying multivariate analysis, where several input variables are combined to a final discriminator. This approach performs better than the classic cut-and-count analysis. This chapter gives a practical introduction to artificial neural networks as a multivariate analysis tool that was used in this work.
+This chapter gives a practical introduction to artificial neural networks as a multivariate technique that was used in this work.
 
 Artificial Neural Networks (ANN) represent a class of algorithms widely used in machine learning and pattern recognition, modeled after the structure of the biological brain. The power of ANNs lies in being able to identify complex relationships between given inputs and outputs, recognizing them in other input values and generating an accurate prediction.
 
-ANNs consist of a sequence of layers containing neurons. The first layer is the \emph{input layer} with $n$ neurons, accepting input values $\va{x}=(x_1,x_2,...,x_n)$. These neurons forward the input values to the neurons of the next layer. The last layer is the \emph{output layer}, which returns the predicted values of the ANN. Between these layers, one or more \emph{hidden layers} may exist. ANNs with two hidden layers or more are known as deep neural networks (DNN). This class of networks with more than one layer of computational units is generally known generally as a multi-layer perceptron. A single-layer perceptron has only a single layer of output nodes, the inputs are directly fed to the outputs via a series of weights.
+ANNs consist of a sequence of layers containing neurons. The first layer is the \emph{input layer} with $n$ neurons, accepting input values $\va{x}=(x_1,x_2,...,x_n)$. These neurons forward the input values to the neurons of the next layer. The last layer is the \emph{output layer}, which returns the predicted values of the ANN. Between these layers, one or more \emph{hidden layers} may exist.
 
 The type of neural network used in the thesis is a feed-forward neural network, where the output values are passed on from one layer to the next and do not return to any neuron of the previous layer (Figure \ref{fig:neural_network}).
 
@@ -15,7 +15,9 @@ The type of neural network used in the thesis is a feed-forward neural network, 
     \label{fig:neural_network}
 \end{figure}
 
-A neuron is a single computational unit, that receives the input values $\va{x}={x_1,x_2,...,x_n}$ from neurons in the previous layer and outputs a single value $y$ by the rule
+Feed-forward neural networks with one input layer, at least one hidden layer and one output layer are generally known as a multi-layer perceptron. A single-layer perceptron has only a single layer of output nodes, the inputs are directly fed to the outputs via a series of weights. ANNs with two hidden layers or more are known as deep neural networks (DNN).
+
+A neuron is a single computational unit, that receives the input values $\va{x}=(x_1,x_2,...,x_n)$ from all neurons in the previous layer and outputs a single value $y$ by the rule
 \begin{equation}
     y=f\left( \sum_{k=1}^{n} w_k \cdot x_k + b_k \right).
 \end{equation}
@@ -28,11 +30,11 @@ A loss or cost function $C$ that measures the inconsistency between predicted va
 
 Examples of loss functions are the mean squared error (MSE)
 \begin{equation}\label{eq:mse}
-C_{MSE}=\frac{1}{N} \sum_{i=1}^N (y_i-\hat{y}_i)^2,
+C_{\text{MSE}}=\frac{1}{N} \sum_{i=1}^N (y_i-\hat{y}_i)^2,
 \end{equation}
 and the binary cross entropy
 \begin{equation}\label{eq:cross_entropy}
-C_{E}=-\sum_{i=1}^N \left(y_i-\ln{(\hat{y}_i)+(1-y_i)\ln{(1-\hat{y}_i)}}\right),
+C_{\text{E}}=-\sum_{i=1}^N \left(y_i-\ln{(\hat{y}_i)+(1-y_i)\ln{(1-\hat{y}_i)}}\right),
 \end{equation}
 where $N$ denotes the number of the training data sets in both equations.
 
@@ -40,7 +42,7 @@ The optimization of the loss function is done with algorithms, such as gradient 
 
 The step size, by which the weights are adjusted, is called the \emph{learning rate} $\eta$, and must be fine-tuned before the training
 \begin{equation}\label{eq:learnrate}
-    w \leftarrow w - \eta \dv{C}{w}.
+    w \rightarrow w - \eta \dv{C}{w}.
 \end{equation}
 Higher learning rates make it difficult to determine the minimum of the cost function accurately, whereas lower learning rates may impact the performance of the algorithm. The weight readjustment as per equation \ref{eq:learnrate} is repeated for several epochs. An epoch is a full training cycle, where every element in the training data set is learned by the ANN. If $\dv{C}{w}$ is zero, a minimum or a saddle point has been reached. To avoid saddle points or shallow local minimums, the training data sample is split into batches and the weights per equation \ref{eq:learnrate} are readjusted for every batch.
 
@@ -64,7 +66,7 @@ where $\gamma$ is an adjustable scale factor, $\beta$ an adjustable shift factor
 \section{Classifier Evaluation}
 Two of the many methods available for evaluating a classifier used in this work are the Receiver Operating Characteristics (ROC) curve and the confusion (error) matrix.
 
-ROC graphs are two-dimensional graphs in which the true positive rate (TPR) is plotted on the Y axis and the false positive rate (FPR) is plotted on the X axis. The ROC curve shows the trade-off between the true positive rate and the false positive rate. The integral of the curve, also known as the area-under-curve (AUC), is a measure of the accuracy of the model. The closer the curve to the diagonal, the less accurate a model is. A model with perfect accuracy will have an AUC score of 1.0. Figure \ref{fig:ch_3_roc} shows an example ROC curve.
+ROC graphs are two-dimensional graphs in which the true positive rate (TPR) is plotted on the $y$ axis and the false positive rate (FPR) is plotted on the $x$ axis. The ROC curve shows the trade-off between the TPR and the FPR. The integral of the curve, also known as the area-under-curve (AUC), is a measure of the accuracy of the model. The closer the curve to the diagonal, the less accurate a model is. A model with perfect accuracy will have an AUC score of 1.0. Figure \ref{fig:ch_3_roc} shows an example ROC curve.
 \begin{figure}[H]
     \centering
     \includegraphics[width=8cm]{assets/chap03/roc.png}
