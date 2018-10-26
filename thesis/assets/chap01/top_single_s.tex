@@ -1,18 +1,6 @@
-\begin{fmffile}{top-single-s}
-    \unitlength = 1mm
-    \begin{fmfgraph*}(30,25)
-        \fmfleft{i1,i2}
-        \fmfright{o1,o2}
-        
-        \fmf{quark}{i1,v1,i2}
-        \fmf{quark}{o2,v2,o1}
-        
-        \fmf{boson,label=\PWplus,label.side=left}{v1,v2}
-        \fmfdot{v1,v2}
-        
-        \fmflabel{\Pquark}{i1}
-        \fmflabel{\APquark}{i2}
-        \fmflabel{\Ptop}{o1}
-        \fmflabel{\APbottom}{o2}
-    \end{fmfgraph*}
-\end{fmffile}
+\feynmandiagram [horizontal=a to b] {
+    i1 [particle=\APquark] -- [anti fermion] a[dot] -- [anti fermion] i2 [particle=\Pquark],
+    a -- [boson, edge label=\PWplus] b[dot],
+    b -- [anti fermion] f1 [particle=\APbottom],
+    f2 [particle=\Ptop] -- [anti fermion] b,
+};

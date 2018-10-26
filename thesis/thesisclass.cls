@@ -107,14 +107,15 @@
 \usepackage{xspace} % for better newcommands
 \usepackage[autostyle=true, babel=true]{csquotes} % use \enquote{abc} instead of "abc"
 \usepackage{nicefrac}
-\usepackage{feynmp-auto}
-\usepackage{hepnames}
+\usepackage{tikz-feynman}
 \usepackage{physics}
 \usepackage{slashed}
+\usepackage{upgreek}
 \usepackage{tikz}
 \usetikzlibrary{arrows}
 \usepackage{multicol}
 \usepackage{hhline}
+\usepackage{environ}
 
 %% --- End of Packages ---
 
@@ -130,6 +131,36 @@
 \newcommand{\Rar}{\ensuremath{\Rightarrow \xspace }}
 
 % particle physics
+\newcommand{\Pup}{u\xspace }
+\newcommand{\Pdown}{d\xspace }
+\newcommand{\Pcharm}{c\xspace }
+\newcommand{\Pstrange}{s\xspace }
+\newcommand{\Ptop}{t\xspace }
+\newcommand{\APtop}{$\overline{\text{t}}$\xspace }
+\newcommand{\Pbottom}{b\xspace }
+\newcommand{\APbottom}{$\overline{\text{b}}$}
+\newcommand{\Pe}{e\xspace }
+\newcommand{\Pquark}{q\xspace }
+\newcommand{\APquark}{$\overline{\text{q}}$\xspace }
+\newcommand{\Pgluon}{g\xspace }
+\newcommand{\PgluonNOSPACE}{g}
+\newcommand{\Pphoton}{$\upgamma$}
+\newcommand{\Ptau}{$\uptau$}
+\newcommand{\Pmuon}{$\upmu$}
+\newcommand{\Pelectronneutrino}{$\upnu_\text{e}$}
+\newcommand{\Pmuonneutrino}{$\upnu_{\upmu}$}
+\newcommand{\Ptauneutrino}{$\upnu_{\uptau}$}
+\newcommand{\PZ}{Z\xspace }
+\newcommand{\PW}{W\xspace }
+\newcommand{\PZzero}{$\text{Z}^{\text{0}}$\xspace }
+\newcommand{\PBzero}{$\text{B}^{\text{0}}$\xspace }
+\newcommand{\PWplus}{$\text{W}^{\text{+}}$\xspace }
+\newcommand{\PWminus}{$\text{W}^{\text{--}}$\xspace }
+\newcommand{\PWone}{$\text{W}^{\text{1}}$\xspace }
+\newcommand{\PWtwo}{$\text{W}^{\text{2}}$\xspace }
+\newcommand{\PWthree}{$\text{W}^{\text{3}}$\xspace }
+\newcommand{\PWpm}{$\text{W}^{\text{\pm}}$\xspace }
+\newcommand{\qqbar}{q$\overline{\text{q}}$\xspace }
 \newcommand{\tbar}{$\overline{\text{t}}$\xspace }
 \newcommand{\ttbar}{t$\overline{\text{t}}$\xspace }
 \newcommand{\ttbarNOSPACE}{t$\overline{\text{t}}$}
@@ -152,14 +183,6 @@
 \newcommand{\powheg}{Powheg\xspace}
 \newcommand{\pythia}{Pythia~8\xspace}
 \newcommand{\herwig}{Herwig~7\xspace}
-
-\DeclareRobustCommand{\PWz}{\HepParticle{W}{}{0}\xspace}
-\DeclareRobustCommand{\PWzero}{\PWz}
-\DeclareRobustCommand{\PWo}{\HepParticle{W}{}{1}\xspace}
-\DeclareRobustCommand{\PWone}{\PWo}
-\DeclareRobustCommand{\PWt}{\HepParticle{W}{}{2}\xspace}
-\DeclareRobustCommand{\PWtwo}{\PWt}
-\DeclareRobustCommand{\PWthree}{\HepParticle{W}{}{3}\xspace}
 
 \def\layersep{2.5cm}
 

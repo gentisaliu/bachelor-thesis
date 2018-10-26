@@ -6,7 +6,7 @@ This chapter discusses the theory relevant for the thesis. Section \ref{sec:theo
 \label{sec:theory_sm}
 The SM describes the known elementary particles and their interactions. Elementary particles are categorized in fermions and bosons based on their spin quantum number.
 
-\textbf{Fermions} are particles with a spin of $\nicefrac{1}{2}$. They are grouped into six quarks and six leptons, which are arranged according to their masses in three generations. The quarks are named the up (\Pup), down (\Pdown), charm (\Pcharm), strange (\Pstrange), top (\Ptop) and bottom (\Pbottom) quark. The leptons are the electron (\Pe), electron neutrino (\Pgne), muon (\Pmu), muon neutrino (\Pgngm), tau (\Ptau), tau neutrino (\Pgngt). For each fermion an antifermion with equal mass, but opposite electric charge, color, and third component of isospin, exists. A summary of the fermions is given in Table \ref{tab:ch_1_sm_fermions}.
+\textbf{Fermions} are particles with a spin of $\nicefrac{1}{2}$. They are grouped into six quarks and six leptons, which are arranged according to their masses in three generations. The quarks are named the up (\Pup), down (\Pdown), charm (\Pcharm), strange (\Pstrange), top (\Ptop) and bottom (\Pbottom) quark. The leptons are the electron (\Pe), electron neutrino (\Pelectronneutrino), muon (\Pmuon), muon neutrino (\Pmuonneutrino), tau (\Ptau), tau neutrino (\Ptauneutrino). For each fermion an antifermion with equal mass, but opposite electric charge, color, and third component of isospin, exists. A summary of the fermions is given in Table \ref{tab:ch_1_sm_fermions}.
 
 \begin{table}[h]
     \caption[Fermions of the Standard Model]{Six leptons and six quarks constitute the fermions of the SM. Particles are ordered according to their generation. Source: \cite{Pov14,Sch17}}
@@ -17,8 +17,8 @@ The SM describes the known elementary particles and their interactions. Elementa
             \multirow{2}{*}{Fermions} & \multicolumn{3}{c}{Generation} & {Electric} & \multirow{2}{*}{Color} & \multirow{2}{*}{Isospin $I_3$} & \multirow{2}{*}{Spin}\\
             & 1 & 2 & 3 & {charge} & & & \\
             \midrule
-            \multirow{2}{*}{Leptons} & \Pgne & \Pgngm & \Pgngt & {$0$} & \multirow{2}{*}{---} & {$+\nicefrac{1}{2}$} & \multirow{2}{*}{$\nicefrac{1}{2}$}\\
-            & \Pe & \Pmu & \Ptau & {$-1$} & & {$-\nicefrac{1}{2}$} &\\
+            \multirow{2}{*}{Leptons} & \Pelectronneutrino & \Pmuonneutrino & \Ptauneutrino & {$0$} & \multirow{2}{*}{---} & {$+\nicefrac{1}{2}$} & \multirow{2}{*}{$\nicefrac{1}{2}$}\\
+            & \Pe & \Pmuon & \Ptau & {$-1$} & & {$-\nicefrac{1}{2}$} &\\
             \midrule
             \multirow{2}{*}{Quarks} & \Pup & \Pcharm & \Ptop & $+\nicefrac{2}{3}$ & \multirow{2}{*}{r, b, g} & {$+\nicefrac{1}{2}$} & \multirow{2}{*}{$\nicefrac{1}{2}$}\\
             & \Pdown & \Pstrange & \Pbottom & $-\nicefrac{1}{3}$ & & {$-\nicefrac{1}{2}$} & \\
@@ -33,7 +33,7 @@ Leptons do not possess color charge. The three neutrinos also lack electric char
 
 First-generation charged particles do not decay, they constitute ordinary matter. Neutrinos do not decay either, they exist in abundance, but do not interact significantly with matter. Other higher-generation charged particles have short lifetimes and can be observed only in high-energy experiments \cite{wiki:standardmodel}.
 
-Gauge \textbf{bosons} mediate the forces between elementary particles and have a spin of 1. The photon \Pgg, mediating the electromagnetic interaction between electrically charged particles, the \PWp, \PWm and \PZ bosons mediating the weak interaction and the eight gluons \Pgluon, mediating the strong interaction are classified as gauge bosons. Their properties are listed in detail in table \ref{tab:ch_1_sm_bosons}.
+Gauge \textbf{bosons} mediate the forces between elementary particles and have a spin of 1. The photon \Pphoton, mediating the electromagnetic interaction between electrically charged particles, the \PWplus, \PWminus and \PZ bosons mediating the weak interaction and the eight gluons \Pgluon, mediating the strong interaction are classified as gauge bosons. Their properties are listed in detail in table \ref{tab:ch_1_sm_bosons}.
 
 \begin{table}[h]
 	\caption[Gauge bosons of the SM]{The gauge bosons of the Standard Model are spin-1 particles that mediate the three fundamental forces described by the SM. For every boson, the interaction it participates in, the charge it couples to, its mass, spin, parity, and interaction range are given. Source: \cite{Pov14, Fal18, Patrignani:2016xqp}}
@@ -46,7 +46,7 @@ Gauge \textbf{bosons} mediate the forces between elementary particles and have a
     		gluons (\Pgluon) & strong & color charge & {$0$} & {$1^-$} & $\approx 10^{-15}$\\
     		photon (\Pphoton) & electromagnetic & electric charge & {$0$} & {$1^-$} & {$\infty$}\\
     		\PWpm & \multirow{2}{*}{weak} &\multirow{2}{*}{weak charge} & {$80.385$} & \multirow{2}{*}{$1$} & \multirow{2}{*}{$10^{-18}$}\\
-    		\PZz & & & {$91.188$} & &\\
+    		\PZzero & & & {$91.188$} & &\\
     		\bottomrule
     	\end{tabular}
 	\end{center}
@@ -69,59 +69,65 @@ The top quark is with approximately $\SI{172.5}{GeV}$ \cite{ACCC14} the heaviest
 
 \subsection{Production and Decay}
 Due to their high mass, accelerators with high energies are required for the production of top quarks. Because of this, its discovery was a long and difficult process, which began in the late seventies \cite{RevModPhys.69.137} and was concluded in 1995 at the Tevatron by the CDF and D\O{} collaborations.
-\begin{figure}
+
+\begin{figure}[h]
     \centering
-    \begin{subfigure}[t]{0.2\textwidth}
+    \begin{subfigure}{.2\textwidth}
         \centering
         \input{assets/chap01/top_pair_qqbar}
-        \caption{\Pquark\APquark annhilation}
+        \caption{\qqbar annihilation}
         \label{fig:top_pair_qqbar}
     \end{subfigure}\hfill
-    \begin{subfigure}[t]{0.2\textwidth}
+    \begin{subfigure}{.2\textwidth}
         \centering
         \input{assets/chap01/top_pair_gg}
-        \caption{\Pgluon\Pgluon fusion}
+        \caption{\PgluonNOSPACE\Pgluon fusion}
         \label{fig:top_pair_gg}
     \end{subfigure}\hfill
-    \begin{subfigure}[t]{0.2\textwidth}
+    \begin{subfigure}{.2\textwidth}
         \centering
         \input{assets/chap01/top_pair_gg_scatter}
-        \caption{\Pgluon\Pgluon scattering}
+        \caption{\PgluonNOSPACE\Pgluon scattering}
         \label{fig:top_pair_gg_scatter}
     \end{subfigure}\hfill
-    \begin{subfigure}[t]{0.2\textwidth}
+    \begin{subfigure}{.2\textwidth}
         \centering
         \input{assets/chap01/top_pair_t}
-        \caption{\Pgluon\Pgluon scattering with switched final states}
-        \label{fig:top_pair_gg_scatter_switched}
+        \caption{\PgluonNOSPACE\Pgluon scattering}
+        \label{fig:top_pair_gg_scatter_t}
     \end{subfigure}
     \caption{Top quark pair production via the strong interaction}
     \label{fig:top_pair}
 \end{figure}
-Top quarks are predominantly produced in pairs via the strong interaction. Figure \ref{fig:top_pair} shows the four relevant Feynman diagrams at leading order. These processes are known as \Ptop\APtop processes. Owing to the fact that antiquarks do not appear as valence quarks in a proton, \Pquark\APquark annihilation is unlikely to occur in proton-proton collisions, such as those in Large Hadron Collider experiments. Top quarks are mostly produced via gluon fusion.\\ \\
+
+Top quarks are predominantly produced in pairs via the strong interaction. Figure \ref{fig:top_pair} shows the four relevant Feynman diagrams at leading order. These processes are known as \ttbar processes. Owing to the fact that antiquarks do not appear as valence quarks in a proton, \qqbar annihilation is unlikely to occur in proton-proton collision experiments, such as those in the Large Hadron Collider. Top quarks are mostly produced via gluon fusion.\\ \\
 Additionally, individual (single) top quarks can be produced via the electroweak interaction. The Feynman diagrams for these processes in leading order are given in Figure \ref{fig:top_single}.
-\begin{figure}[H]
+
+
+
+\begin{figure}[h]
     \centering
-    \begin{subfigure}[t]{0.2\textwidth}
+    \begin{subfigure}[b]{0.2\textwidth}
         \centering
         \input{assets/chap01/top_single_s}
         \caption{$s$-channel}
         \label{fig:top_single_s}
     \end{subfigure}\hfill
-    \begin{subfigure}[t]{0.2\textwidth}
+    \begin{subfigure}[b]{0.2\textwidth}
         \centering
         \input{assets/chap01/top_single_t}
         \caption{$t$-channel}
         \label{fig:top_single_t}
     \end{subfigure}\hfill
-    \begin{subfigure}[t]{0.2\textwidth}
+    \begin{subfigure}[b]{0.2\textwidth}
         \centering
         \input{assets/chap01/top_single_tw_1}
         \caption{$tW$ channel}
         \label{fig:top_single_tw_1}
     \end{subfigure}\hfill
-    \begin{subfigure}[t]{0.2\textwidth}
+    \begin{subfigure}[b]{0.2\textwidth}
         \centering
+        \vfill
         \input{assets/chap01/top_single_tw_2}
         \caption{$tW$ channel}
         \label{fig:top_single_tw_2}
@@ -129,6 +135,7 @@ Additionally, individual (single) top quarks can be produced via the electroweak
     \caption{Single top quark production via the electroweak interaction}
     \label{fig:top_single}
 \end{figure}
+
 Top quarks decay almost exclusively in a \PW boson and a \Pbottom quark. The boson further decays either in a quark-antiquark pair or in a lepton and its corresponding neutrino. The former decay process is referred to as being hadronic, the latter as leptonic.
 
 \section{Jets}

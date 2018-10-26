@@ -1,6 +1,6 @@
 \chapter{Experimental Background}
 \label{ch:experiment}
-Since the Monte-Carlo simulations used in this thesis are modelled after collisions happening at the Compact Muon Solenoid (CMS), this chapter intends to give a brief introduction to the Large Hadron Collider (LHC) and the CMS experiment.
+This chapter presents the experimental context under which the single top quark shall be reconstructed. First, the accelerator complex of the Large Hadron Collider is introduced, then the layout of the Compact Muon Solenoid detector is described.
 
 \section{The Large Hadron Collider}
 The Large Hadron Collider is the world's largest and most powerful particle accelerator, part of the European Organization for Nuclear Research's (CERN) accelerator underground complex, located in the region of Geneva, in a tunnel at a depth ranging from 50 to \SI{175}{m}. It is a circular collider with a circumference of \SI{27}{km} that can accelerate protons, xenon ions and lead ions.
@@ -63,4 +63,4 @@ The LHC has a nominal bunch crossing frequency of about \SI{40}{MHz} with approx
 
 The first stage are the Level-1 (L1) triggers, which is realized by hardware electronics and filters out information from the calorimeters and the muon chambers, with only a few features of interest such as high energy jets, muons or missing energy being calculated. The triggers select events with hard scattering, and reduce the frequency by a factor of 400 to \SI{100}{kHz}, afterwards an online reconstruction with performance optimizations is run. This stage takes around \SI{1}{\micro s} to complete.
 
-The second stage are the High Level Triggers (HLTs) that reduce the event rate by a further factor of 100 to the order of \SI{1}{kHz}. The event data is then stored on tape for more detailed analysis. This trigger is software-based (written mainly in C++) and does complex calculations and a more precise reconstruction.
+The second stage are the High Level Triggers (HLTs), which reduce the event rate by a further factor of 100 to \SI{1}{kHz}. The event data is then stored on tape for more detailed analysis. This trigger is software-based (mainly C++) and does complex calculations and a more precise reconstruction.

@@ -1,20 +1,5 @@
-\begin{fmffile}{top-pair-gg-scatter}
-    \unitlength = 1mm
-    \begin{fmfgraph*}(30,25)
-        \fmfleft{i1,i2}
-        \fmfright{o1,o2}
-
-        \fmf{gluon}{i1,v1}
-        \fmf{gluon}{i2,v2}
-        \fmf{quark}{o1,v1}
-        \fmf{quark}{v2,o2}
-
-        \fmf{quark,label.side=right}{v1,v2}
-        \fmfdot{v1,v2}
-        
-        \fmflabel{\Pgluon}{i1}
-        \fmflabel{\Pgluon}{i2}
-        \fmflabel{\APtop}{o1}
-        \fmflabel{\Ptop}{o2}
-    \end{fmfgraph*}
-\end{fmffile}
+\feynmandiagram [vertical'=a to b] {
+    i1 [particle=\Pgluon] -- [gluon] a[dot] -- [fermion] f1 [particle=\Ptop],
+    a -- [anti fermion, edge] b[dot],
+    i2 [particle=\Pgluon] -- [gluon] b -- [anti fermion] f2 [particle=\APtop],
+};

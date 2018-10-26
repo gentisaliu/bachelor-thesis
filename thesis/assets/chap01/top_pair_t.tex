@@ -1,25 +1,13 @@
-\begin{fmffile}{top-pair-t}
-    \unitlength = 1mm
-    \begin{fmfgraph*}(30,25)
-        \fmfleft{i1,i2}
-        \fmfright{o1,o2}
-
-        \fmf{gluon}{i1,v1}
-        \fmf{gluon}{i2,v2}
-        
-        \fmf{phantom}{v1,o1}
-        \fmf{phantom}{v2,o2}
-        
-        \fmf{quark}{v2,v1}
-        \fmfdot{v1,v2}
-        
-        % These are visible, but have no tension.
-        \fmf{fermion,tension=0}{v1,o2}
-        \fmf{fermion,tension=0}{o1,v2}
-        
-        \fmflabel{\Pgluon}{i1}
-        \fmflabel{\Pgluon}{i2}
-        \fmflabel{\APtop}{o1}
-        \fmflabel{\Ptop}{o2}
-    \end{fmfgraph*}
-\end{fmffile}
+\begin{tikzpicture}
+    \begin{feynman}
+        \diagram [vertical'=a to b] {
+            i1 [particle=\Pgluon] -- [gluon] a[dot] -- [draw=none] f1 [particle=\Ptop],
+            a -- [fermion, edge] b[dot],
+            i2 [particle=\Pgluon] -- [gluon] b -- [draw=none] f2 [particle=\APtop],
+        };
+        \diagram* {
+            (a) -- [anti fermion] (f2),
+            (b) -- [fermion] (f1),
+        };
+    \end{feynman}
+\end{tikzpicture}

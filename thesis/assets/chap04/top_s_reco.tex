@@ -1,26 +1,9 @@
-\begin{fmffile}{top-s-reco}
-    \unitlength = 1mm
-    \begin{fmfgraph*}(60,30)
-        \fmfleft{i1,i2}
-        \fmfright{o4,o3,o2,o1}
-
-        \fmf{quark}{i2,v1,i1}
-        \fmf{boson,label=\PWplus,label.side=left}{v1,v2}
-        \fmf{quark}{v2,v3}
-        \fmf{quark}{v3,o1}
-        \fmf{boson,label=\PWplus,label.side=left,l.d=0.03h,tension=0.1}{v3,v4}
-        \fmf{quark}{o4,v2}
-        \fmf{quark,tension=0.4}{o2,v4,o3}
-
-        \fmfdot{v1,v2,v3,v4}
-        \fmfforce{(0.7w,0.95h)}{v3}
-
-        \fmflabel{\Ptop}{v3}
-        \fmflabel{\APquark}{i1}
-        \fmflabel{\Pquark}{i2}
-        \fmflabel{\Pbottom}{o1}
-        \fmflabel{\Ppositron}{o2}
-        \fmflabel{\Pgne}{o3}
-        \fmflabel{\APbottom}{o4}
-    \end{fmfgraph*}
-\end{fmffile}
+\feynmandiagram [horizontal=a to b] {
+    i1 [particle=\Pquark] -- [fermion] a[dot] -- [fermion] i2 [particle=\APquark],
+    a -- [boson, edge label=\PWplus] b[dot],
+    f2 [particle=\APbottom] -- [fermion] b,
+    b -- [fermion] c[dot, particle=\Ptop],
+    c -- [fermion] f1 [particle=\Pbottom],
+    c -- [boson, edge label=\PWplus] d,
+    d -- [fermion]
+};
