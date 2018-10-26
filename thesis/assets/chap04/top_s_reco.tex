@@ -1,9 +1,23 @@
-\feynmandiagram [horizontal=a to b] {
-    i1 [particle=\Pquark] -- [fermion] a[dot] -- [fermion] i2 [particle=\APquark],
-    a -- [boson, edge label=\PWplus] b[dot],
-    f2 [particle=\APbottom] -- [fermion] b,
-    b -- [fermion] c[dot, particle=\Ptop],
-    c -- [fermion] f1 [particle=\Pbottom],
-    c -- [boson, edge label=\PWplus] d,
-    d -- [fermion]
-};
+\begin{tikzpicture} [baseline={(current bounding box.center)}]
+    \begin{feynman}
+        \vertex (a);
+        \vertex [above left=of a] (b) {\Pquark};
+        \vertex [below left=of a] (d) {\APquark};
+        \vertex [dot, right=of a] (f);
+        \vertex [particle, above right=of f] (c) {\Ptop};
+        \vertex [below right=of f] (e) {\APbottom};
+        \vertex [above right=of c] (g) {\Pbottom};
+        \vertex [below right=of c] (h);
+        \vertex [above right=of h] (i) {\Ppositron};
+        \vertex [below right=of h] (j) {\Pelectronneutrino};
+        \diagram* {
+            (b)[dot] -- [fermion] (a) -- [fermion] (d),
+            (a) -- [boson, edge label'=\PWplus] (f),
+            (e) -- [fermion] (f) -- [fermion] (c),
+            (c) -- [fermion] (g),
+            (c) -- [boson, edge label=\PWplus] (h),
+            (h) -- [anti fermion] (i),
+            (h) -- [fermion] (j),
+        };
+    \end{feynman}
+\end{tikzpicture}

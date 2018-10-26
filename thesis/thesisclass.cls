@@ -150,6 +150,7 @@
 \newcommand{\Pelectronneutrino}{$\upnu_\text{e}$}
 \newcommand{\Pmuonneutrino}{$\upnu_{\upmu}$}
 \newcommand{\Ptauneutrino}{$\upnu_{\uptau}$}
+\newcommand{\Ppositron}{$\text{e}^\text{+}$\xspace }
 \newcommand{\PZ}{Z\xspace }
 \newcommand{\PW}{W\xspace }
 \newcommand{\PZzero}{$\text{Z}^{\text{0}}$\xspace }
