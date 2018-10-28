@@ -103,7 +103,6 @@ Due to their high mass, accelerators with high energies are required for the pro
 Top quarks are predominantly produced in pairs via the strong interaction. Figure \ref{fig:top_pair} shows the four relevant Feynman diagrams at leading order. These processes are known as \ttbar processes. Owing to the fact that antiquarks do not appear as valence quarks in a proton, \qqbar annihilation is unlikely to occur in proton-proton collision experiments, such as those in the Large Hadron Collider. Top quarks are mostly produced via gluon fusion.\\ \\
 Additionally, individual (single) top quarks can be produced via the electroweak interaction. The Feynman diagrams for these processes in leading order are given in Figure \ref{fig:top_single}.
 
-
 \begin{figure}[h]
     \centering
     \begin{subfigure}[b]{0.2\textwidth}
@@ -138,4 +137,6 @@ Additionally, individual (single) top quarks can be produced via the electroweak
 Top quarks decay almost exclusively in a \PW boson and a \Pbottom quark. The boson further decays either in a quark-antiquark pair or in a lepton and its corresponding neutrino. The former decay process is referred to as being hadronic, the latter as leptonic.
 
 \section{Jets}
-Jets are a collection of particles that originate from a single point and move together in the same direction forming a cone. They are produced by the hadronization of a quark or gluon. High enery partons, such as quarks and gluons, are released when two hadrons collide with each other.
+High energy partons, such as quarks and gluons, are released when two hadrons collide with each other. Partons combine with quarks created from quark pair production to form mesons or baryons and reach a stable state in a process known as hadronization. The hadronization of quarks or gluons leads to the formation of jets, a cone-shaped particle shower made of hadrons and other particles that originate from a single point and move together in the same direction. Jets are observed in particle detectors rather than quarks, with the latter being reconstructed from jets.
+
+Various algorithms exist for obtaining information from jets. Since the \Pbottom quark is one of the decay products of the top quark, identification of jets originating from \Pbottom quarks is necessary for the reconstruction of the top quark. This is done by applying b-tagging with the Combined Secondary Vertex algorithm (CSV), that calculates probabilities between zero and one for a \Pbottom-tag. \Pbottom-tags are categorized by the \emph{mis-tag rates}, i.e. the probability of tagging a jet that doesn't originate from a \Pbottom quark. Possible values range from \SI{10}{\%} (\emph{loose}), \SI{1}{\%} (\emph{medium}) to \SI{0.1}{\%} (\emph{tight}). Smaller mis-tag rates lead to smaller efficiencies of the \Pbottom-tagging algorithm.
