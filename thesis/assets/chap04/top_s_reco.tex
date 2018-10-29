@@ -1,10 +1,13 @@
+\tikzfeynmanset{
+    every vertex={dot}, % dot
+}
 \begin{tikzpicture} [baseline={(current bounding box.center)}]
     \begin{feynman}
         \vertex (a);
         \vertex [above left=of a] (b) {\Pquark};
         \vertex [below left=of a] (d) {\APquark};
         \vertex [dot, right=of a] (f);
-        \vertex [particle, above right=of f] (c) {\Ptop};
+        \vertex [particle, above right=of f] (c);
         \vertex [below right=of f] (e) {\APbottom};
         \vertex [above right=of c] (g) {\Pbottom};
         \vertex [below right=of c] (h);
@@ -13,7 +16,7 @@
         \diagram* {
             (b)[dot] -- [fermion] (a) -- [fermion] (d),
             (a) -- [boson, edge label'=\PWplus] (f),
-            (e) -- [fermion] (f) -- [fermion] (c),
+            (e) -- [fermion] (f) -- [fermion, edge label=\Ptop] (c),
             (c) -- [fermion] (g),
             (c) -- [boson, edge label=\PWplus] (h),
             (h) -- [anti fermion] (i),

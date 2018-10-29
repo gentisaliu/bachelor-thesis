@@ -2,13 +2,22 @@
 \label{ch:classifier}
 The study of single top quark s channel production is important in exploring the electroweak sector of the SM, which predicts three production channels (refer to Section \ref{sec:theory_top}). Deviations from the SM prediction of its cross section may hint to the presence of mechanisms beyond the standard model (BSM) \cite{CMS16}.
 
+This chapter describes the development of an artificial neural network classifier for the reconstruction of the top quark.
+Section \ref{sec:ch-5-simulation} describes the generation of simulation events, which will be used to train the classifier. Section \ref{sec:ch-5-preselection} outlines the preselection of events for the purpose of increasing the signal-to-background ratio.
+Furthermore, it describes the best-mass method for the reconstruction of the top quark, which this work aims to improve upon. Ultimately, the development strategies for the ANN classifier are outlined and the improvement results are compared for various ANN configurations and input variables.
+
 \section{Simulation of Events and Corrections}
+\label{sec:ch-5-simulation}
 Simulation of processes is done using the year 2017 conditions at the CMS. The s-channel single top quark production process is simulated with the \emph{MAD-GRAPH5\_AMC@NLO MC} event generator, version 2.2.2, using the 4FS description \cite{Fal18} and every simulation involving top quarks uses their literature mass of \SI{172.5}{GeV}. The parton shower and hadronization process are performed using \pythia version 8.2. The probability for each parton in the initial state to be present in the proton with a given fraction of the proton momentum is obtained by the \emph{NNPDF31\_NNLO\_HESSIAN\_PDFAS PDF} \cite{Fal18}.
 
 Several corrections are applied to the simulations to consider differences between simulation and detector data. The number of pileup interactions is reweighted based on the distribution obtained from minimum-bias events in order to resemble the actual conditions. During reconstruction and selection of leptons dedicated scale factors are applied to simulated events to account for differences in the kinematic properties of the lepton between simulation and data. Finally, the efficiency of the employed b tagging algorithm is corrected to resemble the same number of events in simulation with a certain number of b-tagged jets as in data \cite{Fal18}.
 
 \section{Preselection}
+\label{sec:ch-5-preselection}
+The purpose of the preselection is to achieve an optimal signal-to-background ratio. Every event considered in the analysis must pass at least one HLT decision for muons or electrons .
+
 \section{Reconstruction with the Best-Mass Method}
+\label{sec:ch-5-best-mass}
 \begin{figure}[h]
     \centering
     \input{assets/chap04/top_s_reco}
