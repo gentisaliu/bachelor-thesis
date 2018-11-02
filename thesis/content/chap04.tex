@@ -1,34 +1,47 @@
 \chapter{ANN Classifier for Top Quark Reconstruction}
 \label{ch:classifier}
-The study of single top quark s channel production is important in exploring the electroweak sector of the SM, which predicts three production channels (refer to Section \ref{sec:theory_top}). Deviations from the SM prediction of its cross section may hint to the presence of mechanisms beyond the standard model (BSM) \cite{CMS16}.
+The study of single top quark $s$-channel production is important in exploring the electroweak sector of the SM, which predicts three production channels (refer to Section \ref{sec:theory_top}). Deviations from the SM prediction of its cross section may hint to mechanisms beyond the standard model (BSM) \cite{CMS16}. These single top quarks account for a small proportion of the total production of single top quarks. Therefore, a good separation between signal and background events is required, with single top quarks produced via the $s$-channel constituting signal and those produced via other production modes background events. The improvement of the reconstruction for $s$-channel single top quarks increases the separation between signal and background events.
 
 This chapter describes the development of an artificial neural network classifier for the reconstruction of the top quark.
-Section \ref{sec:ch-5-simulation} describes the generation of simulation events, which will be used to train the classifier. Section \ref{sec:ch-5-preselection} outlines the preselection of events for the purpose of increasing the signal-to-background ratio.
-Furthermore, it describes the best-mass method for the reconstruction of the top quark, which this work aims to improve upon. Ultimately, the development strategies for the ANN classifier are outlined and the improvement results are compared for various ANN configurations and input variables.
+Section \ref{sec:ch-5-simulation} describes the generation of simulation events, which will be used to train the classifier. Section \ref{sec:ch-5-preselection} outlines the preselection of events for increasing the signal-to-background ratio. Section \ref{sec:ch-5-best-mass} introduces the method currently in use for top quark reconstruction, the best-mass method, which this work aims to improve upon. After laying out the input variables of the network in section \ref{sec:ch-5-input-vars}, sections \ref{sec:ch-5-network} and \ref{sec:ch-5-training} describe the configuration and training of the ANN followed by an evaluation of the performance of the classifier and comparison with the best-mass method in section \ref{sec:ch-5-eval}.
 
 \section{Simulation of Events and Corrections}
 \label{sec:ch-5-simulation}
-Simulation of processes is done using the year 2017 conditions at the CMS. The s-channel single top quark production process is simulated with the \emph{MAD-GRAPH5\_AMC@NLO MC} event generator, version 2.2.2, using the 4FS description \cite{Fal18} and every simulation involving top quarks uses their literature mass of \SI{172.5}{GeV}. The parton shower and hadronization process are performed using \pythia version 8.2. The probability for each parton in the initial state to be present in the proton with a given fraction of the proton momentum is obtained by the \emph{NNPDF31\_NNLO\_HESSIAN\_PDFAS PDF} \cite{Fal18}.
+Simulation of processes is done at year 2017 conditions at the CMS. The $s$-channel single top quark production process is simulated with the \emph{MAD-GRAPH5\_AMC@NLO MC} event generator, version 2.2.2, using the 4FS description \cite{Fal18} and every simulation involving top quarks uses their literature mass of \SI{172.5}{GeV}. The parton shower and hadronization process are performed using Pythia version 8.2. The probability for each parton in the initial state to be present in the proton with a given fraction of the proton momentum is obtained by the \emph{NNPDF31\_NNLO\_HESSIAN\_PDFAS PDF} \cite{Fal18}.
 
 Several corrections are applied to the simulations to consider differences between simulation and detector data. The number of pileup interactions is reweighted based on the distribution obtained from minimum-bias events in order to resemble the actual conditions. During reconstruction and selection of leptons dedicated scale factors are applied to simulated events to account for differences in the kinematic properties of the lepton between simulation and data. Finally, the efficiency of the employed b tagging algorithm is corrected to resemble the same number of events in simulation with a certain number of b-tagged jets as in data \cite{Fal18}.
 
 \section{Preselection}
 \label{sec:ch-5-preselection}
-The purpose of the preselection is to achieve an optimal signal-to-background ratio. Every event considered in the analysis must pass at least one HLT decision for muons or electrons .
+The purpose of preselection is to achieve an optimal signal-to-background ratio. As shown in Figure \ref{fig:ch_4_single_top_reco}, the observed final state products are characterized by the presence of one isolated muon or electron, two \Pbottom quarks, one originating from the top quark decay and one recoiling against the top quark, and a neutrino resulting in a missing transverse energy (MET).
+
+Events with either one muon or electron are selected, with the selection criteria for the muon being $p_T > \SI{30}{GeV}$, isolation of at most 0.06 and for the electron $p_T > \SI{35}{GeV}$ with a maximum pseudorapidity $\eta$ of 2.1.
+
+The leptons (muon or electron) are required to originate from the primary vertex (PV), which is reconstructed using the particle-flow (PF) algorithm from at least four tracks and required to be located within a cylinder of radius of \SI{2}{cm} and length of \SI{24}{cm} around the center of detector. 
+
+They must satisfy certain quality criteria (tight ID), as described in detail in \cite{Fal18}. Events with more than one lepton are rejected if at least one of the additional leptons passes the loose ID requirement of the corresponding lepton flavor, which significantly reduces the contribution from background processes.
+
+Jets with a transverse momentum $p_T$ of \SI{40}{GeV}, passing the PF jet ID requirement described in \cite{Fal18}, and a distance of $\Delta R \geq 0.4$ from the $\eta-\phi$ plane to the selected lepton are considered for the analysis. Additionally, jets considered for \Pbottom tagging must have an absolute pseudorapidity $\eta \leq 2.4$, otherwise $\eta \leq 4.7$ is allowed.
+
+As the final state of the $s$-channel single top quark production has two jets, the signal region of the analysis is the 2-jets-2-tags (2j2t) region.
 
 \section{Reconstruction with the Best-Mass Method}
 \label{sec:ch-5-best-mass}
 \begin{figure}[h]
     \centering
-    \input{assets/chap04/top_s_reco}
-    \caption{s-channel single top quark production with the top quark decaying in a \PWplus boson and a \Pbottom quark}
+    \input{assets/chap04/top_s_reco_1}
+    \caption{s-channel single top quark production with the top quark decaying in a \PWplus boson and a \Pbottom quark. The \PWplus quark decays either in a positron and electron neutrino or a muon and muon neutrino.}
     \label{fig:ch_4_single_top_reco}
 \end{figure}
-The top quark can be easily reconstructed from its decay products, the b jet, the lepton and the neutrino (see Figure \ref{fig:ch_4_single_top_reco}), by adding their four-momenta together. Since events stem from the 2-jets-2-tags signal region, the assignment of a b-tagged jet to the b jet from the top quark is ambiguous because of the two b-tagged jets in each event. The b-tagged jet that results in a reconstructed top mass closer to the literature value of \SI{172.5}{GeV} (best-mass method) is selected for the reconstruction \cite{Fal18}.
+The top quark can be easily reconstructed from its decay products, the b jet, the lepton and the neutrino (see Figure \ref{fig:ch_4_single_top_reco}), by adding their four-momenta together. Since events stem from the 2-jets-2-tags signal region, the assignment of a \Pbottom-tagged jet to the b jet from the top quark is ambiguous because of the two b-tagged jets in each event. The b-tagged jet that results in a reconstructed top mass closer to the literature value of \SI{172.5}{GeV} (best-mass method) is selected for the reconstruction \cite{Fal18}.
 \section{Input Variables}
+\label{sec:ch-5-input-vars}
 \section{Network Topology}
+\label{sec:ch-5-network}
 \section{Training}
+\label{sec:ch-5-training}
 \section{Evaluation}
+\label{sec:ch-5-eval}
 
 \begin{center}
     \begin{tabular}{ll}
