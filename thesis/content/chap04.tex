@@ -34,35 +34,75 @@ As the final state of the $s$-channel single top quark production has two jets, 
     \label{fig:ch_4_single_top_reco}
 \end{figure}
 The top quark can be easily reconstructed from its decay products, the b jet, the lepton and the neutrino (see Figure \ref{fig:ch_4_single_top_reco}), by adding their four-momenta together. Since events stem from the 2-jets-2-tags signal region, the assignment of a \Pbottom-tagged jet to the b jet from the top quark is ambiguous because of the two b-tagged jets in each event. The b-tagged jet that results in a reconstructed top mass closer to the literature value of \SI{172.5}{GeV} (best-mass method) is selected for the reconstruction \cite{Fal18}.
+
 \section{Input Variables}
 \label{sec:ch-5-input-vars}
+The task of the classifier will be to accurately differentiate which of the two \Pbottom jets in the final products in Figure \ref{fig:ch_4_single_top_reco} originates from the hadronization of the top quark.
+
+This section lists the choice of input variables for which the classifier had the highest discriminatory power. Various kinematic, angular and jet variable combinations were tried out, with those listed in Table \ref{tab:ch_4_input_vars} yielding the most significant improvement in top quark reconstruction. More details can be found in Section \ref{sec:ch-5-training}.
+
+\emph{Kinematic variables} describe the state of motion of an object, i.e. momentum, direction, or the distance $\Delta R=\sqrt{\Delta \eta^2 + \Delta \phi^2}$ between two objects. They provide good discrimination, because one of the jets recoils against the top quark. \emph{Angular variables} contain angular information for reconstructed objects, whereas \emph{jet variables} of the momenta and count of detected jets.
+
+\begin{table}[h]
+    \caption{The 12 variables that were used for the classifier.}
+    \label{tab:ch_4_input_vars}
+    \begin{center}
+        \begin{tabular}{ll}
+            \hline
+            Variable & Description\\
+            \hline
+            $p_T(j_1)$ & Transverse momentum of first jet\\
+            $\eta(j_1)$ & Pseudorapidity of first jet\\
+            $\phi(j_1)$ & $\phi$ of first jet\\
+            $m_0(j_1)$ & Invariant mass of first jet\\
+
+            $p_T(j_2)$ & Transverse momentum of second jet\\
+            $\eta(j_2)$ & Pseudorapidity of second jet\\
+            $\phi(j_2)$ & $\phi$ of second jet\\
+            $m_0(j_2)$ & Invariant mass of second jet\\
+
+            $\Delta R(j_1, w)$ & Distance between the first jet and the \PWplus boson\\
+            $\Delta R(j_1, lep)$ & Distance between the first jet and the lepton\\
+            $\Delta R(j_2, w)$ & Distance between the second jet and the \PWplus boson\\
+            $\Delta R(j_2, lep)$ & Distance between the second jet and the lepton\\
+            \hline
+        \end{tabular}
+    \end{center}
+\end{table}
+
+Preselected simulation data, as described in Sections \ref{sec:ch-5-simulation} and \ref{sec:ch-5-preselection}, were made available in the form of \emph{ROOT} files. The values of the variables listed previously were either derived by applying algorithms to or provided directly as measurements from this data. 
+
+Next, the values were standardized using \emph{scikit-learn}'s preprocessing module for them to look standard normally distributed by removing the mean value for each feature, then scaling by dividing non-constant features by their standard deviation \cite{scikit-learn}. Standardization of inputs speeds up the convergence of the DNN.
+
+Finally, labeling of the values was performed. After training the DNN, the resulting model can be applied to unlabeled data and an accurate label can be predicted for that data. The information as of which of the two jets resulted by the hadronization of the top quark is available in simulation data and was used in labeling. For every simulation sample, two sets of data were generated, with each jet being assigned $j_1$ and $j_2$ interchangeably: the data set was labeled with $1$ if jet $j_1$ resulted from the top quark, otherwise with $0$.
+
 \section{Network Topology}
 \label{sec:ch-5-network}
+
+\begin{table}[h]
+    \caption{Overview of DNN hyperparameter settings of the developed ANN classifier}
+    \label{tab:ch_4_ann_topology}
+    \begin{center}
+        \begin{tabular}{lc}
+            \hline
+            Hyperparameter & Value\\
+            \hline
+            Input Layer Neurons & 12\\
+            Hidden Layers & 4\\
+            Hidden Layer Neurons & 100\\
+            Hidden Layer Activation Function & ReLU\\
+            Output Layer Neurons & 1\\
+            Output Layer Activation Function & Sigmoid\\
+            Optimizer & ADAM\\
+            Learning Rate & $3.8 \cdot 10^{-8}$\\
+            Dropout Rate & 0.25\\
+            \hline
+        \end{tabular}
+    \end{center}
+\end{table}
+
 \section{Training}
 \label{sec:ch-5-training}
+
 \section{Evaluation}
 \label{sec:ch-5-eval}
-
-\begin{center}
-    \begin{tabular}{ll}
-    \hline
-    Variable & Description\\
-    \hline
-    $p_T(t)$ & Transverse momentum of top signal\\
-    $\eta_T(t)$ & Pseudorapidity of top signal\\
-    $\phi_T(t)$ & $\phi$ of top signal\\
-    $m_T(t)$ & Invariant mass of top signal\\
-
-    $p_T(j)$ & Transverse momentum of jet signal\\
-    $\eta_T(j)$ & Pseudorapidity of jet signal\\
-    $\phi_T(j)$ & $\phi$ of jet signal\\
-    $m_T(j)$ & Invariant mass of jet signal\\
-
-    $p_T(W)$ & Transverse momentum of W boson\\
-    $\eta_T(W)$ & Pseudorapidity of W boson\\
-    $\phi_T(W)$ & $\phi$ of W boson\\
-    $m_T(W)$ & Invariant mass of W boson\\
-
-    number of jets & Number of additional jets with more than \SI{20}{GeV}\\
-  \end{tabular}
-\end{center}
