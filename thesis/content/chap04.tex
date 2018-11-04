@@ -118,6 +118,8 @@ A summary of hyperparameter values that were used to build the DNN can be found 
 
 The neuron in the output layer returns values between 0 and 1 to discriminate between the two classes 0 and 1, which stand for jet $j_2$ and $j_1$ (Table \ref{tab:ch_4_input_vars}) originating from the top quark respectively. To find which of the two jets for an unlabeled set of data is a product of the hadronization of the top quark, the data set has to be evaluated twice against the trained model, with the two jets being assigned $j_1$ and $j_2$ interchangeably, similar to the labeling procedure outlined in Section \ref{sec:ch-5-input-vars}. The evaluation of the data set that returns the highest output value implies that the jet assigned $j_1$ came from the top quark. This interpretation is similar to that with the confusion matrix described in Section \ref{sec:ch_3_eval}.
 
+Finally, it must be noted that hyperparameter optimization with a grid search over five hyperparameters, the optimizer (ADAM and Stochastic Gradient Descent), neurons per hidden layer (1, 5, 10, 20), number of hidden layers (1, 2, 4, 6), dropout rates (0.2, 0.3, 0.4, 0.5) and batch sizes (64, 256) was performed, which did not improve top quark reconstruction.
+
 \section{Training}
 \label{sec:ch-5-training}
 The training of the classifier was done using two Monte Carlo $s$-channel samples, as described in Sections \ref{sec:ch-5-simulation} and \ref{sec:ch-5-preselection}, one with data from the muon, another with data from the electron channel. They were then each fed to the \emph{s channel analysis framework}, where, among others, the \PWplus boson was reconstructed from the muon and muon neutrino or electron and electron neutrino respectively.
@@ -137,7 +139,7 @@ The classifier was trained in mini-batch mode on \num{344374} samples and valida
 
 The selection of the batch size is also crucial in the discriminatory power of the classifier: a small batch may negatively impact the accuracy of gradient estimation, i.e. the direction of the gradient may fluctuate much more often than for larger batches. During the trainings made in the scope of this work, smaller batch sizes lead to considerably longer training times, better AUC-ROC scores, but worse top quark reconstruction accuracy.
 
-The training time of the classifier was about 20 minutes -- the history of the loss value is shown in Figure \ref{fig:ch_4_loss} -- with the classifier converging around the 35th.
+The training time of the classifier was about 20 minutes -- the history of the loss value is shown in Figure \ref{fig:ch_4_loss} -- with the classifier converging around the 35th epoch.
 
 \section{Evaluation}
 
