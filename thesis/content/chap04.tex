@@ -39,7 +39,7 @@ The top quark can be easily reconstructed from its decay products, the b jet, th
 \label{sec:ch-5-input-vars}
 The task of the classifier will be to accurately differentiate which of the two \Pbottom jets in the final products in Figure \ref{fig:ch_4_single_top_reco} originates from the hadronization of the top quark.
 
-This section lists the choice of input variables for which the classifier had the highest discriminatory power. Various kinematic, angular and jet variable combinations were tried out, with those listed in Table \ref{tab:ch_4_input_vars} yielding the most significant improvement in top quark reconstruction. More details can be found in Section \ref{sec:ch-5-training}.
+This section lists the choice of input variables for which the classifier had the highest discriminatory power. Various kinematic, angular and jet variable combinations were tried out, with those listed in Table \ref{tab:ch_4_input_vars} yielding the most significant improvement in top quark reconstruction.
 
 \emph{Kinematic variables} describe the state of motion of an object, i.e. momentum, direction, or the distance $\Delta R=\sqrt{\Delta \eta^2 + \Delta \phi^2}$ between two objects. They provide good discrimination, because one of the jets recoils against the top quark. \emph{Angular variables} contain angular information for reconstructed objects, whereas \emph{jet variables} of the momenta and count of detected jets.
 
@@ -76,6 +76,8 @@ Next, the values were standardized using \emph{scikit-learn}'s preprocessing mod
 
 Finally, labeling of the values was performed. After training the DNN, the resulting model can be applied to unlabeled data and an accurate label can be predicted for that data. The information which of the two jets resulted by the hadronization of the top quark is available in simulation data and was used in labeling. For every simulation sample, two sets of data were generated, with each jet being assigned $j_1$ and $j_2$ interchangeably: the data was labeled with $1$ if jet $j_1$ resulted from the top quark, otherwise with $0$.
 
+Apart from manually investigating variables with potentially high discriminating power, automated feature selection was briefly explored, but results obtained from it could not be tested. Feature selection is a technique used in machine learning that automatically selects those features in data that have the most contribution to the output of interest, and lead to improved accuracy scores of the classifier and networks with fewer inputs (dimensionality reduction). Raw and derived variables from the ROOT files, a total of 40, were labeled as previously described, and passed on to three different feature selection algorithms, namely the Analysis of Variance (ANOVA) with F-test \cite{misc:anova}, Recursive Feature Elimination \cite{scikit-learn} and Feature Importance using trees \cite{scikit-learn}.
+
 \section{Network Topology}
 \label{sec:ch-5-network}
 
@@ -101,8 +103,8 @@ A feed-forward fully-connected neural network with 12 neurons in the input layer
             Initial Learning Rate & 0.0001\\
             Dropout Rate & 0.25\\
             Early Stopping Patience & 5\\
-            Reduce-On-Plateau Factor & 0.5\\
-            Reduce-On-Plateau Patience & 2\\
+            Reduce-LR-On-Plateau Factor & 0.5\\
+            Reduce-LR-On-Plateau Patience & 2\\
             \hline
         \end{tabular}
     \end{center}
@@ -110,14 +112,40 @@ A feed-forward fully-connected neural network with 12 neurons in the input layer
 
 To prevent overfitting, the dropout and early stopping methods introduced in Section \ref{sec:ch_3_regularization} were used. Batch normalization was briefly tested in conjunction with dropout, which resulted in a poorer performance of the classifier, these tests were however far from exhaustive. The developed classifier uses a dropout rate of 0.25 and an early stopping patience of five consecutive epochs without any improvement of the loss on validation data.
 
-Furthermore, the reduce-on-plateau method with a factor of 0.5 and a patience of two epochs without improvement of the loss on validation data was applied: the learning rate is reduced by a factor of two if the validation loss does not decrease for two successive epochs. This dynamic adaptation of the learning rate increases the likelihood of finding an accurate minimum for the loss function within a single training instance, avoiding the need for manual fine-tuning of the learning rate and the repetition of the training process after every change.
+Furthermore, the reduce-learning-rate-on-plateau method with a factor of 0.5 and a patience of two epochs without improvement of the loss on validation data was applied: the learning rate is reduced by a factor of two if the validation loss does not decrease for two successive epochs. This dynamic adaptation of the learning rate increases the likelihood of finding an accurate minimum for the loss function within a single training instance, avoiding the need for manual fine-tuning of the learning rate and the repetition of the training process after every change.
 
 A summary of hyperparameter values that were used to build the DNN can be found in Table \ref{tab:ch_4_ann_topology}.
 
-The neuron in the output layer returns values between 0 and 1 to discriminate between the two classes 0 and 1, which stand for jet $j_2$ and $j_1$ (Table \ref{tab:ch_4_input_vars}) originating from the top quark respectively. To find which of the two jets for an unlabeled set of data is a product of the hadronization of the top quark, the data set has to be evaluated twice against the trained model, with the two jets being assigned $j_1$ and $j_2$ interchangeably, similar to the labeling procedure outlined in Section \ref{sec:ch-5-input-vars}. The evaluation of the data set that returns the highest output value implies that the jet assigned $j_1$ came from the top quark.
+The neuron in the output layer returns values between 0 and 1 to discriminate between the two classes 0 and 1, which stand for jet $j_2$ and $j_1$ (Table \ref{tab:ch_4_input_vars}) originating from the top quark respectively. To find which of the two jets for an unlabeled set of data is a product of the hadronization of the top quark, the data set has to be evaluated twice against the trained model, with the two jets being assigned $j_1$ and $j_2$ interchangeably, similar to the labeling procedure outlined in Section \ref{sec:ch-5-input-vars}. The evaluation of the data set that returns the highest output value implies that the jet assigned $j_1$ came from the top quark. This interpretation is similar to that with the confusion matrix described in Section \ref{sec:ch_3_eval}.
 
 \section{Training}
 \label{sec:ch-5-training}
+The training of the classifier was done using two Monte Carlo $s$-channel samples, as described in Sections \ref{sec:ch-5-simulation} and \ref{sec:ch-5-preselection}, one with data from the muon, another with data from the electron channel. They were then each fed to the \emph{s channel analysis framework}, where, among others, the \PWplus boson was reconstructed from the muon and muon neutrino or electron and electron neutrino respectively.
+
+Keras, an open-source neural network library written in Python providing a consistent set of Application Programming Interfaces (APIs) for various deep learning frameworks that run as backends, was used to define the topology of the classifier. TensorFlow, an open-source software library for dataflow programming developed by Google, was used as a Keras backend. The training ran on a GPU cluster powered by an NVidia GeForce GTX Titan X \cite{misc:geforce} graphics card interfaced by CUDA, an API and parallel computing platform developed by Nvidia.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=.75]{assets/chap04/model_loss.pdf}
+    \caption{The training process of the classifier for top quark reconstruction, which fully converged after about 35 epochs.}
+    \label{fig:ch_4_loss}
+\end{figure}
+
+As mentioned previously, the Monte Carlo simulations are provided in the ROOT file format. These are converted in the \emph{DataFrame} data structure, which provides simpler access and manipulation of numerical tables, and is implemented by pandas, a Python software library for data manipulation and analysis. The data from the electron and muon channel were then merged together in a single large \emph{DataFrame} object. Then they were preprocessed and the values for input variables were extracted, as outlined in detail in Section \ref{sec:ch-5-input-vars}, and used to train the classifier.
+
+The classifier was trained in mini-batch mode on \num{344374} samples and validated on \num{114792} samples, i.e. \SI{75}{\%} of the data was used for training, \SI{25}{\%} for validation. The batch size was selected to be 256: the algorithm takes the first 256 samples from the \num{344374} samples and trains the network, next it takes the second 256 samples, trains the network again and repeats the procedure until all samples have propagated through the network. After each propagation, the network's parameters are updated, in this case the parameters were updated \num{1346} times. This makes the network converge faster, as its weights are updated more often than in the case of one single large batch \cite{153535}. This is repeated for every training epoch with the batch data being shuffled every time.
+
+The selection of the batch size is also crucial in the discriminatory power of the classifier: a small batch may negatively impact the accuracy of gradient estimation, i.e. the direction of the gradient may fluctuate much more often than for larger batches. During the trainings made in the scope of this work, smaller batch sizes lead to considerably longer training times, better AUC-ROC scores, but worse top quark reconstruction accuracy.
+
+The training time of the classifier was about 20 minutes -- the history of the loss value is shown in Figure \ref{fig:ch_4_loss} -- with the classifier converging around the 35th.
 
 \section{Evaluation}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=.75]{assets/chap04/roc_test.pdf}
+    \caption{ROC curve for classifier evaluation using test data.}
+    \label{fig:ch_4_loss}
+\end{figure}
+
 \label{sec:ch-5-eval}

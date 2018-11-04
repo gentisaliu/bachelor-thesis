@@ -65,6 +65,7 @@ Batch normalization \cite{DBLP:journals/corr/IoffeS15} addresses the issue of \e
 where $\gamma$ is an adjustable scale factor, $\beta$ an adjustable shift factor, $\sigma_B$ the standard deviation and $\mu_B$ the mean of the current training batch. Batch normalization eliminates the need for dropout in some cases, allows for much higher learning rates and speeds up training since the input values are more in the scope of the common activation functions.
 
 \section{Classifier Evaluation}
+\label{sec:ch_3_eval}
 Two of the many methods available for evaluating a classifier used in this work are the Receiver Operating Characteristics (ROC) curve and the confusion (error) matrix.
 
 ROC graphs are two-dimensional graphs in which the true positive rate (TPR) is plotted on the $y$ axis and the false positive rate (FPR) is plotted on the $x$ axis. The ROC curve shows the trade-off between the TPR and the FPR. The integral of the curve, also known as the area-under-curve (AUC), is a measure of the accuracy of the model. The closer the curve to the diagonal, the less accurate a model is. A model with perfect accuracy will have an AUC score of 1.0. Figure \ref{fig:ch_3_roc} shows an example ROC curve.
