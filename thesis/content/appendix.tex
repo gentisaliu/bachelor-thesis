@@ -211,9 +211,9 @@ The following tables list all input variables, for which a top quark reconstruct
             $\phi(w)$ & $\phi$ of the \PWplus boson\\
             $m_0(w)$ & Invariant mass of the \PWplus boson\\
 
-            $\Delta R(j_1, w)$ & Distance between the first jet and the \PWplus boson\\
-            $\Delta \phi(j_1, w)$ & \phi difference between the first jet and the \PWplus boson\\
-            $m_0(j_1, w)$ & Invariant mass of the first jet and the \PWplus boson system\\
+            $\Delta R(j_1, w)$ & Distance between first jet and the \PWplus boson\\
+            $\Delta \phi(j_1, w)$ & $\phi$ difference between the first jet and the \PWplus boson\\
+            $m_0(j_1, w)$ & Invariant mass of first jet and the \PWplus boson system\\
             
             $\Delta R(j_2, w)$ & Distance between the second jet and the \PWplus boson\\
             $\Delta \phi(j_2, w)$ & \phi difference between the second jet and the \PWplus boson\\
@@ -225,3 +225,13 @@ The following tables list all input variables, for which a top quark reconstruct
 \end{table}
 
 \chapter{Plots of reconstruction improvement over average learning rate}
+
+\chapter{Most significant variables according to feature selection}
+The following tables list the variables, that best correlate with the labeled output. They were determined using the various feature selection algorithms introduced in Section \ref{sec:ch-5-input-vars}. They may possess potentially good discrimination abilities that may result in a good classifier.
+
+\npdecimalsign{.}
+\nprounddigits{2}
+
+\LTXtable{\textwidth}{assets/appendix/anova}
+\LTXtable{\textwidth}{assets/appendix/rfe}
+\LTXtable{\textwidth}{assets/appendix/fi}

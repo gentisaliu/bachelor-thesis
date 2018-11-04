@@ -116,6 +116,10 @@
 \usepackage{multicol}
 \usepackage{hhline}
 \usepackage{environ}
+\usepackage{longtable}
+\usepackage{numprint}
+\usepackage{tabularx}
+\usepackage{ltxtable}
 \usepackage[titletoc,title]{appendix}
 
 %% --- End of Packages ---
