@@ -72,15 +72,23 @@ This section lists the choice of input variables for which the classifier had th
 
 Preselected simulation data, as described in Sections \ref{sec:ch-5-simulation} and \ref{sec:ch-5-preselection}, were made available in the form of \emph{ROOT} files. The values of the variables listed previously were either derived by applying algorithms to or provided directly as measurements from this data. 
 
-Next, the values were standardized using \emph{scikit-learn}'s preprocessing module for them to look standard normally distributed by removing the mean value for each feature, then scaling by dividing non-constant features by their standard deviation \cite{scikit-learn}. Standardization of inputs speeds up the convergence of the DNN.
+Next, the values were standardized using \emph{scikit-learn}'s preprocessing module for them to look standard normally distributed by removing the mean value for each feature, then scaling by dividing non-constant features by their standard deviation \cite{scikit-learn}. This standardization of values speeds up the convergence of the DNN.
 
-Finally, labeling of the values was performed. After training the DNN, the resulting model can be applied to unlabeled data and an accurate label can be predicted for that data. The information as of which of the two jets resulted by the hadronization of the top quark is available in simulation data and was used in labeling. For every simulation sample, two sets of data were generated, with each jet being assigned $j_1$ and $j_2$ interchangeably: the data set was labeled with $1$ if jet $j_1$ resulted from the top quark, otherwise with $0$.
+Finally, labeling of the values was performed. After training the DNN, the resulting model can be applied to unlabeled data and an accurate label can be predicted for that data. The information which of the two jets resulted by the hadronization of the top quark is available in simulation data and was used in labeling. For every simulation sample, two sets of data were generated, with each jet being assigned $j_1$ and $j_2$ interchangeably: the data was labeled with $1$ if jet $j_1$ resulted from the top quark, otherwise with $0$.
 
 \section{Network Topology}
 \label{sec:ch-5-network}
 
+The performance of the classifier depends to a smaller degree by the topology, the hyperparameter settings of the DNN and the used regularization methods.
+
+A feed-forward fully-connected neural network with 12 neurons in the input layer, four hidden layers containing 100 neurons each, and an output layer consisting of a single neuron, was used. The ReLU function was selected for the activation of neurons in the hidden layers and the sigmoid function for the activation of the neuron in the output layer. Cross-entropy was chosen as the loss function, since a faster DNN convergence even for poorly selected initialization weights has been observed. The Adam optimizer was used by default for loss function minimization, due to its established reliability among other optimizers in similar classification problems. Some tests with the stochastic gradient descent (SGD) optimizer for the same input variables seemed to validate this assumption.
+
+To countermeasure overfitting, the dropout and early stopping methods introduced in Section \ref{sec:ch_3_regularization} were used. Batch normalization was briefly tested in conjunction with dropout, which resulted in a poorer performance of the classifier, these tests were however non-exhaustive. The developed classifier uses a dropout rate of 0.25 and an early stopping patience of 5 epochs without any improvement of the AUC score on validation data.
+
+A summary of hyperparameter values that were used to build the DNN can be found in Table \ref{tab:ch_4_ann_topology}.
+
 \begin{table}[h]
-    \caption{Overview of DNN hyperparameter settings of the developed ANN classifier}
+    \caption{Overview of DNN hyperparameter settings for the ANN classifier}
     \label{tab:ch_4_ann_topology}
     \begin{center}
         \begin{tabular}{lc}
@@ -96,10 +104,13 @@ Finally, labeling of the values was performed. After training the DNN, the resul
             Optimizer & ADAM\\
             Learning Rate & $3.8 \cdot 10^{-8}$\\
             Dropout Rate & 0.25\\
+            Early Stopping Patience & 5\\
             \hline
         \end{tabular}
     \end{center}
 \end{table}
+
+The neuron in the output layer returns values between 0 and 1 to discriminate between the two classes 0 and 1, that stand for jet $j_2$ and $j_1$ (Table \ref{tab:ch_4_input_vars}) originating from the top quark respectively. 
 
 \section{Training}
 \label{sec:ch-5-training}
