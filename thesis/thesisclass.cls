@@ -116,6 +116,7 @@
 \usepackage{multicol}
 \usepackage{hhline}
 \usepackage{environ}
+\usepackage[titletoc,title]{appendix}
 
 %% --- End of Packages ---
 
