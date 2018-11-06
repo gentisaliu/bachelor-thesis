@@ -6,9 +6,9 @@ Section \ref{sec:ch-4-simulation} describes the generation of simulation events,
 
 \section{Simulation of Events and Corrections}
 \label{sec:ch-4-simulation}
-Simulation of events is done at year 2017 conditions at the CMS experiment. The $s$-channel single top quark production process is simulated with the \emph{MAD-GRAPH5\_AMC@NLO} event generator, version 2.2.2, using the 4FS description \cite{Fal18} and every simulation involving top quarks uses their literature mass of \SI{172.5}{GeV}. The parton shower and hadronization process are performed using \emph{Pythia} version 8.2. The probability for each parton in the initial state to be present in the proton with a given fraction of the proton momentum is obtained by the \emph{NNPDF31\_NNLO\_HESSIAN\_PDFAS PDF} \cite{Fal18}.
+Simulation of events is done at year 2017 conditions at the CMS experiment. The $s$-channel single top quark production process is simulated with the \emph{MAD-GRAPH5\_AMC@NLO} event generator, version 2.2.2, using the 4FS description \cite{2009JHEPA} and every simulation involving top quarks uses their literature mass of \SI{172.5}{GeV}. The parton shower and hadronization process are performed using \emph{Pythia} version 8.2. The probability for each parton in the initial state to be present in the proton with a given fraction of the proton momentum is obtained by the \emph{NNPDF31\_NNLO\_HESSIAN\_PDFAS PDF} \cite{2015CoPhC.191.159S}.
 
-Several corrections are applied to the simulations to consider differences between simulation and detector data. The number of pileup interactions is reweighted based on the distribution obtained from minimum-bias events in order to resemble the actual conditions. During reconstruction and selection of leptons dedicated scale factors are applied to simulated events to account for differences in the kinematic properties of the lepton between simulation and data. Finally, the efficiency of the employed b tagging algorithm is corrected to resemble the same number of events in simulation with a certain number of b-tagged jets as in data \cite{Fal18}.
+Several corrections are applied to the simulations to consider differences between simulation and detector data. The number of pileup interactions is reweighted based on the distribution obtained from minimum-bias events in order to resemble the actual conditions. During reconstruction and selection of leptons dedicated scale factors are applied to simulated events to account for differences in the kinematic properties of the lepton between simulation and data. Finally, the efficiency of the employed b tagging algorithm is corrected to resemble the same number of events in simulation with a certain number of b-tagged jets as in data \cite{CMS-b-tagging}.
 
 \section{Preselection}
 \label{sec:ch-4-preselection}
@@ -18,9 +18,9 @@ Events with either one muon or electron are selected, with the selection criteri
 
 The leptons (muon or electron) are required to originate from the primary vertex (PV), which is reconstructed using the particle-flow (PF) algorithm from at least four tracks and required to be located within a cylinder of radius of \SI{2}{cm} and length of \SI{24}{cm} around the center of detector. 
 
-They must satisfy certain quality criteria (tight ID), as described in detail in \cite{Fal18}. Events with more than one lepton are rejected if at least one of the additional leptons passes the loose ID requirement of the corresponding lepton flavor, which significantly reduces the contribution from background processes.
+They must satisfy certain quality criteria (tight ID), as described in detail in \cite{CMS-Muon-Physics,CMS-Electron-Physics}. Events with more than one lepton are rejected if at least one of the additional leptons passes the loose ID requirement of the corresponding lepton flavor, which significantly reduces the contribution from background processes.
 
-Jets with a transverse momentum $p_\text{T}$ of \SI{40}{GeV}, passing the PF jet ID requirement described in \cite{Fal18}, and a distance of $\Delta R \geq 0.4$ from the $\eta$-$\phi$ plane to the selected lepton are considered for the analysis. Additionally, jets considered for \Pbottom tagging must have an absolute pseudorapidity $|\eta| \leq 2.4$, otherwise $|\eta| \leq 4.7$ is allowed.
+Jets with a transverse momentum $p_\text{T}$ of \SI{40}{GeV}, passing the PF jet ID requirement described in \cite{CMS-PAS-JME-16-003}, and a distance of $\Delta R \geq 0.4$ from the $\eta$-$\phi$ plane to the selected lepton are considered for the analysis. Additionally, jets considered for \Pbottom tagging must have an absolute pseudorapidity $|\eta| \leq 2.4$, otherwise $|\eta| \leq 4.7$ is allowed.
 
 As the final state of the $s$-channel single top quark production has two \Pbottom jets, the signal region of the analysis is the 2-jets-2-tags (2j2t) region.
 
@@ -32,7 +32,7 @@ As the final state of the $s$-channel single top quark production has two \Pbott
     \caption{$s$-channel single top quark production with the top quark decaying in a \PWplus boson and a \Pbottom quark. The \PWplus quark decays either in a positron and electron neutrino or a muon and muon neutrino.}
     \label{fig:ch_4_single_top_reco}
 \end{figure}
-The top quark can be easily reconstructed from its decay products, the b jet, the lepton and the neutrino (see Figure \ref{fig:ch_4_single_top_reco}), by adding their four-momenta together. Since events stem from the 2-jets-2-tags signal region, the assignment of a \Pbottom-tagged jet to the b jet from the top quark is ambiguous because of the two b-tagged jets in each event. The b-tagged jet that results in a reconstructed top mass closer to the literature value of \SI{172.5}{GeV} (best-mass method) is selected for the reconstruction \cite{Fal18}.
+The top quark can be easily reconstructed from its decay products, the b jet, the lepton and the neutrino (see Figure \ref{fig:ch_4_single_top_reco}), by adding their four-momenta together. Since events stem from the 2-jets-2-tags signal region, the assignment of a \Pbottom-tagged jet to the \Pbottom jet from the top quark is ambiguous because of the two b-tagged jets in each event. The b-tagged jet that results in a reconstructed top mass closer to the literature value of \SI{172.5}{GeV} (best-mass method) is selected for the reconstruction.
 
 \section{Input Variables}
 \label{sec:ch-4-input-vars}
