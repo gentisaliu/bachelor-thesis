@@ -141,6 +141,7 @@
 \newcommand{\Pcharm}{c\xspace }
 \newcommand{\Pstrange}{s\xspace }
 \newcommand{\Ptop}{t\xspace }
+\newcommand{\PtopNOSPACE}{t}
 \newcommand{\APtop}{$\overline{\text{t}}$\xspace }
 \newcommand{\Pbottom}{b\xspace }
 \newcommand{\APbottom}{$\overline{\text{b}}$}
