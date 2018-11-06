@@ -107,7 +107,7 @@
 \usepackage{xspace} % for better newcommands
 \usepackage[autostyle=true, babel=true]{csquotes} % use \enquote{abc} instead of "abc"
 \usepackage{nicefrac}
-\usepackage{tikz-feynman}
+\usepackage[com pat=1.1.0]{tikz-feynman} 
 \usepackage{physics}
 \usepackage{slashed}
 \usepackage{upgreek}
