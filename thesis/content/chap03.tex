@@ -1,12 +1,12 @@
 \chapter{Artificial Neural Networks}
 \label{ch:nn_mva}
-This chapter gives a practical introduction to artificial neural networks as a multivariate technique that was used in this work.
+This chapter provides a practical introduction to artificial neural networks as the multivariate technique that was used in this work.
 
-Artificial Neural Networks (ANN) represent a class of algorithms widely used in machine learning and pattern recognition, modeled after the structure of the biological brain. The power of ANNs lies in being able to identify complex relationships between given inputs and outputs, recognizing them in other input values and generating an accurate prediction.
+Artificial neural networks (ANN) represent a class of algorithms widely used in machine learning and pattern recognition, modeled after the structure of the biological brain. The power of ANNs lies in being able to identify complex relationships between given inputs and outputs, recognizing them in other input values and generating an accurate prediction.
 
 ANNs consist of a sequence of layers containing neurons. The first layer is the \emph{input layer} with $n$ neurons, accepting input values $\va{x}=(x_1,x_2,...,x_n)$. These neurons forward the input values to the neurons of the next layer. The last layer is the \emph{output layer}, which returns the predicted values of the ANN. Between these layers, one or more \emph{hidden layers} may exist.
 
-The type of neural network used in the thesis is a feed-forward neural network, where the output values are passed on from one layer to the next and do not return to any neuron of the previous layer (Figure \ref{fig:neural_network}).
+The type of neural networks used in the thesis is a feed-forward neural network, illustrated in Figure \ref{fig:neural_network}, where the output values are passed on from one layer to the next and do not return to any neuron of the previous layer.
 
 \begin{figure}[h]
     \centering
@@ -15,9 +15,9 @@ The type of neural network used in the thesis is a feed-forward neural network, 
     \label{fig:neural_network}
 \end{figure}
 
-Feed-forward neural networks with one input layer, at least one hidden layer and one output layer are generally known as a multi-layer perceptron. A single-layer perceptron has only a single layer of output nodes, the inputs are directly fed to the outputs via a series of weights. ANNs with two hidden layers or more are known as deep neural networks (DNN).
+A feed-forward neural network with one input layer, at least one hidden layer, and one output layer is generally known as a multi-layer perceptron. A single-layer perceptron has only a single layer of output nodes, the inputs are directly fed to the outputs via a series of weights. ANNs with two hidden layers or more are known as deep neural networks (DNN).
 
-A neuron is a single computational unit, that receives the input values $\va{x}=(x_1,x_2,...,x_n)$ from all neurons in the previous layer and outputs a single value $y$ by the rule
+A neuron is a single computational unit that receives the input values $\va{x}=(x_1,x_2,...,x_n)$ from all neurons in the previous layer and outputs a single value $y$ by the rule
 \begin{equation}
     y=f\left( \sum_{k=1}^{n} w_k \cdot x_k + b_k \right).
 \end{equation}
@@ -46,7 +46,7 @@ The step size, by which the weights are adjusted, is called the \emph{learning r
 \end{equation}
 Higher learning rates make it difficult to determine the minimum of the cost function accurately, whereas lower learning rates may impact the performance of the algorithm. The weight readjustment as per equation \ref{eq:learnrate} is repeated for several epochs. An epoch is a full training cycle, where every element in the training data set is learned by the ANN. If $\dv{C}{w}$ is zero, a minimum or a saddle point has been reached. To avoid saddle points or shallow local minimums, the training data sample is split into batches and the weights per equation \ref{eq:learnrate} are readjusted for every batch.
 
-The most common algorithm for weight adjustment is the backpropagation algorithm \cite{Rumelhart:1988:LRB:65669.104451}. In very broad terms, backpropagation iteratively adjusts each weight in the network proportionally to its overall error contribution. Starting at the output layer and going backwards, the chain rule of differentiation is applied for finding the derivatives of cost.
+The most common algorithm for weight adjustment is the backpropagation algorithm \cite{Rumelhart:1988:LRB:65669.104451}. In very broad terms, backpropagation iteratively adjusts each weight in the network proportionally to its overall error contribution. Starting at the output layer and going backwards, the chain rule of differentiation is applied for finding the derivatives of the cost function.
 
 \section{Regularization}
 \label{sec:ch_3_regularization}
@@ -54,15 +54,15 @@ Regularization is one of the many techniques used to prevent an ANN from overfit
 
 The regularization methods used in this work are explained in the following.
 
-Early stopping \cite{Prechelt2012} stops the training of an ANN when a monitored value does not improve after a certain number of epochs. The monitored value in this thesis is the validation loss. The available data is divided in training and validation data set. After every epoch, the validation loss is calculated by evaluating the loss function on the validation data set, and the ANN parameters, where the validation loss becomes minimal, are stored. Additionally, early stopping was combined with the learning-rate-reduction-on-plateau strategy, that reduces the learning rate hyperparameter of the ANN by a certain factor if the validation loss does not improve for several epochs.
+Early stopping \cite{Prechelt2012} interrupts the training of an ANN when a monitored value does not improve after a certain number of epochs. The monitored value in this thesis is the validation loss. The available data is divided in training and validation data set. After every epoch, the validation loss is calculated by evaluating the loss function on the validation data set, and the ANN parameters, where the validation loss becomes minimal, are stored. Additionally, early stopping was combined with the learning-rate-reduction-on-plateau strategy to reduce the learning rate hyperparameter of the ANN by a certain factor if the validation loss does not improve for several epochs.
 
 Dropout \cite{DBLP:journals/corr/abs-1207-0580} deactivates random neurons for every batch update, preventing single neurons from carrying most or all the generalization information of the ANN. This forces the network to reapply weights to the remaining active neurons making it more capable of generalizing beyond the training set. The dropout rate is used to indicate the fraction of neurons to be deactivated.
 
 Batch normalization \cite{DBLP:journals/corr/IoffeS15} addresses the issue of \emph{internal covariance shift} by normalizing each neuron's output $y_i$. Internal covariance shift happens due to the distribution change in each layer's inputs during training, as the parameters of the previous layers change. The normalization is given by
 \begin{equation}
-    \hat{y}_i=\gamma \frac{y_i - \mu_B}{\sqrt{\sigma_B^2 + \epsilon}}+\beta,
+    \hat{y}_i=\gamma \frac{y_i - \mu_\text{B}}{\sqrt{\sigma_\text{B}^2 + \epsilon}}+\beta,
 \end{equation}
-where $\gamma$ is an adjustable scale factor, $\beta$ an adjustable shift factor, $\sigma_B$ the standard deviation and $\mu_B$ the mean of the current training batch. Batch normalization eliminates the need for dropout in some cases, allows for much higher learning rates and speeds up training since the input values are more in the scope of the common activation functions.
+where $\gamma$ is an adjustable scale factor, $\beta$ an adjustable shift factor, $\sigma_\text{B}$ the standard deviation and $\mu_B$ the mean of the current training batch. Batch normalization eliminates the need for dropout in some cases, allows for much higher learning rates and speeds up training, since the input values are more within the domain of the common activation functions.
 
 \section{Classifier Evaluation}
 \label{sec:ch_3_eval}
@@ -77,7 +77,7 @@ ROC graphs are two-dimensional graphs in which the true positive rate (TPR) is p
 \end{figure}
 The AUC score of a ROC curve can be used to determine overfitting, e.g., when the AUC score of the training data set is higher than that of the validation data set.
 
-The confusion matrix is a table layout, where each row of the matrix represents the instance counts in a predicted class while each column represents the counts in an actual class.
+The confusion matrix is a table layout, where each row of the matrix represents the instance counts in a predicted class, while each column represents the counts in an actual class.
 
 Assume a classifier has been trained to distinguish between cats, dogs and rabbits with a sample of 27 animals, where 8 are cats, 6 dogs and 13 rabbits.
 
@@ -101,4 +101,4 @@ Assume a classifier has been trained to distinguish between cats, dogs and rabbi
     \end{center}
 \end{table}
 
-Reading the columns of table \ref{tab:ch_3_confusion_matrix} vertically, the classifier predicted that of the 8 actual cats 3 were dogs, of the actual 6 dogs 2 were cats and 1 rabbit and of the actual 13 rabbits 2 were dogs. The correct predictions are highlighted in bold in the diagonal of the table, the incorrect predictions are represented by values outside the diagonal.
+Reading the columns of Table \ref{tab:ch_3_confusion_matrix} vertically, the classifier predicted that of the 8 actual cats 3 were dogs, of the actual 6 dogs 2 were cats and 1 rabbit and of the actual 13 rabbits 2 were dogs. The correct predictions are highlighted in bold in the diagonal of the table, the incorrect predictions are represented by values outside the diagonal.

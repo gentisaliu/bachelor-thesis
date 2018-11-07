@@ -150,7 +150,7 @@
 \newcommand{\APquark}{$\overline{\text{q}}$\xspace }
 \newcommand{\Pgluon}{g\xspace }
 \newcommand{\PgluonNOSPACE}{g}
-\newcommand{\Pphoton}{$\upgamma$}
+\newcommand{\Pphoton}{$\upgamma$\xspace }
 \newcommand{\Ptau}{$\uptau$}
 \newcommand{\Pmuon}{$\upmu$}
 \newcommand{\Pelectronneutrino}{$\upnu_\text{e}$}

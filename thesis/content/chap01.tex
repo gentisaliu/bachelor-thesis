@@ -1,15 +1,16 @@
 \chapter{Theoretical Background}
 \label{ch:theory}
 
-This chapter discusses the theory relevant for the thesis. Section \ref{sec:theory_sm} provides an overview of the standard model (SM) of particle physics, the context for this work. Section \ref{sec:theory_top} focuses on properties of the top quark, its production processes and decay modes, which are important in the development and evaluation of the classifier in chapters \ref{ch:classifier} and \ref{ch:classifier}.
+This chapter discusses the theory relevant for the thesis. Section \ref{sec:theory_sm} provides an overview of the standard model (SM) of particle physics, the context for this work. Section \ref{sec:theory_top} focuses on properties of the top quark, its production processes and decay modes, which are important in the development and evaluation of the classifier in chapter \ref{ch:classifier}. Throughout this thesis natural units ($\hbar=c=1$) are used.
+
 \section{The Standard Model of Particle Physics}
 \label{sec:theory_sm}
 The SM describes the known elementary particles and their interactions. Elementary particles are categorized in fermions and bosons based on their spin quantum number.
 
-\textbf{Fermions} are particles with a spin of $\nicefrac{1}{2}$. They are grouped into six quarks and six leptons, which are arranged according to their masses in three generations. The quarks are named the up (\Pup), down (\Pdown), charm (\Pcharm), strange (\Pstrange), top (\Ptop) and bottom (\Pbottom) quark. The leptons are the electron (\Pe), electron neutrino (\Pelectronneutrino), muon (\Pmuon), muon neutrino (\Pmuonneutrino), tau (\Ptau), tau neutrino (\Ptauneutrino). For each fermion an antifermion with equal mass, but opposite electric charge, color, and third component of isospin, exists. A summary of the fermions is given in Table \ref{tab:ch_1_sm_fermions}.
+\textbf{Fermions} are particles with a spin of $\nicefrac{1}{2}$. They are grouped into six quarks and six leptons, which are arranged according to their masses in three generations. The quarks are named the up (\Pup), down (\Pdown), charm (\Pcharm), strange (\Pstrange), top (\Ptop) and bottom (\Pbottom) quark. The leptons are the electron (\Pe), electron neutrino (\Pelectronneutrino), muon (\Pmuon), muon neutrino (\Pmuonneutrino), tau (\Ptau), and tau neutrino (\Ptauneutrino). For each fermion an antifermion with equal mass, but opposite electric charge, color, and third component of isospin, exists. A summary of the fermions is given in Table \ref{tab:ch_1_sm_fermions}.
 
 \begin{table}[h]
-    \caption[Fermions of the Standard Model]{Six leptons and six quarks constitute the fermions of the SM. Particles are ordered according to their generation. Source: \cite{Pov14}}
+    \caption[Fermions of the Standard Model]{Six leptons and six quarks constitute the fermions of the SM. The particles are ordered according to their generation. Source: \cite{Pov14}}
     \label{tab:ch_1_sm_fermions}
     \begin{center}
         \begin{tabular}{ccccccccc}
@@ -27,16 +28,16 @@ The SM describes the known elementary particles and their interactions. Elementa
     \end{center}
 \end{table}
 
-Quarks carry color charge, electric charge, and weak isospin --- they interact with other quarks via the strong, electromagnetic, and weak interaction respectively. A quark's color can take one of three charges (red, green, and blue), an antiquark one of the three anticolors (antired, antigreen, and antiblue). Due to color confinement, quarks cannot be isolated, they are strongly bound to one another forming color-neutral composite particles (hadrons). Hadrons are categorized in mesons (one quark, one antiquark) and baryons (three quarks), such as the proton (\Pup\Pup\Pdown) and the neutron (\Pup\Pdown\Pdown). Quarks from the same generation form a weak isospin doublet; particles from the same doublet behave similarly towards the weak interaction.
+Quarks carry color charge, electric charge, and weak isospin --- they interact with other quarks via the strong, electromagnetic, and weak interaction respectively. A quark's color can take one of three charges (red, green, and blue), an antiquark one of the three anticolors (antired, antigreen, and antiblue). Due to color confinement, quarks cannot be isolated, they are strongly bound to one another forming color-neutral composite particles (hadrons). Hadrons are categorized in mesons (one quark, one antiquark) and baryons (three quarks), such as the proton (\Pup\Pup\Pdown) and the neutron (\Pup\Pdown\Pdown). Quarks of the same generation form a weak isospin doublet; particles of the same doublet behave similarly towards the weak interaction.
 
-Leptons do not possess color charge. The three neutrinos also lack electric charge and only interact through the weak nuclear force, thus being difficult to detect. In contrast, the electron, muon, and tau have electric charge and interact electromagnetically.
+Leptons do not possess color charge. The three neutrinos also lack electric charge and only interact through the weak nuclear force, thus being difficult to detect. In contrast, the electron, muon, and tau have electric charge and interact both electromagnetically and weakly.
 
 First-generation charged particles do not decay, they constitute ordinary matter. Neutrinos do not decay either, they exist in abundance, but do not interact significantly with matter. Other higher-generation charged particles have short lifetimes and can be observed only in high-energy experiments \cite{wiki:standardmodel}.
 
-Gauge \textbf{bosons} mediate the forces between elementary particles and have a spin of 1. The photon \Pphoton, mediating the electromagnetic interaction between electrically charged particles, the \PWplus, \PWminus and \PZ bosons mediating the weak interaction and the eight gluons \Pgluon, mediating the strong interaction are classified as gauge bosons. Their properties are listed in detail in table \ref{tab:ch_1_sm_bosons}.
+Gauge \textbf{bosons} mediate the forces between elementary particles and have a spin of 1. The photon \Pphoton, mediating the electromagnetic interaction between electrically charged particles, the \PWplus, \PWminus, and \PZ bosons, mediating the weak interaction, and the eight gluons \Pgluon, mediating the strong interaction, are classified as gauge bosons. Their properties are listed in detail in Table \ref{tab:ch_1_sm_bosons}.
 
 \begin{table}[h]
-	\caption[Gauge bosons of the SM]{The gauge bosons of the Standard Model are spin-1 particles that mediate the three fundamental forces described by the SM. For every boson, the interaction it participates in, the charge it couples to, its mass, spin, parity, and interaction range are given. Source: \cite{Pov14, Fal18, Patrignani:2016xqp}}
+	\caption[Gauge bosons of the SM]{The gauge bosons of the standard model are spin-1 particles that mediate the three fundamental forces described by the SM. For every boson, the interaction it participates in, the charge it couples to, its mass, spin, parity, and interaction range are given. Source: \cite{Pov14, Fal18, pdg}}
 	\label{tab:ch_1_sm_bosons}
 	\begin{center}
     	\begin{tabular}{cccccc}
@@ -54,20 +55,20 @@ Gauge \textbf{bosons} mediate the forces between elementary particles and have a
 
 The interactions of the SM are described by quantum field theories \cite{Pov14}:
 \begin{itemize}
-\item The electromagnetic interaction is described by quantum electrodynamics (QED). Because photons have no electrical charge, they do not interact with other photons.
+\item The electromagnetic interaction is described by quantum electrodynamics (QED). Since photons have no electrical charge, they do not interact with other photons.
 \item The strong interaction is described by quantum chromodynamics (QCD), which forbids the existence of free color-charged particles.
 \item The weak interaction is described by quantum flavordynamics (QFD) \cite{Gri08}. The gauge bosons, left-chiral fermions, and right-chiral antifermions interact weakly. Conservation of parity is therefore violated by the weak interaction, because left-handed particles transform to right-handed particles under a parity inversion.
 \end{itemize}
 
-The electromagnetic and the weak interaction are unified within the theory of the electroweak interaction. This theory predicts four massless gauge bosons, the \PBzero, \PWone, \PWtwo, and \PWthree bosons. The spontaneous symmetry breaking of the electroweak symmetry, caused by the Higgs mechanism, produces four gauge bosons, namely three massive (the \PZzero and \PWpm) and one massless (the photon \Pphoton). The \PZzero and \PWpm bosons are described by the theory as orthogonal linear combinations of the \PBzero and \PWone bosons under the Weinberg angle \cite{wiki:electroweak}.
+The electromagnetic and the weak interaction are unified within the theory of the electroweak interaction. This theory predicts four massless gauge bosons, the \PBzero, \PWone, \PWtwo, and \PWthree bosons. The spontaneous symmetry breaking of the electroweak symmetry, caused by the Higgs mechanism, produces four gauge bosons, namely three massive (the \PZzero and \PWpm) and one massless (the photon \Pphoton). The \PZzero boson and the photon \Pphoton are described by the theory as orthogonal linear combinations of the \PBzero and \PWthree bosons under the Weinberg angle \cite{wiki:electroweak}. The \PWpm bosons can be expressed as orthogonal linear combinations of the \PWone and \PWtwo bosons with complex coefficients.
 
 The Higgs mechanism introduces a new complex scalar Higgs field, which provides masses for the weak gauge bosons, and couples through a Yukawa interaction with the corresponding fermion fields, generating non-vanishing fermion mass terms. The excitation of the Higgs field leads to the production of the Higgs boson. The existence of the Higgs boson was confirmed in 2012 by the ATLAS and CMS experiments at the Large Hadron Collider. It has a mass of around \SI{125}{\giga\eV} \cite{Cha12} and is the only spin-0 particle in the SM.
 
 \section{The Top Quark}
 \label{sec:theory_top}
-The top quark is with approximately $\SI{172.5}{GeV}$ \cite{ACCC14} the heaviest particle in the SM. Its existence was first postulated in 1973 by Makoto Kobayashi and Toshihide Maskawa. The high mass is responsible for the top quark's short lifetime of \SI{5e-25}{s}, which is about twenty times shorter than the typical timescale of hadronization. Because no hadronization can occur, there are no composite particles made up of a top quark, making the top quark very interesting for studying ''bare'' quarks. The strong coupling between the Higgs boson and the top quark makes it a suitable tool for studying the properties of the Higgs boson.
+The top quark is with a mass of approximately $\SI{172.5}{GeV}$ \cite{ACCC14} the heaviest particle in the SM. Its existence was first postulated in 1973 by Makoto Kobayashi and Toshihide Maskawa. The high mass is responsible for the top quark's short lifetime of \SI{5e-25}{s} \cite{pdg}, which is about twenty times shorter than the typical timescale of hadronization. Since no hadronization can occur, there are no composite particles made up of a top quark, making the top quark very interesting for studying ''bare'' quarks. The strong coupling between the Higgs boson and the top quark makes it a suitable tool for studying the properties of the Higgs boson.
 
-Due to their high mass, accelerators with high energies are required for the production of top quarks. Because of this, its discovery was a long and difficult process, which began in the late seventies \cite{RevModPhys.69.137} and was concluded in 1995 at the Tevatron by the CDF and D\O{} collaborations.
+Due to the high mass of the top quark, accelerators with high energies are required for their production. Because of this, its discovery was a long and difficult process, which began in the late seventies \cite{RevModPhys.69.137} and was concluded in 1995 at the Tevatron by the CDF and D\O{} collaborations.
 
 \begin{figure}[h]
     \centering
@@ -133,9 +134,9 @@ Additionally, individual (single) top quarks can be produced via the electroweak
     \label{fig:top_single}
 \end{figure}
 
-Top quarks decay almost exclusively in a \PW boson and a \Pbottom quark. The boson further decays either in a quark-antiquark pair or in a lepton and its corresponding neutrino. The former decay process is referred to as being hadronic, the latter as leptonic.
+Top quarks decay almost exclusively into a \PW boson and a \Pbottom quark. The boson further decays either to a quark-antiquark pair or in a lepton and its corresponding neutrino. The former decay process is referred to as being hadronic, the latter as leptonic.
 
 \section{Jets}
-High energy partons, such as quarks and gluons, are released when two hadrons collide. Partons combine with quarks created from quark pair production to form mesons or baryons and reach a stable state in a process known as hadronization. The hadronization of quarks or gluons leads to the formation of jets, a cone-shaped particle shower made of hadrons and other particles that originate from a single point and move together in the same direction. Jets are observed in particle detectors rather than quarks, with the latter being reconstructed from jets.
+High energy partons, such as quarks and gluons, are released when two hadrons collide. Partons combine with quarks created from quark pair production to form mesons or baryons and reach a stable state in a process known as hadronization. The hadronization of quarks or gluons leads to the formation of a jet, a cone-shaped particle shower made of hadrons and other particles that originate from a single point and move together in the same direction. Jets are observed in particle detectors rather than quarks, with the latter being reconstructed from jets.
 
-Various algorithms exist for obtaining information from jets. Since the \Pbottom quark is one of the decay products of the top quark, identification of jets originating from \Pbottom quarks is necessary for the reconstruction of the top quark. This is done by applying b-tagging with the Combined Secondary Vertex algorithm (CSV), that calculates probabilities between zero and one for a \Pbottom-tag. \Pbottom-tags are categorized by the \emph{mis-tag rates}, i.e. the probability of tagging a jet that doesn't originate from a \Pbottom quark. Possible values range from \SI{10}{\%} (\emph{loose}), \SI{1}{\%} (\emph{medium}) to \SI{0.1}{\%} (\emph{tight}). Smaller mis-tag rates lead to smaller efficiencies of the \Pbottom-tagging algorithm.
+Various algorithms exist for obtaining information from jets. Since the \Pbottom quark is one of the decay products of the top quark, identification of jets originating from \Pbottom quarks is necessary for the reconstruction of the top quark. This is done by applying b-tagging with the Combined Secondary Vertex algorithm (CSV) \cite{Chatrchyan:1494669}, that calculates measures for probabilities between zero and one for a \Pbottom-tag. \Pbottom-tags are categorized by the \emph{mis-tag rates}, i.e. the probability of tagging a jet that doesn't originate from a \Pbottom quark. Possible values range from \SI{10}{\%} (\emph{loose}), \SI{1}{\%} (\emph{medium}) to \SI{0.1}{\%} (\emph{tight}). Smaller mis-tag rates lead to smaller efficiencies of the \Pbottom-tagging algorithm.
